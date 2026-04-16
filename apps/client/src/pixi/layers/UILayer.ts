@@ -105,7 +105,7 @@ export class UILayer extends Container {
     this.phaseBtnText = new Text({ text: '▶ 下一階段', style: new TextStyle({ fontSize: 16, fill: 0xffffff, fontWeight: 'bold' }) });
     this.phaseBtnText.anchor.set(0.5);
     this.phaseBtn.addChild(this.phaseBtnText);
-    this.phaseBtn.position.set(LOGICAL_W / 2, LOGICAL_H - 80);
+    this.phaseBtn.position.set(LOGICAL_W / 2, LOGICAL_H - 170);
     this.phaseBtn.on('pointerover', () => { this.phaseBtnBg.texture = getTexture('btn_phase_hover'); });
     this.phaseBtn.on('pointerout', () => { this.phaseBtnBg.texture = getTexture('btn_phase_normal'); });
     this.addChild(this.phaseBtn);
@@ -122,7 +122,7 @@ export class UILayer extends Container {
     const surText = new Text({ text: '🏳 投降', style: new TextStyle({ fontSize: 14, fill: 0xffffff }) });
     surText.anchor.set(0.5);
     this.surrenderBtn.addChild(surText);
-    this.surrenderBtn.position.set(LOGICAL_W / 2 + 200, LOGICAL_H - 80);
+    this.surrenderBtn.position.set(LOGICAL_W - 80, LOGICAL_H - 170);
     this.addChild(this.surrenderBtn);
 
     // Cancel button
@@ -136,7 +136,7 @@ export class UILayer extends Container {
     const cancelText = new Text({ text: '✕ 取消', style: new TextStyle({ fontSize: 14, fill: 0xffffff }) });
     cancelText.anchor.set(0.5);
     this.cancelBtn.addChild(cancelText);
-    this.cancelBtn.position.set(LOGICAL_W / 2 - 200, LOGICAL_H - 80);
+    this.cancelBtn.position.set(80, LOGICAL_H - 170);
     this.addChild(this.cancelBtn);
 
     // Direct attack button
