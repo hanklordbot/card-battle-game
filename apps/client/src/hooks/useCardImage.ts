@@ -24,7 +24,7 @@ export function useCardImage(cardId: string, size: 'small' | 'large' = 'small') 
     const el = ref.current;
     if (!el || triggered.current) return;
 
-    const url = getCardImageUrl(cardId, size);
+    const url = getCardImageUrl(cardId);
     if (!url) {
       setState('error');
       return;

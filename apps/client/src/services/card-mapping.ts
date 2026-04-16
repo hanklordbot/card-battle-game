@@ -33,10 +33,9 @@ export const CARD_IMAGE_MAP: Record<string, number> = {
   'TRP-005': 94192409,  // 強制脫出裝置 → Compulsory Evacuation Device
 };
 
-/** Get YGOProDeck image URL for a card. Returns null if no mapping exists. */
-export function getCardImageUrl(cardId: string, size: 'small' | 'large' = 'small'): string | null {
+/** Get card image URL. Uses local files to avoid CORS issues. */
+export function getCardImageUrl(cardId: string): string | null {
   const ygoproId = CARD_IMAGE_MAP[cardId];
   if (!ygoproId) return null;
-  const folder = size === 'small' ? 'cards_small' : 'cards';
-  return `https://images.ygoprodeck.com/images/${folder}/${ygoproId}.jpg`;
+  return `${import.meta.env.BASE_URL}card-images/${ygoproId}.jpg`;
 }

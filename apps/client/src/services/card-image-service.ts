@@ -22,7 +22,7 @@ export function initCardImageService(): void {
  * Uses IndexedDB cache → network fetch → cache store pipeline.
  */
 export async function fetchCardImage(cardId: string, size: 'small' | 'large' = 'small'): Promise<string | null> {
-  const url = getCardImageUrl(cardId, size);
+  const url = getCardImageUrl(cardId);
   if (!url) return null;
 
   if (pending.has(url)) return pending.get(url)!;

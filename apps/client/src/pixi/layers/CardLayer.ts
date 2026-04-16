@@ -98,7 +98,7 @@ export class CardSprite extends Container {
       if (this._loadedCardId !== card.id) {
         this._loadedCardId = card.id;
         this.artSprite.visible = false;
-        const url = getCardImageUrl(card.id, 'small');
+        const url = getCardImageUrl(card.id);
         if (url) {
           const img = new Image();
           img.crossOrigin = 'anonymous';
