@@ -46,11 +46,11 @@ export class UILayer extends Container {
   constructor() {
     super();
 
-    const lpStyle = new TextStyle({ fontSize: 22, fill: 0xffffff, fontWeight: 'bold' });
-    const labelStyle = new TextStyle({ fontSize: 14, fill: 0xffffff });
+    const lpStyle = new TextStyle({ fontSize: 28, fill: 0xffffff, fontWeight: 'bold' });
+    const labelStyle = new TextStyle({ fontSize: 16, fill: 0xffffff });
 
     // Player LP
-    this.playerLpLabel = new Text({ text: '我方', style: new TextStyle({ fontSize: 14, fill: hexNum(COLORS.myAccent) }) });
+    this.playerLpLabel = new Text({ text: '我方', style: new TextStyle({ fontSize: 16, fill: hexNum(COLORS.myAccent), fontWeight: 'bold' }) });
     this.playerLpLabel.position.set(30, LOGICAL_H - 140);
     this.addChild(this.playerLpLabel);
 
@@ -62,7 +62,7 @@ export class UILayer extends Container {
     this.addChild(this.playerLpBar);
 
     // Opponent LP
-    this.oppLpLabel = new Text({ text: '對方', style: new TextStyle({ fontSize: 14, fill: hexNum(COLORS.oppAccent) }) });
+    this.oppLpLabel = new Text({ text: '對方', style: new TextStyle({ fontSize: 16, fill: hexNum(COLORS.oppAccent), fontWeight: 'bold' }) });
     this.oppLpLabel.position.set(30, 20);
     this.addChild(this.oppLpLabel);
 
@@ -74,7 +74,7 @@ export class UILayer extends Container {
     this.addChild(this.oppLpBar);
 
     // Turn label
-    this.turnLabel = new Text({ text: '', style: new TextStyle({ fontSize: 16, fill: hexNum(COLORS.myAccent), fontWeight: 'bold' }) });
+    this.turnLabel = new Text({ text: '', style: new TextStyle({ fontSize: 18, fill: hexNum(COLORS.myAccent), fontWeight: 'bold' }) });
     this.turnLabel.anchor.set(0.5, 0);
     this.turnLabel.position.set(LOGICAL_W / 2, LOGICAL_H - 145);
     this.addChild(this.turnLabel);
@@ -85,7 +85,7 @@ export class UILayer extends Container {
     for (let i = 0; i < PHASE_ORDER.length; i++) {
       const t = new Text({
         text: PHASE_LABELS[PHASE_ORDER[i]],
-        style: new TextStyle({ fontSize: 14, fill: hexNum(COLORS.phaseInactive), fontWeight: 'bold' }),
+        style: new TextStyle({ fontSize: 16, fill: hexNum(COLORS.phaseInactive), fontWeight: 'bold' }),
       });
       t.anchor.set(0.5);
       t.position.set(phaseStartX + i * 80, phaseY);
@@ -154,7 +154,7 @@ export class UILayer extends Container {
     this.addChild(this.directAttackBtn);
 
     // Toast
-    this.toastText = new Text({ text: '', style: new TextStyle({ fontSize: 20, fill: 0xffffff, fontWeight: 'bold', dropShadow: true }) });
+    this.toastText = new Text({ text: '', style: new TextStyle({ fontSize: 24, fill: 0xffffff, fontWeight: 'bold', dropShadow: true }) });
     this.toastText.anchor.set(0.5);
     this.toastText.position.set(LOGICAL_W / 2, LOGICAL_H / 2 - 200);
     this.toastText.visible = false;
@@ -252,7 +252,7 @@ export class UILayer extends Container {
     }
     this._lastLogCount = recent.length;
 
-    const style = new TextStyle({ fontSize: 11, fill: 0xcccccc, wordWrap: true, wordWrapWidth: 250 });
+    const style = new TextStyle({ fontSize: 13, fill: 0xcccccc, wordWrap: true, wordWrapWidth: 250 });
 
     // Reuse existing Text objects, create new ones only if needed
     while (this.logTexts.length > recent.length) {

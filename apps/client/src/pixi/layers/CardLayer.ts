@@ -1,14 +1,15 @@
-import { Container, Graphics, Text, TextStyle, Sprite } from 'pixi.js';
+import { Container, Graphics, Text, TextStyle, Sprite, Texture } from 'pixi.js';
 import { Card, isMonster, MonsterCard, CardType, Position, FieldCard } from '../../core/card';
 import { getCardFrameColor } from '../../game/constants';
 import { LOGICAL_W, LOGICAL_H } from '../PixiApp';
 import { SLOT_W, SLOT_H, type SlotInfo } from './FieldLayer';
 import { getTexture } from '../TexturePreloader';
+import { getCardImageUrl } from '../../services/card-mapping';
 
 const CARD_W = 80;
 const CARD_H = 116;
-const HAND_CARD_W = 70;
-const HAND_CARD_H = 100;
+const HAND_CARD_W = 80;
+const HAND_CARD_H = 116;
 
 function hexToNum(hex: string): number {
   return parseInt(hex.replace('#', ''), 16);
@@ -20,7 +21,9 @@ export class CardSprite extends Container {
   private statsText: Text;
   private typeBadge: Text;
   private backSprite: Sprite;
+  private artSprite: Sprite;
   private _faceDown = false;
+  private _loadedCardId = '';
   cardRef: Card | null = null;
   cardIndex = -1;
 
@@ -28,18 +31,25 @@ export class CardSprite extends Container {
     super();
     this.addChild(this.bg);
 
-    const nameStyle = new TextStyle({ fontSize: 10, fill: 0xffffff, fontWeight: 'bold', wordWrap: true, wordWrapWidth: w - 8 });
+    // Card art image (loaded async)
+    this.artSprite = new Sprite();
+    this.artSprite.width = w;
+    this.artSprite.height = h;
+    this.artSprite.visible = false;
+    this.addChild(this.artSprite);
+
+    const nameStyle = new TextStyle({ fontSize: 14, fill: 0xffffff, fontWeight: 'bold', wordWrap: true, wordWrapWidth: w - 8 });
     this.nameText = new Text({ text: '', style: nameStyle });
     this.nameText.position.set(4, 4);
     this.addChild(this.nameText);
 
-    const statsStyle = new TextStyle({ fontSize: 11, fill: 0xffd700, fontWeight: 'bold' });
+    const statsStyle = new TextStyle({ fontSize: 14, fill: 0xffd700, fontWeight: 'bold' });
     this.statsText = new Text({ text: '', style: statsStyle });
     this.statsText.anchor.set(0.5, 1);
     this.statsText.position.set(w / 2, h - 4);
     this.addChild(this.statsText);
 
-    const badgeStyle = new TextStyle({ fontSize: 18, fill: 0xffffff, fontWeight: 'bold' });
+    const badgeStyle = new TextStyle({ fontSize: 22, fill: 0xffffff, fontWeight: 'bold' });
     this.typeBadge = new Text({ text: '', style: badgeStyle });
     this.typeBadge.anchor.set(0.5);
     this.typeBadge.position.set(w / 2, h / 2);
@@ -65,7 +75,9 @@ export class CardSprite extends Container {
     this.statsText.visible = !faceDown;
     this.typeBadge.visible = !faceDown;
 
-    if (!faceDown) {
+    if (faceDown) {
+      this.artSprite.visible = false;
+    } else {
       const color = hexToNum(getCardFrameColor(card));
       this.bg.clear();
       this.bg.roundRect(0, 0, this.w, this.h, 4);
@@ -80,6 +92,35 @@ export class CardSprite extends Container {
       } else {
         this.statsText.text = '';
         this.typeBadge.text = card.cardType === CardType.Spell ? '魔' : '陷';
+      }
+
+      // Load card art image (async, no CORS — uses <img> crossOrigin)
+      if (this._loadedCardId !== card.id) {
+        this._loadedCardId = card.id;
+        this.artSprite.visible = false;
+        const url = getCardImageUrl(card.id, 'small');
+        if (url) {
+          const img = new Image();
+          img.crossOrigin = 'anonymous';
+          img.onload = () => {
+            if (this.cardRef?.id !== card.id) return; // stale
+            const tex = Texture.from(img);
+            this.artSprite.texture = tex;
+            this.artSprite.width = this.w;
+            this.artSprite.height = this.h;
+            this.artSprite.visible = true;
+            // Hide text overlays when image is shown
+            this.nameText.visible = false;
+            this.typeBadge.visible = false;
+            this.bg.visible = false;
+          };
+          img.src = url;
+        }
+      } else if (this.artSprite.texture && this.artSprite.texture !== Texture.EMPTY) {
+        this.artSprite.visible = true;
+        this.nameText.visible = false;
+        this.typeBadge.visible = false;
+        this.bg.visible = false;
       }
     }
   }
@@ -128,16 +169,16 @@ export class CardLayer extends Container {
       pool.push(this.acquireHandCard(HAND_CARD_W, HAND_CARD_H));
     }
 
-    const totalW = cards.length * HAND_CARD_W - Math.max(0, cards.length - 1) * Math.max(15, cards.length * 2);
+    const gap = 8;
+    const totalW = cards.length * HAND_CARD_W + Math.max(0, cards.length - 1) * gap;
     const startX = (LOGICAL_W - totalW) / 2 + HAND_CARD_W / 2;
-    const overlap = Math.max(15, cards.length * 2);
     const y = isOpponent ? 60 : LOGICAL_H - 60;
 
     for (let i = 0; i < cards.length; i++) {
       const cs = pool[i];
       cs.setCard(cards[i], isOpponent);
       cs.cardIndex = i;
-      cs.position.set(startX + i * (HAND_CARD_W - overlap), y);
+      cs.position.set(startX + i * (HAND_CARD_W + gap), y);
       cs.scale.set(1);
       cs.rotation = 0;
 

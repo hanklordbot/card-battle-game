@@ -1,44 +1,49 @@
 import { useState, useEffect, useRef } from 'react';
-import { fetchCardImage } from '../services/card-image-service';
+import { getCardImageUrl } from '../services/card-mapping';
 
 export type ImageState = 'idle' | 'loading' | 'loaded' | 'error';
 
 /**
- * Hook to lazy-load a card image. Triggers fetch when the element enters the viewport.
+ * Hook to load a card image. Uses direct <img> URL (no fetch/CORS issues).
+ * Triggers load when element enters viewport via IntersectionObserver.
  */
 export function useCardImage(cardId: string, size: 'small' | 'large' = 'small') {
-  const [src, setSrc] = useState<string | null>(null);
   const [state, setState] = useState<ImageState>('idle');
+  const [src, setSrc] = useState<string | null>(null);
   const ref = useRef<HTMLDivElement>(null);
-  const loadedRef = useRef(false);
+  const triggered = useRef(false);
 
+  // Reset on cardId change
   useEffect(() => {
-    loadedRef.current = false;
+    triggered.current = false;
     setSrc(null);
     setState('idle');
   }, [cardId, size]);
 
   useEffect(() => {
     const el = ref.current;
-    if (!el || loadedRef.current) return;
+    if (!el || triggered.current) return;
+
+    const url = getCardImageUrl(cardId, size);
+    if (!url) {
+      setState('error');
+      return;
+    }
 
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (!entry.isIntersecting || loadedRef.current) return;
-        loadedRef.current = true;
+        if (!entry.isIntersecting || triggered.current) return;
+        triggered.current = true;
         observer.disconnect();
         setState('loading');
 
-        fetchCardImage(cardId, size).then((url) => {
-          if (url) {
-            setSrc(url);
-            setState('loaded');
-          } else {
-            setState('error');
-          }
-        });
+        // Preload via Image object — no CORS issues
+        const img = new Image();
+        img.onload = () => { setSrc(url); setState('loaded'); };
+        img.onerror = () => setState('error');
+        img.src = url;
       },
-      { rootMargin: '100px' } // start loading slightly before visible
+      { rootMargin: '200px' }
     );
 
     observer.observe(el);

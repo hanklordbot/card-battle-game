@@ -74,7 +74,8 @@ export function registerAllAudio(): void {
 }
 
 /** Preload assets for a given strategy group. */
-export async function preloadAudio(group: 'preload' | 'battlePreload' | 'deckEditPreload', basePath = '/audio'): Promise<void> {
+export async function preloadAudio(group: 'preload' | 'battlePreload' | 'deckEditPreload', basePath?: string): Promise<void> {
+  const base = basePath ?? `${import.meta.env.BASE_URL}audio`.replace(/\/\//g, '/');
   const groups: Record<string, string[]> = {
     preload: ['bgm_main_menu', 'sfx_ui_click', 'sfx_match_found', 'sfx_countdown_tick'],
     battlePreload: [
@@ -87,7 +88,7 @@ export async function preloadAudio(group: 'preload' | 'battlePreload' | 'deckEdi
     ],
     deckEditPreload: ['bgm_deck_edit'],
   };
-  await audioManager.loadByStrategy(groups[group] ?? [], basePath);
+  await audioManager.loadByStrategy(groups[group] ?? [], base);
 }
 
 // === High-Level Game Event Triggers ===
