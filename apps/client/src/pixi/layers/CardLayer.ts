@@ -3,6 +3,7 @@ import { Card, isMonster, MonsterCard, CardType, Position, FieldCard } from '../
 import { getCardFrameColor } from '../../game/constants';
 import { LOGICAL_W, LOGICAL_H } from '../PixiApp';
 import { SLOT_W, SLOT_H, type SlotInfo } from './FieldLayer';
+import { getTexture } from '../TexturePreloader';
 
 const CARD_W = 80;
 const CARD_H = 116;
@@ -44,7 +45,7 @@ export class CardSprite extends Container {
     this.typeBadge.position.set(w / 2, h / 2);
     this.addChild(this.typeBadge);
 
-    this.backSprite = Sprite.from('assets/battle-field-png/card-slots/card_back.png');
+    this.backSprite = new Sprite(getTexture('card_back'));
     this.backSprite.width = w;
     this.backSprite.height = h;
     this.backSprite.visible = false;
@@ -89,7 +90,8 @@ export class CardSprite extends Container {
 export class CardLayer extends Container {
   private playerHandCards: CardSprite[] = [];
   private oppHandCards: CardSprite[] = [];
-  private fieldCards = new Map<string, CardSprite>(); // key: "p{player}m{zone}" or "p{player}s{zone}"
+  private fieldCards = new Map<string, CardSprite>();
+  private handCardPool: CardSprite[] = []; // recycled hand card sprites
 
   onHandCardClick?: (index: number) => void;
   onHandCardRightClick?: (card: Card) => void;
@@ -100,20 +102,30 @@ export class CardLayer extends Container {
     super();
   }
 
+  private acquireHandCard(w: number, h: number): CardSprite {
+    const cs = this.handCardPool.pop() ?? new CardSprite(w, h);
+    cs.visible = true;
+    this.addChild(cs);
+    return cs;
+  }
+
+  private releaseHandCard(cs: CardSprite) {
+    cs.removeAllListeners();
+    cs.visible = false;
+    this.removeChild(cs);
+    this.handCardPool.push(cs);
+  }
+
   updateHand(cards: Card[], isOpponent: boolean) {
     const pool = isOpponent ? this.oppHandCards : this.playerHandCards;
 
-    // Remove excess
+    // Release excess to pool
     while (pool.length > cards.length) {
-      const c = pool.pop()!;
-      this.removeChild(c);
-      c.destroy();
+      this.releaseHandCard(pool.pop()!);
     }
-    // Add missing
+    // Acquire missing from pool
     while (pool.length < cards.length) {
-      const cs = new CardSprite(HAND_CARD_W, HAND_CARD_H);
-      pool.push(cs);
-      this.addChild(cs);
+      pool.push(this.acquireHandCard(HAND_CARD_W, HAND_CARD_H));
     }
 
     const totalW = cards.length * HAND_CARD_W - Math.max(0, cards.length - 1) * Math.max(15, cards.length * 2);

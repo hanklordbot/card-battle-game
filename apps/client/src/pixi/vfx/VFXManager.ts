@@ -33,7 +33,8 @@ export class VFXManager {
     stage.addChild(this.vfxLayer);
     stage.sortChildren();
 
-    this.pool = new ParticlePool(this.vfxLayer);
+    this.pool = new ParticlePool(this.vfxLayer, app);
+    this.pool.initTexture(app);
     this.cardVFX = new CardVFX(app, this.vfxLayer, this.pool);
     this.battleVFX = new BattleVFX(app, this.vfxLayer, this.pool);
     this.lpVFX = new LPVFX(app, this.vfxLayer, this.pool);

@@ -5,6 +5,7 @@ import { initPixiApp, destroyPixiApp, getPixiApp } from '../pixi/PixiApp';
 import { BattleScene } from '../pixi/scenes/BattleScene';
 import { vfxManager } from '../pixi/vfx/VFXManager';
 import { audioManager, gameAudio, registerAllAudio, preloadAudio } from '../audio';
+import { revokeAllCardImages } from '../services/card-image-service';
 import VolumeControl from './VolumeControl';
 import React from 'react';
 
@@ -69,6 +70,7 @@ export default function BattleField() {
       const unsubs = (el as HTMLDivElement & { _unsubs?: (() => void)[] })._unsubs;
       unsubs?.forEach(u => u());
       sceneRef.current = null;
+      revokeAllCardImages();
       destroyPixiApp();
     };
   }, [initAudio]);

@@ -1,5 +1,6 @@
 import { Container, Sprite, Texture } from 'pixi.js';
 import { LOGICAL_W, LOGICAL_H } from '../PixiApp';
+import { getTexture } from '../TexturePreloader';
 
 const SLOT_W = 80;
 const SLOT_H = 116;
@@ -35,13 +36,13 @@ export class FieldLayer extends Container {
 
   private build() {
     // Background
-    const bg = Sprite.from('assets/battle-field-png/background/bg_default.png');
+    const bg = new Sprite(getTexture('bg_default'));
     bg.width = LOGICAL_W;
     bg.height = LOGICAL_H;
     this.addChild(bg);
 
     // Center divider
-    const divider = Sprite.from('assets/battle-field-png/ui/center_divider.png');
+    const divider = new Sprite(getTexture('center_divider'));
     divider.anchor.set(0.5);
     divider.position.set(LOGICAL_W / 2, CENTER_Y);
     divider.width = LOGICAL_W * 0.6;
@@ -73,7 +74,7 @@ export class FieldLayer extends Container {
       const x = FIELD_X_START + i * (SLOT_W + SLOT_GAP) + SLOT_W / 2;
       const y = cy;
 
-      const sprite = Sprite.from(`assets/battle-field-png/card-slots/${texName}.png`);
+      const sprite = new Sprite(getTexture(texName));
       sprite.anchor.set(0.5);
       sprite.width = SLOT_W;
       sprite.height = SLOT_H;
@@ -82,7 +83,7 @@ export class FieldLayer extends Container {
       sprite.cursor = 'pointer';
       this.addChild(sprite);
 
-      const highlight = Sprite.from('assets/battle-field-png/card-slots/slot_highlight.png');
+      const highlight = new Sprite(getTexture('slot_highlight'));
       highlight.anchor.set(0.5);
       highlight.width = SLOT_W + 8;
       highlight.height = SLOT_H + 8;
@@ -97,7 +98,7 @@ export class FieldLayer extends Container {
   }
 
   private createZone(x: number, cy: number, texName: string): Sprite {
-    const s = Sprite.from(`assets/battle-field-png/functional/${texName}.png`);
+    const s = new Sprite(getTexture(texName));
     s.anchor.set(0.5);
     s.width = ZONE_SIZE;
     s.height = ZONE_SIZE;

@@ -1,4 +1,4 @@
-import { Application, Container } from 'pixi.js';
+import { Application, Container, Rectangle } from 'pixi.js';
 import { FieldLayer } from '../layers/FieldLayer';
 import { CardLayer } from '../layers/CardLayer';
 import { UILayer } from '../layers/UILayer';
@@ -21,9 +21,15 @@ export class BattleScene extends Container {
   uiLayer: UILayer;
   overlayLayer: OverlayLayer;
   private interaction: InteractionManager;
+  private _lastGameStarted = false;
+  private _lastGameOverShown = false;
 
   constructor() {
     super();
+    // Enable culling — PixiJS skips rendering children outside this area
+    this.cullable = true;
+    this.cullArea = new Rectangle(0, 0, 1920, 1080);
+
     this.fieldLayer = new FieldLayer();
     this.cardLayer = new CardLayer();
     this.uiLayer = new UILayer();
@@ -137,10 +143,14 @@ export class BattleScene extends Container {
       this.overlayLayer.hideCardDetail();
     }
 
-    // Game over
+    // Game over — only trigger VFX once
     if (gameOver) {
-      this.overlayLayer.showGameOver(duel.result);
+      if (!this._lastGameOverShown) {
+        this._lastGameOverShown = true;
+        this.overlayLayer.showGameOver(duel.result);
+      }
     } else {
+      this._lastGameOverShown = false;
       this.overlayLayer.hideGameOver();
     }
   }

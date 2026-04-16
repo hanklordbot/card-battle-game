@@ -1,4 +1,6 @@
 import { Application } from 'pixi.js';
+import { getQualityConfig } from '../stores/qualityStore';
+import { preloadBattleTextures, unloadBattleTextures } from './TexturePreloader';
 
 export const LOGICAL_W = 1920;
 export const LOGICAL_H = 1080;
@@ -8,7 +10,9 @@ let app: Application | null = null;
 export async function initPixiApp(container: HTMLElement): Promise<Application> {
   if (app) return app;
 
+  const qc = getQualityConfig();
   const preferWebGPU = typeof navigator !== 'undefined' && 'gpu' in navigator;
+  const resolution = Math.max(1, (window.devicePixelRatio || 1) * qc.resolutionScale);
 
   app = new Application();
   await app.init({
@@ -16,10 +20,14 @@ export async function initPixiApp(container: HTMLElement): Promise<Application> 
     width: LOGICAL_W,
     height: LOGICAL_H,
     backgroundColor: 0x1a1a2e,
-    antialias: true,
+    antialias: qc.antialias,
     autoDensity: true,
-    resolution: window.devicePixelRatio || 1,
+    resolution,
+    powerPreference: 'high-performance',
   });
+
+  // Preload all battlefield textures into cache before rendering
+  await preloadBattleTextures();
 
   container.appendChild(app.canvas as HTMLCanvasElement);
   fitToContainer(container);
@@ -45,10 +53,11 @@ export function getPixiApp(): Application {
   return app;
 }
 
-export function destroyPixiApp() {
+export async function destroyPixiApp() {
   if (!app) return;
   const a = app as Application & { _ro?: ResizeObserver };
   a._ro?.disconnect();
+  await unloadBattleTextures();
   app.destroy(true, { children: true });
   app = null;
 }

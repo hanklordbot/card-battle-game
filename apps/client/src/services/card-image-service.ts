@@ -1,5 +1,6 @@
 /**
  * Card Image Service — fetches card images from YGOProDeck API with IndexedDB caching.
+ * Tracks blob URLs for proper memory cleanup.
  */
 
 import { getCardImageUrl } from './card-mapping';
@@ -7,6 +8,9 @@ import { getCachedImage, setCachedImage, cleanExpiredCache } from './image-cache
 
 // In-flight request dedup
 const pending = new Map<string, Promise<string | null>>();
+
+// Track active blob URLs for cleanup
+const activeBlobUrls = new Set<string>();
 
 /** Initialize: clean expired cache entries. */
 export function initCardImageService(): void {
@@ -21,24 +25,25 @@ export async function fetchCardImage(cardId: string, size: 'small' | 'large' = '
   const url = getCardImageUrl(cardId, size);
   if (!url) return null;
 
-  // Dedup concurrent requests for the same URL
   if (pending.has(url)) return pending.get(url)!;
 
   const promise = (async () => {
     try {
-      // 1. Check IndexedDB cache
       const cached = await getCachedImage(url);
-      if (cached) return URL.createObjectURL(cached);
+      if (cached) {
+        const blobUrl = URL.createObjectURL(cached);
+        activeBlobUrls.add(blobUrl);
+        return blobUrl;
+      }
 
-      // 2. Fetch from network
       const resp = await fetch(url);
       if (!resp.ok) return null;
       const blob = await resp.blob();
-
-      // 3. Store in cache
       await setCachedImage(url, blob);
 
-      return URL.createObjectURL(blob);
+      const blobUrl = URL.createObjectURL(blob);
+      activeBlobUrls.add(blobUrl);
+      return blobUrl;
     } catch {
       return null;
     } finally {
@@ -48,4 +53,20 @@ export async function fetchCardImage(cardId: string, size: 'small' | 'large' = '
 
   pending.set(url, promise);
   return promise;
+}
+
+/** Revoke a single blob URL to free memory. */
+export function revokeCardImage(blobUrl: string): void {
+  if (activeBlobUrls.has(blobUrl)) {
+    URL.revokeObjectURL(blobUrl);
+    activeBlobUrls.delete(blobUrl);
+  }
+}
+
+/** Revoke all tracked blob URLs. Call on scene teardown. */
+export function revokeAllCardImages(): void {
+  for (const url of activeBlobUrls) {
+    URL.revokeObjectURL(url);
+  }
+  activeBlobUrls.clear();
 }

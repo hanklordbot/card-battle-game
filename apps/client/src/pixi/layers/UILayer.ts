@@ -2,6 +2,7 @@ import { Container, Graphics, Text, TextStyle, Sprite } from 'pixi.js';
 import { Phase, INITIAL_LP, DuelState } from '../../core/duel';
 import { COLORS, PHASE_LABELS, PHASE_ORDER } from '../../game/constants';
 import { LOGICAL_W, LOGICAL_H } from '../PixiApp';
+import { getTexture } from '../TexturePreloader';
 
 function hexNum(hex: string): number {
   return parseInt(hex.replace('#', ''), 16);
@@ -96,7 +97,7 @@ export class UILayer extends Container {
     this.phaseBtn = new Container();
     this.phaseBtn.eventMode = 'static';
     this.phaseBtn.cursor = 'pointer';
-    this.phaseBtnBg = Sprite.from('assets/battle-field-png/ui/btn_phase_normal.png');
+    this.phaseBtnBg = new Sprite(getTexture('btn_phase_normal'));
     this.phaseBtnBg.anchor.set(0.5);
     this.phaseBtnBg.width = 160;
     this.phaseBtnBg.height = 44;
@@ -105,15 +106,15 @@ export class UILayer extends Container {
     this.phaseBtnText.anchor.set(0.5);
     this.phaseBtn.addChild(this.phaseBtnText);
     this.phaseBtn.position.set(LOGICAL_W / 2, LOGICAL_H - 80);
-    this.phaseBtn.on('pointerover', () => { this.phaseBtnBg.texture = Sprite.from('assets/battle-field-png/ui/btn_phase_hover.png').texture; });
-    this.phaseBtn.on('pointerout', () => { this.phaseBtnBg.texture = Sprite.from('assets/battle-field-png/ui/btn_phase_normal.png').texture; });
+    this.phaseBtn.on('pointerover', () => { this.phaseBtnBg.texture = getTexture('btn_phase_hover'); });
+    this.phaseBtn.on('pointerout', () => { this.phaseBtnBg.texture = getTexture('btn_phase_normal'); });
     this.addChild(this.phaseBtn);
 
     // Surrender button
     this.surrenderBtn = new Container();
     this.surrenderBtn.eventMode = 'static';
     this.surrenderBtn.cursor = 'pointer';
-    const surBg = Sprite.from('assets/battle-field-png/ui/btn_surrender.png');
+    const surBg = new Sprite(getTexture('btn_surrender'));
     surBg.anchor.set(0.5);
     surBg.width = 120;
     surBg.height = 40;
@@ -176,7 +177,14 @@ export class UILayer extends Container {
     this.addChild(this.logContainer);
   }
 
+  private _lastPlayerLp = -1;
+  private _lastOppLp = -1;
+
   updateLP(playerLp: number, oppLp: number) {
+    if (playerLp === this._lastPlayerLp && oppLp === this._lastOppLp) return;
+    this._lastPlayerLp = playerLp;
+    this._lastOppLp = oppLp;
+
     this.playerLpText.text = `${playerLp}`;
     this.oppLpText.text = `${oppLp}`;
 
@@ -233,22 +241,38 @@ export class UILayer extends Container {
     this.toastTimer = window.setTimeout(() => { this.toastText.visible = false; }, 2000);
   }
 
-  updateLog(logs: { message: string }[]) {
-    // Remove old
-    for (const t of this.logTexts) { this.logContainer.removeChild(t); t.destroy(); }
-    this.logTexts = [];
+  private _lastLogCount = -1;
 
+  updateLog(logs: { message: string }[]) {
     const recent = logs.slice(-15);
+    // Skip if log count unchanged (most common case)
+    if (recent.length === this._lastLogCount && this.logTexts.length === recent.length) {
+      // Check if last message matches
+      if (recent.length > 0 && this.logTexts[recent.length - 1]?.text === recent[recent.length - 1].message) return;
+    }
+    this._lastLogCount = recent.length;
+
     const style = new TextStyle({ fontSize: 11, fill: 0xcccccc, wordWrap: true, wordWrapWidth: 250 });
-    let y = 0;
-    for (const log of recent) {
-      const t = new Text({ text: log.message, style });
-      t.position.set(5, y);
+
+    // Reuse existing Text objects, create new ones only if needed
+    while (this.logTexts.length > recent.length) {
+      const t = this.logTexts.pop()!;
+      t.visible = false;
+    }
+    while (this.logTexts.length < recent.length) {
+      const t = new Text({ text: '', style });
       this.logContainer.addChild(t);
       this.logTexts.push(t);
+    }
+
+    let y = 0;
+    for (let i = 0; i < recent.length; i++) {
+      const t = this.logTexts[i];
+      t.text = recent[i].message;
+      t.visible = true;
+      t.position.set(5, y);
       y += t.height + 2;
     }
-    // Scroll to bottom
     if (y > 300) {
       for (const t of this.logTexts) t.y -= y - 300;
     }

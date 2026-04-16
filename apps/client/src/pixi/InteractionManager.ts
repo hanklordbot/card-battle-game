@@ -1,11 +1,11 @@
-import { Card, isMonster, MonsterCard, CardType, Position } from '../../core/card';
-import { Phase, DuelResult } from '../../core/duel';
-import { useBattleStore } from '../../stores/battleStore';
-import { useUIStore } from '../../stores/uiStore';
-import { runAITurn } from '../../game/ai';
-import { gameAudio } from '../../audio';
-import { vfxManager } from '../vfx/VFXManager';
-import type { BattleScene } from '../scenes/BattleScene';
+import { Card, isMonster, MonsterCard, CardType, Position } from '../core/card';
+import { Phase, DuelResult } from '../core/duel';
+import { useBattleStore } from '../stores/battleStore';
+import { useUIStore } from '../stores/uiStore';
+import { runAITurn } from '../game/ai';
+import { gameAudio } from '../audio';
+import { vfxManager } from './vfx/VFXManager';
+import type { BattleScene } from './scenes/BattleScene';
 
 export class InteractionManager {
   constructor(private scene: BattleScene) {

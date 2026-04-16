@@ -1,5 +1,30 @@
+# Dependencies
 node_modules/
+
+# Build output
 dist/
+*.tsbuildinfo
+
+# Environment
+.env
+.env.*
+
+# Cache
 .cache/
-*.log
+.vite/
+
+# OS
 .DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Lock files (keep pnpm-lock.yaml)
+package-lock.json
