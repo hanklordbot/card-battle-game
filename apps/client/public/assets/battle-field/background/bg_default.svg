@@ -1,0 +1,106 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1080" viewBox="0 0 1920 1080">
+  <defs>
+    <radialGradient id="skyGrad" cx="50%" cy="50%" r="70%">
+      <stop offset="0%" stop-color="#0A1628"/>
+      <stop offset="100%" stop-color="#0D0221"/>
+    </radialGradient>
+    <radialGradient id="magicCircle" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#FFD43B" stop-opacity="0.06"/>
+      <stop offset="60%" stop-color="#FFD43B" stop-opacity="0.03"/>
+      <stop offset="100%" stop-color="#FFD43B" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="vignette" cx="50%" cy="50%" r="70%">
+      <stop offset="0%" stop-color="#000" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#000" stop-opacity="0.5"/>
+    </radialGradient>
+    <linearGradient id="fieldTop" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1A1020" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="transparent" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="fieldBottom" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="transparent" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#101A28" stop-opacity="0.4"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <pattern id="gridLines" width="96" height="138" patternUnits="userSpaceOnUse" patternTransform="translate(724 100)">
+      <rect width="96" height="138" fill="none" stroke="#16213E" stroke-width="0.5" stroke-opacity="0.3"/>
+    </pattern>
+  </defs>
+
+  <!-- Sky background -->
+  <rect width="1920" height="1080" fill="url(#skyGrad)"/>
+
+  <!-- Star field -->
+  <g opacity="0.6">
+    <circle cx="150" cy="80" r="1.5" fill="#fff" opacity="0.7"/>
+    <circle cx="320" cy="200" r="1" fill="#fff" opacity="0.5"/>
+    <circle cx="500" cy="50" r="2" fill="#fff" opacity="0.8"/>
+    <circle cx="680" cy="150" r="1" fill="#fff" opacity="0.4"/>
+    <circle cx="850" cy="30" r="1.5" fill="#fff" opacity="0.6"/>
+    <circle cx="1050" cy="120" r="1" fill="#fff" opacity="0.5"/>
+    <circle cx="1200" cy="60" r="2" fill="#fff" opacity="0.7"/>
+    <circle cx="1400" cy="180" r="1" fill="#fff" opacity="0.4"/>
+    <circle cx="1550" cy="40" r="1.5" fill="#fff" opacity="0.6"/>
+    <circle cx="1750" cy="100" r="1" fill="#fff" opacity="0.5"/>
+    <circle cx="200" cy="950" r="1" fill="#fff" opacity="0.4"/>
+    <circle cx="400" cy="1000" r="1.5" fill="#fff" opacity="0.5"/>
+    <circle cx="700" cy="980" r="1" fill="#fff" opacity="0.3"/>
+    <circle cx="1100" cy="1020" r="1.5" fill="#fff" opacity="0.5"/>
+    <circle cx="1500" cy="960" r="1" fill="#fff" opacity="0.4"/>
+    <circle cx="1800" cy="1000" r="2" fill="#fff" opacity="0.6"/>
+    <circle cx="100" cy="500" r="1" fill="#fff" opacity="0.3"/>
+    <circle cx="1850" cy="450" r="1" fill="#fff" opacity="0.3"/>
+    <circle cx="50" cy="300" r="1.5" fill="#fff" opacity="0.4"/>
+    <circle cx="1900" cy="700" r="1" fill="#fff" opacity="0.4"/>
+    <circle cx="960" cy="540" r="1" fill="#88f" opacity="0.3"/>
+    <circle cx="300" cy="400" r="1" fill="#fff" opacity="0.3"/>
+    <circle cx="1600" cy="350" r="1.5" fill="#fff" opacity="0.5"/>
+    <circle cx="750" cy="800" r="1" fill="#fff" opacity="0.3"/>
+    <circle cx="1300" cy="750" r="1" fill="#fff" opacity="0.4"/>
+  </g>
+
+  <!-- Magic circle (center) -->
+  <circle cx="960" cy="370" r="400" fill="url(#magicCircle)"/>
+  <g transform="translate(960,370)" opacity="0.08" fill="none" stroke="#FFD43B" stroke-width="1">
+    <!-- Outer ring -->
+    <circle r="380"/>
+    <circle r="350"/>
+    <!-- Hexagram -->
+    <polygon points="0,-300 259.8,150 -259.8,150"/>
+    <polygon points="0,300 -259.8,-150 259.8,-150"/>
+    <!-- Inner rings -->
+    <circle r="250"/>
+    <circle r="200"/>
+    <!-- Rune marks -->
+    <line x1="0" y1="-350" x2="0" y2="-380"/>
+    <line x1="303" y1="-175" x2="329" y2="-190"/>
+    <line x1="303" y1="175" x2="329" y2="190"/>
+    <line x1="0" y1="350" x2="0" y2="380"/>
+    <line x1="-303" y1="175" x2="-329" y2="190"/>
+    <line x1="-303" y1="-175" x2="-329" y2="-190"/>
+    <!-- Cross lines -->
+    <line x1="-200" y1="0" x2="200" y2="0"/>
+    <line x1="0" y1="-200" x2="0" y2="200"/>
+  </g>
+
+  <!-- Field zone tint - opponent area (reddish) -->
+  <rect x="0" y="0" width="1920" height="370" fill="url(#fieldTop)"/>
+  <!-- Field zone tint - player area (bluish) -->
+  <rect x="0" y="370" width="1920" height="710" fill="url(#fieldBottom)"/>
+
+  <!-- Subtle grid overlay for card zones -->
+  <rect x="600" y="90" width="720" height="560" fill="url(#gridLines)" opacity="0.15"/>
+
+  <!-- Energy lines between zones -->
+  <g stroke="#16213E" stroke-width="0.5" opacity="0.2">
+    <line x1="600" y1="228" x2="1320" y2="228"/>
+    <line x1="600" y1="366" x2="1320" y2="366"/>
+    <line x1="600" y1="524" x2="1320" y2="524"/>
+  </g>
+
+  <!-- Vignette overlay -->
+  <rect width="1920" height="1080" fill="url(#vignette)"/>
+</svg>

@@ -1,0 +1,27 @@
+[
+  {
+    "id": "SPL-001", "name": "強欲之壺", "cardType": "spell", "cardSubType": "normal_spell",
+    "effectDescription": "從牌組抽2張牌。", "effectScripts": ["EFF-DRAW2"],
+    "rarity": "SR", "artworkId": "art-spl-001", "limitStatus": "limited"
+  },
+  {
+    "id": "SPL-002", "name": "旋風", "cardType": "spell", "cardSubType": "quick_spell",
+    "effectDescription": "破壞場上1張魔法/陷阱卡。", "effectScripts": ["EFF-MST"],
+    "rarity": "R", "artworkId": "art-spl-002", "limitStatus": "unlimited"
+  },
+  {
+    "id": "SPL-003", "name": "戰士之力", "cardType": "spell", "cardSubType": "equip_spell",
+    "effectDescription": "裝備怪獸的攻擊力上升700。", "effectScripts": ["EFF-EQUIP-ATK"],
+    "rarity": "N", "artworkId": "art-spl-003", "limitStatus": "unlimited"
+  },
+  {
+    "id": "SPL-004", "name": "黑暗領域", "cardType": "spell", "cardSubType": "field_spell",
+    "effectDescription": "場上所有闇屬性怪獸攻擊力上升500，光屬性怪獸攻擊力下降400。", "effectScripts": ["EFF-FIELD-DARK"],
+    "rarity": "R", "artworkId": "art-spl-004", "limitStatus": "unlimited"
+  },
+  {
+    "id": "SPL-005", "name": "生命之泉", "cardType": "spell", "cardSubType": "continuous_spell",
+    "effectDescription": "每回合準備階段回復500 LP。", "effectScripts": ["EFF-HEAL500"],
+    "rarity": "N", "artworkId": "art-spl-005", "limitStatus": "unlimited"
+  }
+]

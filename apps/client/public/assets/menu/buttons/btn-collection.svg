@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 252 56" width="252" height="56">
+  <defs>
+    <linearGradient id="purpN" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#A78BFA"/><stop offset="50%" stop-color="#8B5CF6"/><stop offset="100%" stop-color="#5B21B6"/>
+    </linearGradient>
+    <linearGradient id="purpH" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#C4B5FD"/><stop offset="50%" stop-color="#A78BFA"/><stop offset="100%" stop-color="#7C3AED"/>
+    </linearGradient>
+    <linearGradient id="purpP" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#5B21B6"/><stop offset="50%" stop-color="#6D28D9"/><stop offset="100%" stop-color="#5B21B6"/>
+    </linearGradient>
+    <filter id="gl"><feGaussianBlur stdDeviation="3" result="b"/><feComposite in="b" in2="SourceGraphic" operator="over"/></filter>
+  </defs>
+  <!-- Normal -->
+  <g id="normal">
+    <rect width="252" height="56" rx="8" fill="url(#purpN)" filter="url(#gl)" stroke="#A78BFA" stroke-width="1"/>
+    <!-- Book icon -->
+    <g transform="translate(80,28)" fill="none" stroke="#F1F5F9" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M-10,-10 L-10,10 C-10,10 -4,7 0,10 C4,7 10,10 10,10 L10,-10 C10,-10 4,-7 0,-10 C-4,-7 -10,-10 -10,-10Z"/>
+      <line x1="0" y1="-10" x2="0" y2="10"/>
+    </g>
+    <text x="148" y="35" font-family="'Noto Sans TC','sans-serif'" font-size="20" font-weight="600" fill="#F1F5F9" letter-spacing="6">圖 鑑</text>
+  </g>
+  <!-- Hover -->
+  <g id="hover" transform="translate(0,72)">
+    <rect width="252" height="56" rx="8" fill="url(#purpH)" stroke="#C4B5FD" stroke-width="1.5"/>
+    <g transform="translate(80,28)" fill="none" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M-10,-10 L-10,10 C-10,10 -4,7 0,10 C4,7 10,10 10,10 L10,-10 C10,-10 4,-7 0,-10 C-4,-7 -10,-10 -10,-10Z"/>
+      <line x1="0" y1="-10" x2="0" y2="10"/>
+    </g>
+    <text x="148" y="35" font-family="'Noto Sans TC','sans-serif'" font-size="20" font-weight="600" fill="#FFFFFF" letter-spacing="6">圖 鑑</text>
+  </g>
+  <!-- Pressed -->
+  <g id="pressed" transform="translate(0,144)">
+    <rect width="252" height="56" rx="8" fill="url(#purpP)" stroke="#5B21B6" stroke-width="1"/>
+    <g transform="translate(80,29)" fill="none" stroke="#CBD5E1" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M-10,-10 L-10,10 C-10,10 -4,7 0,10 C4,7 10,10 10,10 L10,-10 C10,-10 4,-7 0,-10 C-4,-7 -10,-10 -10,-10Z"/>
+      <line x1="0" y1="-10" x2="0" y2="10"/>
+    </g>
+    <text x="148" y="36" font-family="'Noto Sans TC','sans-serif'" font-size="20" font-weight="600" fill="#CBD5E1" letter-spacing="6">圖 鑑</text>
+  </g>
+</svg>

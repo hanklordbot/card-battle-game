@@ -1,0 +1,66 @@
+[
+  {
+    "id": "MON-001", "name": "暗黑魔術師", "cardType": "monster", "cardSubType": "effect_monster",
+    "attribute": "闇", "monsterType": "魔法使族", "level": 7, "atk": 2500, "def": 2100,
+    "effectDescription": "此卡召喚成功時，可以從牌組抽1張牌。", "effectScripts": ["EFF-001"],
+    "rarity": "UR", "artworkId": "art-mon-001", "limitStatus": "unlimited"
+  },
+  {
+    "id": "MON-002", "name": "青眼白龍", "cardType": "monster", "cardSubType": "normal_monster",
+    "attribute": "光", "monsterType": "龍族", "level": 8, "atk": 3000, "def": 2500,
+    "effectDescription": "", "effectScripts": [],
+    "rarity": "UR", "artworkId": "art-mon-002", "limitStatus": "unlimited",
+    "flavorText": "以高攻擊力自豪的傳說之龍。任何對手都會被粉碎。"
+  },
+  {
+    "id": "MON-003", "name": "火焰劍士", "cardType": "monster", "cardSubType": "normal_monster",
+    "attribute": "火", "monsterType": "戰士族", "level": 4, "atk": 1800, "def": 1600,
+    "effectDescription": "", "effectScripts": [],
+    "rarity": "R", "artworkId": "art-mon-003", "limitStatus": "unlimited",
+    "flavorText": "揮舞著烈焰之劍的勇猛戰士。"
+  },
+  {
+    "id": "MON-004", "name": "水精靈", "cardType": "monster", "cardSubType": "effect_monster",
+    "attribute": "水", "monsterType": "水族", "level": 3, "atk": 1200, "def": 1000,
+    "effectDescription": "此卡被破壞時，可以從墓地特殊召喚1隻等級4以下的水屬性怪獸。", "effectScripts": ["EFF-002"],
+    "rarity": "R", "artworkId": "art-mon-004", "limitStatus": "unlimited"
+  },
+  {
+    "id": "MON-005", "name": "鋼鐵巨人", "cardType": "monster", "cardSubType": "normal_monster",
+    "attribute": "地", "monsterType": "機械族", "level": 4, "atk": 1600, "def": 1900,
+    "effectDescription": "", "effectScripts": [],
+    "rarity": "N", "artworkId": "art-mon-005", "limitStatus": "unlimited",
+    "flavorText": "以堅硬的鋼鐵之軀守護同伴的巨人。"
+  },
+  {
+    "id": "MON-006", "name": "風之翼龍", "cardType": "monster", "cardSubType": "effect_monster",
+    "attribute": "風", "monsterType": "龍族", "level": 5, "atk": 2100, "def": 1800,
+    "effectDescription": "一回合一次，可以破壞對方場上1張魔法/陷阱卡。", "effectScripts": ["EFF-003"],
+    "rarity": "SR", "artworkId": "art-mon-006", "limitStatus": "unlimited"
+  },
+  {
+    "id": "MON-007", "name": "暗影刺客", "cardType": "monster", "cardSubType": "effect_monster",
+    "attribute": "闇", "monsterType": "惡魔族", "level": 4, "atk": 1700, "def": 1200,
+    "effectDescription": "翻轉：破壞對方場上1張怪獸。", "effectScripts": ["EFF-004"],
+    "rarity": "R", "artworkId": "art-mon-007", "limitStatus": "unlimited"
+  },
+  {
+    "id": "MON-008", "name": "光之天使", "cardType": "monster", "cardSubType": "effect_monster",
+    "attribute": "光", "monsterType": "天使族", "level": 4, "atk": 1400, "def": 1800,
+    "effectDescription": "此卡在場上表側表示存在時，我方所有怪獸攻擊力上升300。", "effectScripts": ["EFF-005"],
+    "rarity": "SR", "artworkId": "art-mon-008", "limitStatus": "unlimited"
+  },
+  {
+    "id": "MON-009", "name": "森林守衛者", "cardType": "monster", "cardSubType": "normal_monster",
+    "attribute": "地", "monsterType": "植物族", "level": 3, "atk": 1000, "def": 1400,
+    "effectDescription": "", "effectScripts": [],
+    "rarity": "N", "artworkId": "art-mon-009", "limitStatus": "unlimited",
+    "flavorText": "守護古老森林的植物戰士。"
+  },
+  {
+    "id": "MON-010", "name": "雷電鳥", "cardType": "monster", "cardSubType": "effect_monster",
+    "attribute": "光", "monsterType": "雷族", "level": 6, "atk": 2400, "def": 1800,
+    "effectDescription": "此卡召喚成功時，對方受到500點傷害。", "effectScripts": ["EFF-006"],
+    "rarity": "SR", "artworkId": "art-mon-010", "limitStatus": "unlimited"
+  }
+]

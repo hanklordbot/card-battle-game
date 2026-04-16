@@ -1,0 +1,27 @@
+[
+  {
+    "id": "TRP-001", "name": "奈落的落穴", "cardType": "trap", "cardSubType": "normal_trap",
+    "effectDescription": "對方召喚攻擊力1500以上的怪獸時，破壞並除外該怪獸。", "effectScripts": ["EFF-BOTTOMLESS"],
+    "rarity": "SR", "artworkId": "art-trp-001", "limitStatus": "unlimited"
+  },
+  {
+    "id": "TRP-002", "name": "魔法筒", "cardType": "trap", "cardSubType": "normal_trap",
+    "effectDescription": "對方怪獸攻擊時，無效化該攻擊，並給予對方等同該怪獸攻擊力的傷害。", "effectScripts": ["EFF-CYLINDER"],
+    "rarity": "R", "artworkId": "art-trp-002", "limitStatus": "unlimited"
+  },
+  {
+    "id": "TRP-003", "name": "神之宣告", "cardType": "trap", "cardSubType": "counter_trap",
+    "effectDescription": "支付LP一半，無效化魔法/陷阱/召喚並破壞。", "effectScripts": ["EFF-SOLEMN"],
+    "rarity": "UR", "artworkId": "art-trp-003", "limitStatus": "limited"
+  },
+  {
+    "id": "TRP-004", "name": "聖潔之鏡", "cardType": "trap", "cardSubType": "continuous_trap",
+    "effectDescription": "場上所有光屬性怪獸防禦力上升500。", "effectScripts": ["EFF-MIRROR-LIGHT"],
+    "rarity": "N", "artworkId": "art-trp-004", "limitStatus": "unlimited"
+  },
+  {
+    "id": "TRP-005", "name": "強制脫出裝置", "cardType": "trap", "cardSubType": "normal_trap",
+    "effectDescription": "選擇場上1隻怪獸回到持有者手牌。", "effectScripts": ["EFF-COMPULSORY"],
+    "rarity": "R", "artworkId": "art-trp-005", "limitStatus": "unlimited"
+  }
+]

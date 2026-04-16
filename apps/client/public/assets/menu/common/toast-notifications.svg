@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 48" width="360" height="48">
+  <defs>
+    <linearGradient id="toastBg" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#1A1E3E" stop-opacity="0.95"/>
+      <stop offset="100%" stop-color="#12142A" stop-opacity="0.95"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Success toast -->
+  <g id="success">
+    <rect width="360" height="48" rx="8" fill="url(#toastBg)" stroke="#1A1E3E" stroke-width="1"/>
+    <rect width="3" height="48" rx="1.5" fill="#22C55E"/>
+    <!-- Check icon -->
+    <circle cx="28" cy="24" r="10" fill="none" stroke="#22C55E" stroke-width="1.5"/>
+    <polyline points="22,24 26,28 34,20" fill="none" stroke="#22C55E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+
+  <!-- Error toast -->
+  <g id="error" transform="translate(0,60)">
+    <rect width="360" height="48" rx="8" fill="url(#toastBg)" stroke="#1A1E3E" stroke-width="1"/>
+    <rect width="3" height="48" rx="1.5" fill="#DC2626"/>
+    <circle cx="28" cy="24" r="10" fill="none" stroke="#DC2626" stroke-width="1.5"/>
+    <line x1="23" y1="19" x2="33" y2="29" stroke="#DC2626" stroke-width="1.5" stroke-linecap="round"/>
+    <line x1="33" y1="19" x2="23" y2="29" stroke="#DC2626" stroke-width="1.5" stroke-linecap="round"/>
+  </g>
+
+  <!-- Warning toast -->
+  <g id="warning" transform="translate(0,120)">
+    <rect width="360" height="48" rx="8" fill="url(#toastBg)" stroke="#1A1E3E" stroke-width="1"/>
+    <rect width="3" height="48" rx="1.5" fill="#F59E0B"/>
+    <polygon points="28,14 38,34 18,34" fill="none" stroke="#F59E0B" stroke-width="1.5" stroke-linejoin="round"/>
+    <line x1="28" y1="22" x2="28" y2="27" stroke="#F59E0B" stroke-width="1.5" stroke-linecap="round"/>
+    <circle cx="28" cy="31" r="1" fill="#F59E0B"/>
+  </g>
+
+  <!-- Info toast -->
+  <g id="info" transform="translate(0,180)">
+    <rect width="360" height="48" rx="8" fill="url(#toastBg)" stroke="#1A1E3E" stroke-width="1"/>
+    <rect width="3" height="48" rx="1.5" fill="#3B82F6"/>
+    <circle cx="28" cy="24" r="10" fill="none" stroke="#3B82F6" stroke-width="1.5"/>
+    <line x1="28" y1="22" x2="28" y2="30" stroke="#3B82F6" stroke-width="1.5" stroke-linecap="round"/>
+    <circle cx="28" cy="18" r="1" fill="#3B82F6"/>
+  </g>
+</svg>

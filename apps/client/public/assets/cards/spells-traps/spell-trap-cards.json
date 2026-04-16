@@ -1,0 +1,112 @@
+[
+  {
+    "id": "SPL-001",
+    "name": "烈焰風暴",
+    "card_type": "spell",
+    "card_sub_type": "normal_spell",
+    "effect_description": "破壞對方場上所有表側表示的怪獸。",
+    "effect_scripts": ["destroy_opponent_all_face_up_monsters"],
+    "rarity": "R",
+    "artwork_id": "SPL-001-烈焰風暴",
+    "limit_status": "unlimited"
+  },
+  {
+    "id": "SPL-002",
+    "name": "瞬間轉移",
+    "card_type": "spell",
+    "card_sub_type": "quick_spell",
+    "effect_description": "自己場上的怪獸1隻與對方場上的怪獸1隻為對象才能發動。交換那2隻怪獸的控制權。",
+    "effect_scripts": ["swap_control_1_each"],
+    "rarity": "SR",
+    "artwork_id": "SPL-002-瞬間轉移",
+    "limit_status": "unlimited"
+  },
+  {
+    "id": "SPL-003",
+    "name": "生命之森結界",
+    "card_type": "spell",
+    "card_sub_type": "continuous_spell",
+    "effect_description": "自己的每次準備階段，回復自己500點生命值。",
+    "effect_scripts": ["standby_heal_500"],
+    "rarity": "N",
+    "artwork_id": "SPL-003-生命之森結界",
+    "limit_status": "unlimited"
+  },
+  {
+    "id": "SPL-004",
+    "name": "龍牙聖劍",
+    "card_type": "spell",
+    "card_sub_type": "equip_spell",
+    "effect_description": "裝備怪獸的攻擊力上升700點，防禦力上升300點。",
+    "effect_scripts": ["equip_atk_plus_700_def_plus_300"],
+    "rarity": "R",
+    "artwork_id": "SPL-004-龍牙聖劍",
+    "limit_status": "unlimited"
+  },
+  {
+    "id": "SPL-005",
+    "name": "深淵海域",
+    "card_type": "spell",
+    "card_sub_type": "field_spell",
+    "effect_description": "場上所有水屬性怪獸的攻擊力上升300點。場上所有火屬性怪獸的攻擊力下降300點。",
+    "effect_scripts": ["field_water_atk_plus_300", "field_fire_atk_minus_300"],
+    "rarity": "SR",
+    "artwork_id": "SPL-005-深淵海域",
+    "limit_status": "unlimited"
+  },
+  {
+    "id": "TRP-001",
+    "name": "奈落的落穴",
+    "card_type": "trap",
+    "card_sub_type": "normal_trap",
+    "effect_description": "對方召喚・反轉召喚攻擊力1500以上的怪獸時才能發動。那隻怪獸破壞並除外。",
+    "effect_scripts": ["on_opponent_summon_atk_gte_1500_destroy_banish"],
+    "rarity": "R",
+    "artwork_id": "TRP-001-奈落的落穴",
+    "limit_status": "unlimited"
+  },
+  {
+    "id": "TRP-002",
+    "name": "詛咒之霧",
+    "card_type": "trap",
+    "card_sub_type": "continuous_trap",
+    "effect_description": "對方場上所有表側表示怪獸的攻擊力，每次對方的準備階段降低200點。",
+    "effect_scripts": ["opponent_standby_all_monsters_atk_minus_200"],
+    "rarity": "N",
+    "artwork_id": "TRP-002-詛咒之霧",
+    "limit_status": "unlimited"
+  },
+  {
+    "id": "TRP-003",
+    "name": "神聖否定",
+    "card_type": "trap",
+    "card_sub_type": "counter_trap",
+    "effect_description": "對方發動魔法卡時才能發動。那個發動無效並破壞。",
+    "effect_scripts": ["negate_destroy_opponent_spell"],
+    "rarity": "SR",
+    "artwork_id": "TRP-003-神聖否定",
+    "limit_status": "unlimited"
+  },
+  {
+    "id": "TRP-004",
+    "name": "鏡面力量",
+    "card_type": "trap",
+    "card_sub_type": "normal_trap",
+    "effect_description": "對方怪獸的攻擊宣言時才能發動。對方場上所有攻擊表示怪獸破壞。",
+    "effect_scripts": ["on_opponent_attack_destroy_all_attack_position"],
+    "rarity": "SR",
+    "artwork_id": "TRP-004-鏡面力量",
+    "limit_status": "unlimited"
+  },
+  {
+    "id": "TRP-005",
+    "name": "靈魂封印",
+    "card_type": "trap",
+    "card_sub_type": "continuous_trap",
+    "effect_description": "此卡在場上表側表示存在的期間，雙方不能從墓地特殊召喚怪獸。",
+    "effect_scripts": ["continuous_prevent_graveyard_special_summon"],
+    "rarity": "R",
+    "artwork_id": "TRP-005-靈魂封印",
+    "limit_status": "unlimited"
+  }
+]

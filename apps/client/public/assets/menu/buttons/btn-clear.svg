@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 36" width="100" height="36">
+  <g id="normal"><rect width="100" height="36" rx="6" fill="transparent" stroke="#94A3B8" stroke-width="1"/><text x="50" y="23" text-anchor="middle" font-family="'Noto Sans TC','sans-serif'" font-size="14" font-weight="500" fill="#CBD5E1">清空</text></g>
+  <g id="hover" transform="translate(0,48)"><rect width="100" height="36" rx="6" fill="rgba(220,38,38,0.1)" stroke="#DC2626" stroke-width="1"/><text x="50" y="23" text-anchor="middle" font-family="'Noto Sans TC','sans-serif'" font-size="14" font-weight="500" fill="#FCA5A5">清空</text></g>
+  <g id="pressed" transform="translate(0,96)"><rect width="100" height="36" rx="6" fill="rgba(220,38,38,0.2)" stroke="#991B1B" stroke-width="1"/><text x="50" y="24" text-anchor="middle" font-family="'Noto Sans TC','sans-serif'" font-size="14" font-weight="500" fill="#DC2626">清空</text></g>
+</svg>

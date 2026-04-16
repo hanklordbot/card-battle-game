@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 40" width="340" height="40">
+  <defs>
+    <filter id="focusGlow">
+      <feGaussianBlur stdDeviation="2" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  <!-- Normal state -->
+  <g id="normal">
+    <rect width="340" height="40" rx="8" fill="#0A0A12" fill-opacity="0.6" stroke="#2A1F5E" stroke-width="1"/>
+    <!-- Search icon -->
+    <g transform="translate(16,20)" fill="none" stroke="#94A3B8" stroke-width="1.5" stroke-linecap="round">
+      <circle cx="0" cy="0" r="6"/>
+      <line x1="4.5" y1="4.5" x2="8" y2="8"/>
+    </g>
+    <text x="36" y="25" font-family="'Noto Sans TC','sans-serif'" font-size="14" fill="#94A3B8">搜尋卡片名稱...</text>
+  </g>
+  <!-- Focus state -->
+  <g id="focus" transform="translate(0,56)">
+    <rect width="340" height="40" rx="8" fill="#0A0A12" fill-opacity="0.6" stroke="#8B5CF6" stroke-width="1.5" filter="url(#focusGlow)"/>
+    <g transform="translate(16,20)" fill="none" stroke="#8B5CF6" stroke-width="1.5" stroke-linecap="round">
+      <circle cx="0" cy="0" r="6"/>
+      <line x1="4.5" y1="4.5" x2="8" y2="8"/>
+    </g>
+  </g>
+</svg>

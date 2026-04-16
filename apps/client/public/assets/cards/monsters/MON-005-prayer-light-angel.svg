@@ -1,0 +1,103 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 610" width="420" height="610">
+  <defs>
+    <linearGradient id="cardFrame" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#E07A3A"/><stop offset="50%" stop-color="#C45C1E"/><stop offset="100%" stop-color="#8E3A0E"/>
+    </linearGradient>
+    <linearGradient id="innerFrame" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#F09050"/><stop offset="100%" stop-color="#B04E14"/>
+    </linearGradient>
+    <radialGradient id="artBg" cx="50%" cy="40%" r="60%">
+      <stop offset="0%" stop-color="#FFF8E7"/><stop offset="100%" stop-color="#F0E68C"/>
+    </radialGradient>
+    <linearGradient id="textBg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#F8F4E8"/><stop offset="100%" stop-color="#F0E8D0"/>
+    </linearGradient>
+  </defs>
+  <rect x="0" y="0" width="420" height="610" rx="12" ry="12" fill="url(#cardFrame)" stroke="#3A3020" stroke-width="3"/>
+  <rect x="12" y="12" width="396" height="586" rx="6" ry="6" fill="none" stroke="url(#innerFrame)" stroke-width="2"/>
+  <rect x="20" y="14" width="380" height="40" rx="4" ry="4" fill="rgba(0,0,0,0.25)"/>
+  <text x="28" y="41" font-family="'Noto Sans TC',sans-serif" font-weight="bold" font-size="20" fill="#FFF" stroke="#000" stroke-width="0.8" paint-order="stroke">祈光小天使</text>
+  <!-- Attribute: Light -->
+  <circle cx="378" cy="34" r="18" fill="#FFF8DC" stroke="#DAA520" stroke-width="2"/>
+  <circle cx="378" cy="34" r="6" fill="#FFD700"/>
+  <g stroke="#FFD700" stroke-width="1.5" stroke-linecap="round">
+    <line x1="378" y1="20" x2="378" y2="24"/><line x1="378" y1="44" x2="378" y2="48"/>
+    <line x1="364" y1="34" x2="368" y2="34"/><line x1="388" y1="34" x2="392" y2="34"/>
+  </g>
+  <!-- Stars: 2 -->
+  <g transform="translate(396,60)">
+    <polygon points="-8,-8 -5.5,-3 0,-2.5 -4,1 -3,6.5 -8,4 -13,6.5 -12,1 -16,-2.5 -10.5,-3" fill="#FFD700" stroke="#B8860B" stroke-width="0.8"/>
+    <polygon points="-26,-8 -23.5,-3 -18,-2.5 -22,1 -21,6.5 -26,4 -31,6.5 -30,1 -34,-2.5 -28.5,-3" fill="#FFD700" stroke="#B8860B" stroke-width="0.8"/>
+  </g>
+  <!-- Card art -->
+  <rect x="24" y="82" width="372" height="284" rx="2" ry="2" fill="url(#artBg)" stroke="#2A2A2A" stroke-width="2"/>
+  <!-- Golden dust particles -->
+  <g fill="#FFD700" opacity="0.5">
+    <circle cx="80" cy="130" r="1.5"/><circle cx="320" cy="160" r="1"/><circle cx="140" cy="110" r="1.2"/>
+    <circle cx="280" cy="290" r="1.5"/><circle cx="100" cy="270" r="1"/><circle cx="250" cy="120" r="1.3"/>
+    <circle cx="170" cy="300" r="1"/><circle cx="340" cy="250" r="1.2"/><circle cx="70" cy="200" r="0.8"/>
+  </g>
+  <!-- Angel figure -->
+  <g transform="translate(210,210)">
+    <!-- Wings -->
+    <g fill="#F5F0E8" stroke="#E0D8C0" stroke-width="0.8">
+      <!-- Left wing -->
+      <path d="M-15,-20 Q-50,-50 -60,-30 Q-55,-15 -40,-10 Q-50,-35 -30,-25 Q-35,-10 -15,-5Z"/>
+      <!-- Right wing -->
+      <path d="M15,-20 Q50,-50 60,-30 Q55,-15 40,-10 Q50,-35 30,-25 Q35,-10 15,-5Z"/>
+    </g>
+    <!-- Wing glow -->
+    <g fill="#FFD700" opacity="0.1">
+      <path d="M-15,-20 Q-50,-50 -60,-30 Q-55,-15 -40,-10 Q-50,-35 -30,-25 Q-35,-10 -15,-5Z"/>
+      <path d="M15,-20 Q50,-50 60,-30 Q55,-15 40,-10 Q50,-35 30,-25 Q35,-10 15,-5Z"/>
+    </g>
+    <!-- Robe -->
+    <path d="M-14,5 Q-16,40 -12,60 Q0,65 12,60 Q16,40 14,5 Q0,0 -14,5Z" fill="#F5F0E8" stroke="#E0D8C0" stroke-width="0.8"/>
+    <!-- Robe folds -->
+    <path d="M-4,15 Q-2,35 -3,55" fill="none" stroke="#E0D8C0" stroke-width="0.5"/>
+    <path d="M6,12 Q5,30 7,50" fill="none" stroke="#E0D8C0" stroke-width="0.5"/>
+    <!-- Bare feet -->
+    <ellipse cx="-5" cy="62" rx="5" ry="3" fill="#FFE4C4"/>
+    <ellipse cx="5" cy="62" rx="5" ry="3" fill="#FFE4C4"/>
+    <!-- Ankle rings -->
+    <ellipse cx="-5" cy="58" rx="5" ry="1.5" fill="none" stroke="#F0E68C" stroke-width="1"/>
+    <ellipse cx="5" cy="58" rx="5" ry="1.5" fill="none" stroke="#F0E68C" stroke-width="1"/>
+    <!-- Arms (praying) -->
+    <path d="M-12,5 Q-16,15 -8,25" fill="#FFE4C4" stroke="#D4A880" stroke-width="0.5"/>
+    <path d="M12,5 Q16,15 8,25" fill="#FFE4C4" stroke="#D4A880" stroke-width="0.5"/>
+    <!-- Praying hands -->
+    <path d="M-4,22 Q0,18 4,22 Q2,28 0,30 Q-2,28 -4,22Z" fill="#FFE4C4" stroke="#D4A880" stroke-width="0.5"/>
+    <!-- Light at fingertips -->
+    <circle cx="0" cy="24" r="3" fill="#FFD700" opacity="0.5"/>
+    <!-- Head -->
+    <circle cx="0" cy="-18" r="14" fill="#FFE4C4" stroke="#D4A880" stroke-width="0.8"/>
+    <!-- Hair -->
+    <path d="M-12,-26 Q-14,-36 -6,-34 Q0,-38 6,-34 Q14,-36 12,-26 Q8,-30 0,-32 Q-8,-30 -12,-26Z" fill="#F0E68C" stroke="#DAA520" stroke-width="0.5"/>
+    <!-- Eyes (big, cute) -->
+    <ellipse cx="-5" cy="-18" rx="4" ry="3.5" fill="#FFF"/>
+    <circle cx="-4.5" cy="-17.5" r="2.5" fill="#87CEEB"/>
+    <circle cx="-4" cy="-18.5" r="1" fill="#FFF"/>
+    <ellipse cx="5" cy="-18" rx="4" ry="3.5" fill="#FFF"/>
+    <circle cx="5.5" cy="-17.5" r="2.5" fill="#87CEEB"/>
+    <circle cx="6" cy="-18.5" r="1" fill="#FFF"/>
+    <!-- Blush -->
+    <ellipse cx="-8" cy="-14" rx="3" ry="1.5" fill="#FFB6C1" opacity="0.4"/>
+    <ellipse cx="8" cy="-14" rx="3" ry="1.5" fill="#FFB6C1" opacity="0.4"/>
+    <!-- Mouth -->
+    <path d="M-2,-12 Q0,-10 2,-12" fill="none" stroke="#D4A880" stroke-width="0.6"/>
+    <!-- Halo (slightly tilted) -->
+    <ellipse cx="0" cy="-36" rx="12" ry="4" fill="none" stroke="#FFD700" stroke-width="2" transform="rotate(-8,0,-36)"/>
+    <ellipse cx="0" cy="-36" rx="12" ry="4" fill="#FFD700" opacity="0.15" transform="rotate(-8,0,-36)"/>
+  </g>
+  <!-- Type line -->
+  <rect x="24" y="370" width="372" height="24" rx="2" ry="2" fill="rgba(0,0,0,0.15)"/>
+  <text x="30" y="387" font-family="'Noto Sans TC',sans-serif" font-size="13" fill="#1A1A1A">【天使族／效果】</text>
+  <rect x="24" y="398" width="372" height="144" rx="4" ry="4" fill="url(#textBg)" stroke="#C8B888" stroke-width="1"/>
+  <text font-family="'Noto Sans TC',sans-serif" font-size="12" fill="#1A1A1A">
+    <tspan x="32" y="420">此卡被送入墓地時，自己回復500點生</tspan>
+    <tspan x="32" dy="17">命值。</tspan>
+  </text>
+  <text x="28" y="562" font-family="'Roboto Mono',monospace" font-size="10" fill="#888">MON-005</text>
+  <text x="388" y="562" font-family="'Roboto',sans-serif" font-weight="bold" font-size="16" fill="#1A1A1A" text-anchor="end">ATK/600 DEF/800</text>
+  <text x="28" y="592" font-family="'Roboto',sans-serif" font-size="10" fill="#888">N</text>
+</svg>

@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 28" width="120" height="28">
+  <!-- Normal -->
+  <g id="normal">
+    <text x="60" y="19" text-anchor="middle" font-family="'Noto Sans TC','sans-serif'" font-size="13" fill="#8B5CF6">重置篩選</text>
+  </g>
+  <!-- Hover -->
+  <g id="hover" transform="translate(0,36)">
+    <text x="60" y="19" text-anchor="middle" font-family="'Noto Sans TC','sans-serif'" font-size="13" fill="#A78BFA" text-decoration="underline">重置篩選</text>
+  </g>
+</svg>

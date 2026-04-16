@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" width="1920" height="1080">
+  <defs>
+    <!-- Main background gradient -->
+    <linearGradient id="bgMain" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0A0A12"/>
+      <stop offset="40%" stop-color="#12142A"/>
+      <stop offset="100%" stop-color="#1A1E3E"/>
+    </linearGradient>
+    <!-- Radial center glow -->
+    <radialGradient id="centerGlow" cx="50%" cy="40%" r="50%">
+      <stop offset="0%" stop-color="#2A1F5E" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="#0A0A12" stop-opacity="0"/>
+    </radialGradient>
+    <!-- Vignette -->
+    <radialGradient id="vignette" cx="50%" cy="50%" r="70%">
+      <stop offset="0%" stop-color="#000000" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0.5"/>
+    </radialGradient>
+    <!-- Hex pattern -->
+    <pattern id="hexPattern" x="0" y="0" width="60" height="52" patternUnits="userSpaceOnUse">
+      <polygon points="30,0 60,15 60,37 30,52 0,37 0,15" fill="none" stroke="#8B5CF6" stroke-width="0.3" opacity="0.04"/>
+    </pattern>
+    <!-- Magic circle for center decoration -->
+    <g id="magicCircle">
+      <circle cx="0" cy="0" r="280" fill="none" stroke="#D4A843" stroke-width="0.5" opacity="0.03"/>
+      <circle cx="0" cy="0" r="260" fill="none" stroke="#8B5CF6" stroke-width="0.3" opacity="0.04"/>
+      <circle cx="0" cy="0" r="300" fill="none" stroke="#D4A843" stroke-width="0.3" opacity="0.02"/>
+      <!-- Inner runes (decorative lines) -->
+      <line x1="-200" y1="0" x2="200" y2="0" stroke="#D4A843" stroke-width="0.3" opacity="0.03"/>
+      <line x1="0" y1="-200" x2="0" y2="200" stroke="#D4A843" stroke-width="0.3" opacity="0.03"/>
+      <line x1="-141" y1="-141" x2="141" y2="141" stroke="#8B5CF6" stroke-width="0.3" opacity="0.02"/>
+      <line x1="141" y1="-141" x2="-141" y2="141" stroke="#8B5CF6" stroke-width="0.3" opacity="0.02"/>
+      <!-- Inscribed hexagon -->
+      <polygon points="0,-240 208,-120 208,120 0,240 -208,120 -208,-120" fill="none" stroke="#D4A843" stroke-width="0.4" opacity="0.03"/>
+      <!-- Inner triangle -->
+      <polygon points="0,-180 156,90 -156,90" fill="none" stroke="#8B5CF6" stroke-width="0.3" opacity="0.025"/>
+      <polygon points="0,180 -156,-90 156,-90" fill="none" stroke="#8B5CF6" stroke-width="0.3" opacity="0.025"/>
+    </g>
+    <!-- Decorative wing ornament -->
+    <g id="wingOrnament">
+      <path d="M0,0 C30,-20 80,-30 140,-60 C160,-70 180,-55 200,-65 C220,-75 250,-60 280,-80 C250,-50 200,-30 150,-20 C100,-10 50,-5 0,0Z" fill="none" stroke="#D4A843" stroke-width="0.6" opacity="0.04"/>
+      <path d="M0,10 C25,-8 70,-18 120,-40 C140,-50 155,-38 175,-48 C155,-30 120,-18 80,-10 C50,-4 20,2 0,10Z" fill="none" stroke="#8B5CF6" stroke-width="0.4" opacity="0.03"/>
+    </g>
+  </defs>
+
+  <!-- Base background -->
+  <rect width="1920" height="1080" fill="url(#bgMain)"/>
+
+  <!-- Hex texture overlay -->
+  <rect width="1920" height="1080" fill="url(#hexPattern)"/>
+
+  <!-- Center glow -->
+  <rect width="1920" height="1080" fill="url(#centerGlow)"/>
+
+  <!-- Magic circle decoration (center) -->
+  <use href="#magicCircle" x="960" y="420"/>
+
+  <!-- Wing ornaments (left and right) -->
+  <use href="#wingOrnament" x="100" y="400" transform="translate(100,400) scale(-1,1) translate(-100,-400)"/>
+  <use href="#wingOrnament" x="1820" y="400"/>
+
+  <!-- Subtle vertical light beams -->
+  <rect x="300" y="0" width="2" height="1080" fill="#8B5CF6" opacity="0.015"/>
+  <rect x="1620" y="0" width="2" height="1080" fill="#8B5CF6" opacity="0.015"/>
+
+  <!-- Particle dots (static representation) -->
+  <circle cx="200" cy="150" r="1.5" fill="#D4A843" opacity="0.15"/>
+  <circle cx="450" cy="300" r="1" fill="#8B5CF6" opacity="0.12"/>
+  <circle cx="700" cy="200" r="1.2" fill="#D4A843" opacity="0.1"/>
+  <circle cx="1200" cy="180" r="1" fill="#D4A843" opacity="0.18"/>
+  <circle cx="1500" cy="350" r="1.5" fill="#8B5CF6" opacity="0.1"/>
+  <circle cx="1700" cy="150" r="1" fill="#D4A843" opacity="0.14"/>
+  <circle cx="350" cy="700" r="1.2" fill="#8B5CF6" opacity="0.08"/>
+  <circle cx="600" cy="800" r="1" fill="#D4A843" opacity="0.12"/>
+  <circle cx="900" cy="750" r="1.5" fill="#D4A843" opacity="0.1"/>
+  <circle cx="1100" cy="850" r="1" fill="#8B5CF6" opacity="0.15"/>
+  <circle cx="1400" cy="700" r="1.2" fill="#D4A843" opacity="0.08"/>
+  <circle cx="1650" cy="800" r="1" fill="#8B5CF6" opacity="0.12"/>
+  <circle cx="160" cy="500" r="0.8" fill="#D4A843" opacity="0.2"/>
+  <circle cx="1760" cy="500" r="0.8" fill="#D4A843" opacity="0.2"/>
+  <circle cx="960" cy="950" r="1" fill="#8B5CF6" opacity="0.06"/>
+  <circle cx="500" cy="500" r="1.3" fill="#D4A843" opacity="0.09"/>
+  <circle cx="1400" cy="500" r="1.3" fill="#8B5CF6" opacity="0.09"/>
+
+  <!-- Vignette overlay -->
+  <rect width="1920" height="1080" fill="url(#vignette)"/>
+</svg>

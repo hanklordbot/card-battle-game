@@ -1,0 +1,111 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 610" width="420" height="610">
+  <defs>
+    <linearGradient id="cardFrameGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#2AAE68"/>
+      <stop offset="50%" stop-color="#1D8A50"/>
+      <stop offset="100%" stop-color="#126638"/>
+    </linearGradient>
+    <linearGradient id="innerFrameGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#38C478"/>
+      <stop offset="100%" stop-color="#187A44"/>
+    </linearGradient>
+    <linearGradient id="textAreaBg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#F8F4E8"/>
+      <stop offset="100%" stop-color="#F0E8D0"/>
+    </linearGradient>
+    <!-- Art: Sword blade gradient -->
+    <linearGradient id="bladeGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#E0D8C8"/>
+      <stop offset="30%" stop-color="#F5F0E8"/>
+      <stop offset="50%" stop-color="#FFFFFF"/>
+      <stop offset="70%" stop-color="#F5F0E8"/>
+      <stop offset="100%" stop-color="#D0C8B8"/>
+    </linearGradient>
+    <linearGradient id="hiltGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#8B0000"/>
+      <stop offset="50%" stop-color="#A01010"/>
+      <stop offset="100%" stop-color="#6B0000"/>
+    </linearGradient>
+    <filter id="swordGlow">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- Card frame -->
+  <rect x="0" y="0" width="420" height="610" rx="12" ry="12" fill="url(#cardFrameGrad)" stroke="#3A3020" stroke-width="3"/>
+  <rect x="12" y="12" width="396" height="586" rx="6" ry="6" fill="none" stroke="url(#innerFrameGrad)" stroke-width="2"/>
+
+  <!-- Card name -->
+  <rect x="20" y="14" width="380" height="40" rx="4" ry="4" fill="rgba(0,0,0,0.25)"/>
+  <text x="28" y="41" font-family="'Noto Sans TC', sans-serif" font-weight="bold" font-size="20" fill="#FFFFFF" stroke="#000000" stroke-width="0.8" paint-order="stroke">龍牙聖劍</text>
+
+  <!-- Spell type icon - Equip -->
+  <circle cx="378" cy="34" r="18" fill="#1D8A50" stroke="#0E5530" stroke-width="2"/>
+  <text x="378" y="30" font-family="sans-serif" font-size="9" fill="#FFFFFF" text-anchor="middle">魔法</text>
+  <text x="378" y="42" font-family="sans-serif" font-size="8" fill="#A0E0B8" text-anchor="middle">裝備</text>
+
+  <!-- Sub-type indicator -->
+  <rect x="24" y="58" width="372" height="20" rx="2" ry="2" fill="rgba(0,0,0,0.1)"/>
+  <text x="390" y="72" font-family="'Noto Sans TC', sans-serif" font-size="12" fill="#E0FFE8" text-anchor="end">【裝備魔法】</text>
+
+  <!-- Card art area -->
+  <rect x="24" y="82" width="372" height="284" rx="2" ry="2" fill="#1A1A2E" stroke="#2A2A2A" stroke-width="2"/>
+  <!-- Dark background -->
+  <rect x="26" y="84" width="368" height="280" fill="#1A1A2E" rx="1"/>
+  <!-- Enchantment aura behind sword -->
+  <g filter="url(#swordGlow)" opacity="0.5">
+    <ellipse cx="210" cy="220" rx="60" ry="120" fill="#FFD700" opacity="0.15"/>
+    <ellipse cx="210" cy="220" rx="40" ry="90" fill="#FFD700" opacity="0.2"/>
+  </g>
+  <!-- Sword blade (vertical, tip up) -->
+  <g>
+    <!-- Blade -->
+    <polygon points="210,100 195,280 200,285 210,288 220,285 225,280" fill="url(#bladeGrad)" stroke="#B8A888" stroke-width="1"/>
+    <!-- Dragon tooth serrations on blade edges -->
+    <polygon points="195,180 188,175 195,170" fill="#F5F0E8" stroke="#DAA520" stroke-width="0.5" opacity="0.7"/>
+    <polygon points="195,210 186,205 195,200" fill="#F5F0E8" stroke="#DAA520" stroke-width="0.5" opacity="0.7"/>
+    <polygon points="195,240 187,235 195,230" fill="#F5F0E8" stroke="#DAA520" stroke-width="0.5" opacity="0.7"/>
+    <polygon points="225,180 232,175 225,170" fill="#F5F0E8" stroke="#DAA520" stroke-width="0.5" opacity="0.7"/>
+    <polygon points="225,210 234,205 225,200" fill="#F5F0E8" stroke="#DAA520" stroke-width="0.5" opacity="0.7"/>
+    <polygon points="225,240 233,235 225,230" fill="#F5F0E8" stroke="#DAA520" stroke-width="0.5" opacity="0.7"/>
+    <!-- Golden rune line on blade center -->
+    <line x1="210" y1="120" x2="210" y2="275" stroke="#FFD700" stroke-width="1.5" opacity="0.6"/>
+    <!-- Cross guard (dragon wing shape) -->
+    <polygon points="170,285 195,280 195,295 180,300" fill="#DAA520" stroke="#8B6914" stroke-width="1"/>
+    <polygon points="250,285 225,280 225,295 240,300" fill="#DAA520" stroke="#8B6914" stroke-width="1"/>
+    <!-- Grip -->
+    <rect x="203" y="290" width="14" height="45" rx="3" fill="url(#hiltGrad)" stroke="#6B0000" stroke-width="1"/>
+    <!-- Dragon scale texture on grip -->
+    <line x1="205" y1="300" x2="215" y2="300" stroke="#4A0000" stroke-width="0.5" opacity="0.5"/>
+    <line x1="205" y1="310" x2="215" y2="310" stroke="#4A0000" stroke-width="0.5" opacity="0.5"/>
+    <line x1="205" y1="320" x2="215" y2="320" stroke="#4A0000" stroke-width="0.5" opacity="0.5"/>
+    <!-- Pommel gem -->
+    <circle cx="210" cy="340" r="8" fill="#DAA520" stroke="#8B6914" stroke-width="1.5"/>
+    <circle cx="210" cy="340" r="4" fill="#FFD700" opacity="0.8"/>
+  </g>
+  <!-- Floating golden particles -->
+  <g filter="url(#swordGlow)">
+    <circle cx="180" cy="150" r="2" fill="#FFD700" opacity="0.7"/>
+    <circle cx="240" cy="160" r="1.5" fill="#FFD700" opacity="0.6"/>
+    <circle cx="175" cy="220" r="1.5" fill="#FFD700" opacity="0.5"/>
+    <circle cx="245" cy="230" r="2" fill="#FFD700" opacity="0.6"/>
+    <circle cx="190" cy="270" r="1.5" fill="#FFD700" opacity="0.5"/>
+    <circle cx="230" cy="260" r="1.5" fill="#FFD700" opacity="0.5"/>
+  </g>
+
+  <!-- Type description line -->
+  <rect x="24" y="370" width="372" height="24" rx="2" ry="2" fill="rgba(0,0,0,0.15)"/>
+  <text x="30" y="387" font-family="'Noto Sans TC', sans-serif" font-size="13" fill="#E0FFE8">【裝備魔法】</text>
+
+  <!-- Effect text area -->
+  <rect x="24" y="398" width="372" height="172" rx="4" ry="4" fill="url(#textAreaBg)" stroke="#C8B888" stroke-width="1"/>
+  <text font-family="'Noto Sans TC', sans-serif" font-size="12" fill="#1A1A1A">
+    <tspan x="32" y="420">裝備怪獸的攻擊力上升700點，防禦力</tspan>
+    <tspan x="32" y="437">上升300點。</tspan>
+  </text>
+
+  <!-- Card ID -->
+  <text x="28" y="588" font-family="'Roboto Mono', monospace" font-size="10" fill="#888888">SPL-004</text>
+  <text x="388" y="588" font-family="'Roboto', sans-serif" font-size="10" fill="#888888" text-anchor="end">R</text>
+</svg>

@@ -1,0 +1,57 @@
+[
+  {
+    "id": "DECK-001",
+    "name": "闇之力量",
+    "description": "以闇屬性怪獸為核心的攻擊型牌組",
+    "mainDeck": [
+      "MON-001", "MON-001",
+      "MON-007", "MON-007", "MON-007",
+      "MON-003", "MON-003", "MON-003",
+      "MON-005", "MON-005", "MON-005",
+      "MON-006", "MON-006",
+      "MON-009", "MON-009", "MON-009",
+      "MON-004", "MON-004",
+      "MON-008", "MON-008",
+      "SPL-001",
+      "SPL-002", "SPL-002", "SPL-002",
+      "SPL-003", "SPL-003",
+      "SPL-004", "SPL-004",
+      "SPL-005",
+      "TRP-001", "TRP-001",
+      "TRP-002", "TRP-002", "TRP-002",
+      "TRP-003",
+      "TRP-004",
+      "TRP-005", "TRP-005", "TRP-005",
+      "MON-010"
+    ],
+    "extraDeck": [],
+    "sideDeck": []
+  },
+  {
+    "id": "DECK-002",
+    "name": "光之守護",
+    "description": "以光屬性怪獸為核心的防禦型牌組",
+    "mainDeck": [
+      "MON-002", "MON-002",
+      "MON-008", "MON-008", "MON-008",
+      "MON-010", "MON-010",
+      "MON-003", "MON-003",
+      "MON-005", "MON-005", "MON-005",
+      "MON-009", "MON-009", "MON-009",
+      "MON-004", "MON-004", "MON-004",
+      "MON-007", "MON-007",
+      "SPL-001",
+      "SPL-002", "SPL-002",
+      "SPL-003", "SPL-003", "SPL-003",
+      "SPL-005", "SPL-005",
+      "TRP-001", "TRP-001", "TRP-001",
+      "TRP-002", "TRP-002",
+      "TRP-003",
+      "TRP-004", "TRP-004",
+      "TRP-005", "TRP-005",
+      "MON-006", "MON-001"
+    ],
+    "extraDeck": [],
+    "sideDeck": []
+  }
+]

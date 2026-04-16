@@ -1,0 +1,137 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 610" width="420" height="610">
+  <defs>
+    <linearGradient id="cardFrame" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#E07A3A"/><stop offset="50%" stop-color="#C45C1E"/><stop offset="100%" stop-color="#8E3A0E"/>
+    </linearGradient>
+    <linearGradient id="innerFrame" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#F09050"/><stop offset="100%" stop-color="#B04E14"/>
+    </linearGradient>
+    <radialGradient id="artBg" cx="50%" cy="40%" r="65%">
+      <stop offset="0%" stop-color="#FFF8E7"/><stop offset="60%" stop-color="#1A237E"/>
+    </radialGradient>
+    <linearGradient id="textBg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#F8F4E8"/><stop offset="100%" stop-color="#F0E8D0"/>
+    </linearGradient>
+    <linearGradient id="holyArmor" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#F5F0E8"/><stop offset="50%" stop-color="#E8E0D0"/><stop offset="100%" stop-color="#C0B8A0"/>
+    </linearGradient>
+    <linearGradient id="swordBlade" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FFFFF0"/><stop offset="100%" stop-color="#FFD700"/>
+    </linearGradient>
+    <filter id="glow"><feGaussianBlur stdDeviation="3" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  </defs>
+  <rect width="420" height="610" rx="12" fill="url(#cardFrame)" stroke="#3A3020" stroke-width="3"/>
+  <rect x="12" y="12" width="396" height="586" rx="6" fill="none" stroke="url(#innerFrame)" stroke-width="2"/>
+  <rect x="20" y="14" width="380" height="40" rx="4" fill="rgba(0,0,0,0.25)"/>
+  <text x="28" y="41" font-family="'Noto Sans TC',sans-serif" font-weight="bold" font-size="18" fill="#FFF" stroke="#000" stroke-width="0.8" paint-order="stroke">聖輝騎士王·奧瑞斯</text>
+  <!-- Attribute: Light -->
+  <circle cx="378" cy="34" r="18" fill="#FFF8DC" stroke="#DAA520" stroke-width="2"/>
+  <circle cx="378" cy="34" r="6" fill="#FFD700"/>
+  <g stroke="#FFD700" stroke-width="1.5" stroke-linecap="round">
+    <line x1="378" y1="20" x2="378" y2="24"/><line x1="378" y1="44" x2="378" y2="48"/>
+    <line x1="364" y1="34" x2="368" y2="34"/><line x1="388" y1="34" x2="392" y2="34"/>
+    <line x1="369" y1="25" x2="372" y2="28"/><line x1="387" y1="25" x2="384" y2="28"/>
+    <line x1="369" y1="43" x2="372" y2="40"/><line x1="387" y1="43" x2="384" y2="40"/>
+  </g>
+  <!-- Stars: 8 -->
+  <g transform="translate(396,60)">
+    <polygon points="-8,-8 -5.5,-3 0,-2.5 -4,1 -3,6.5 -8,4 -13,6.5 -12,1 -16,-2.5 -10.5,-3" fill="#FFD700" stroke="#B8860B" stroke-width="0.8"/>
+    <polygon points="-26,-8 -23.5,-3 -18,-2.5 -22,1 -21,6.5 -26,4 -31,6.5 -30,1 -34,-2.5 -28.5,-3" fill="#FFD700" stroke="#B8860B" stroke-width="0.8"/>
+    <polygon points="-44,-8 -41.5,-3 -36,-2.5 -40,1 -39,6.5 -44,4 -49,6.5 -48,1 -52,-2.5 -46.5,-3" fill="#FFD700" stroke="#B8860B" stroke-width="0.8"/>
+    <polygon points="-62,-8 -59.5,-3 -54,-2.5 -58,1 -57,6.5 -62,4 -67,6.5 -66,1 -70,-2.5 -64.5,-3" fill="#FFD700" stroke="#B8860B" stroke-width="0.8"/>
+    <polygon points="-80,-8 -77.5,-3 -72,-2.5 -76,1 -75,6.5 -80,4 -85,6.5 -84,1 -88,-2.5 -82.5,-3" fill="#FFD700" stroke="#B8860B" stroke-width="0.8"/>
+    <polygon points="-98,-8 -95.5,-3 -90,-2.5 -94,1 -93,6.5 -98,4 -103,6.5 -102,1 -106,-2.5 -100.5,-3" fill="#FFD700" stroke="#B8860B" stroke-width="0.8"/>
+    <polygon points="-116,-8 -113.5,-3 -108,-2.5 -112,1 -111,6.5 -116,4 -121,6.5 -120,1 -124,-2.5 -118.5,-3" fill="#FFD700" stroke="#B8860B" stroke-width="0.8"/>
+    <polygon points="-134,-8 -131.5,-3 -126,-2.5 -130,1 -129,6.5 -134,4 -139,6.5 -138,1 -142,-2.5 -136.5,-3" fill="#FFD700" stroke="#B8860B" stroke-width="0.8"/>
+  </g>
+  <!-- Card art -->
+  <rect x="24" y="82" width="372" height="284" rx="2" fill="url(#artBg)" stroke="#2A2A2A" stroke-width="2"/>
+  <!-- Holy light burst from center -->
+  <g opacity="0.3">
+    <line x1="210" y1="180" x2="60" y2="90" stroke="#FFD700" stroke-width="2"/>
+    <line x1="210" y1="180" x2="360" y2="90" stroke="#FFD700" stroke-width="2"/>
+    <line x1="210" y1="180" x2="40" y2="200" stroke="#FFD700" stroke-width="1.5"/>
+    <line x1="210" y1="180" x2="380" y2="200" stroke="#FFD700" stroke-width="1.5"/>
+    <line x1="210" y1="180" x2="100" y2="350" stroke="#FFD700" stroke-width="1"/>
+    <line x1="210" y1="180" x2="320" y2="350" stroke="#FFD700" stroke-width="1"/>
+  </g>
+  <!-- Cloud tear effect -->
+  <path d="M24,82 Q100,110 150,95 Q210,82 270,95 Q340,110 396,82" fill="#1A237E" opacity="0.4"/>
+  <!-- Knight figure (dramatic, from above) -->
+  <g transform="translate(210,210)">
+    <!-- Energy wings (3 pairs) -->
+    <g filter="url(#glow)" opacity="0.7">
+      <!-- Top pair: energy geometric -->
+      <path d="M-15,-50 L-90,-90 L-70,-45 L-100,-60 L-50,-30Z" fill="#4FC3F7" opacity="0.5"/>
+      <path d="M15,-50 L90,-90 L70,-45 L100,-60 L50,-30Z" fill="#4FC3F7" opacity="0.5"/>
+      <!-- Mid pair: white feather wings -->
+      <path d="M-20,-20 L-120,-30 L-100,0 L-130,-5 L-80,20 L-110,25 L-50,35Z" fill="#F5F0E8" stroke="#E0D8C0" stroke-width="0.5"/>
+      <path d="M20,-20 L120,-30 L100,0 L130,-5 L80,20 L110,25 L50,35Z" fill="#F5F0E8" stroke="#E0D8C0" stroke-width="0.5"/>
+      <!-- Bottom pair: gold small -->
+      <path d="M-18,15 L-60,30 L-45,40 L-65,50 L-25,45Z" fill="#FFD700" opacity="0.5"/>
+      <path d="M18,15 L60,30 L45,40 L65,50 L25,45Z" fill="#FFD700" opacity="0.5"/>
+    </g>
+    <!-- Cape -->
+    <path d="M-20,-10 L-30,80 Q0,90 30,80 L20,-10Z" fill="#F5F0E8" stroke="#DAA520" stroke-width="0.5"/>
+    <!-- Legs -->
+    <rect x="-14" y="45" width="10" height="30" rx="3" fill="url(#holyArmor)" stroke="#DAA520" stroke-width="0.8"/>
+    <rect x="4" y="45" width="10" height="30" rx="3" fill="url(#holyArmor)" stroke="#DAA520" stroke-width="0.8"/>
+    <!-- Body armor (multi-layered white-gold) -->
+    <path d="M-22,-20 L-24,45 L24,45 L22,-20 Q0,-28 -22,-20Z" fill="url(#holyArmor)" stroke="#DAA520" stroke-width="1.5"/>
+    <!-- Armor holy rune lines -->
+    <g stroke="#FFD700" stroke-width="0.8" opacity="0.6" fill="none">
+      <path d="M-10,0 L0,-8 L10,0"/><path d="M-8,15 L0,10 L8,15"/><path d="M-6,30 L0,25 L6,30"/>
+    </g>
+    <!-- Armor seam glow -->
+    <g stroke="#FFD700" stroke-width="0.5" opacity="0.4">
+      <line x1="-22" y1="0" x2="-18" y2="0"/><line x1="22" y1="0" x2="18" y2="0"/>
+      <line x1="-22" y1="20" x2="-18" y2="20"/><line x1="22" y1="20" x2="18" y2="20"/>
+    </g>
+    <!-- Shoulder pads (lion-griffin style) -->
+    <path d="M-28,-18 Q-38,-25 -36,-12 Q-34,-5 -24,-8Z" fill="#E8E0D0" stroke="#DAA520" stroke-width="1"/>
+    <path d="M28,-18 Q38,-25 36,-12 Q34,-5 24,-8Z" fill="#E8E0D0" stroke="#DAA520" stroke-width="1"/>
+    <!-- Chest gem -->
+    <ellipse cx="0" cy="5" rx="6" ry="8" fill="#FFA000" stroke="#DAA520" stroke-width="1.5" filter="url(#glow)"/>
+    <ellipse cx="-1" cy="3" rx="2" ry="3" fill="#FFF8DC" opacity="0.5"/>
+    <!-- Left arm + sword raised overhead -->
+    <rect x="26" y="-15" width="8" height="35" rx="3" fill="url(#holyArmor)" stroke="#DAA520" stroke-width="0.8"/>
+    <!-- Holy sword (raised high) -->
+    <g transform="translate(30,-20) rotate(-15)">
+      <rect x="-3" y="-70" width="6" height="55" rx="1" fill="url(#swordBlade)" stroke="#DAA520" stroke-width="0.5"/>
+      <!-- Sword gem -->
+      <ellipse cx="0" cy="-35" rx="3" ry="5" fill="#FFA000" filter="url(#glow)"/>
+      <!-- Cross guard -->
+      <rect x="-10" y="-16" width="20" height="4" rx="1" fill="#FFD700"/>
+      <!-- Sword tip -->
+      <path d="M-3,-70 L0,-78 L3,-70" fill="#FFFFF0"/>
+      <!-- Sword glow aura -->
+      <rect x="-3" y="-70" width="6" height="55" rx="1" fill="#FFD700" opacity="0.2"/>
+    </g>
+    <!-- Right arm -->
+    <rect x="-34" y="-15" width="8" height="35" rx="3" fill="url(#holyArmor)" stroke="#DAA520" stroke-width="0.8"/>
+    <!-- Helmet (lion-griffin visor) -->
+    <path d="M-16,-30 Q-18,-50 0,-55 Q18,-50 16,-30 Q0,-25 -16,-30Z" fill="url(#holyArmor)" stroke="#DAA520" stroke-width="1.5"/>
+    <!-- Visor slit -->
+    <path d="M-10,-38 L0,-35 L10,-38" fill="none" stroke="#1A237E" stroke-width="2"/>
+    <!-- Golden eyes behind visor -->
+    <circle cx="-5" cy="-38" r="1.5" fill="#FFD700"/>
+    <circle cx="5" cy="-38" r="1.5" fill="#FFD700"/>
+    <!-- Helmet crest -->
+    <path d="M0,-55 Q-5,-65 0,-70 Q5,-65 0,-55Z" fill="#FFD700"/>
+  </g>
+  <!-- Type line -->
+  <rect x="24" y="370" width="372" height="24" rx="2" fill="rgba(0,0,0,0.15)"/>
+  <text x="30" y="387" font-family="'Noto Sans TC',sans-serif" font-size="13" fill="#1A1A1A">【戰士族／效果】</text>
+  <rect x="24" y="398" width="372" height="144" rx="4" fill="url(#textBg)" stroke="#C8B888" stroke-width="1"/>
+  <text font-family="'Noto Sans TC',sans-serif" font-size="12" fill="#1A1A1A">
+    <tspan x="32" y="420">此卡不能通常召喚。必須解放自己場上</tspan>
+    <tspan x="32" dy="17">2隻光屬性怪獸才能特殊召喚。</tspan>
+    <tspan x="32" dy="17">①：一回合一次，可以選擇對方場上1張</tspan>
+    <tspan x="32" dy="17">卡片破壞。</tspan>
+    <tspan x="32" dy="17">②：此卡戰鬥破壞對方怪獸時，回復等同</tspan>
+    <tspan x="32" dy="17">該怪獸攻擊力數值的生命值。</tspan>
+  </text>
+  <text x="28" y="562" font-family="'Roboto Mono',monospace" font-size="10" fill="#888">MON-006</text>
+  <text x="388" y="562" font-family="'Roboto',sans-serif" font-weight="bold" font-size="16" fill="#1A1A1A" text-anchor="end">ATK/2800 DEF/2400</text>
+  <text x="28" y="592" font-family="'Roboto',sans-serif" font-size="10" fill="#888">SR</text>
+</svg>

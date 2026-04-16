@@ -1,0 +1,114 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 610" width="420" height="610">
+  <defs>
+    <linearGradient id="cardFrameGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#2AAE68"/>
+      <stop offset="50%" stop-color="#1D8A50"/>
+      <stop offset="100%" stop-color="#126638"/>
+    </linearGradient>
+    <linearGradient id="innerFrameGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#38C478"/>
+      <stop offset="100%" stop-color="#187A44"/>
+    </linearGradient>
+    <linearGradient id="textAreaBg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#F8F4E8"/>
+      <stop offset="100%" stop-color="#F0E8D0"/>
+    </linearGradient>
+    <!-- Art: Deep sea -->
+    <linearGradient id="seaDepth" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#87CEEB" stop-opacity="0.3"/>
+      <stop offset="30%" stop-color="#1E3A5F"/>
+      <stop offset="70%" stop-color="#0D2137"/>
+      <stop offset="100%" stop-color="#060E1A"/>
+    </linearGradient>
+    <filter id="waterGlow">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- Card frame -->
+  <rect x="0" y="0" width="420" height="610" rx="12" ry="12" fill="url(#cardFrameGrad)" stroke="#3A3020" stroke-width="3"/>
+  <rect x="12" y="12" width="396" height="586" rx="6" ry="6" fill="none" stroke="url(#innerFrameGrad)" stroke-width="2"/>
+
+  <!-- Card name -->
+  <rect x="20" y="14" width="380" height="40" rx="4" ry="4" fill="rgba(0,0,0,0.25)"/>
+  <text x="28" y="41" font-family="'Noto Sans TC', sans-serif" font-weight="bold" font-size="20" fill="#FFFFFF" stroke="#000000" stroke-width="0.8" paint-order="stroke">深淵海域</text>
+
+  <!-- Spell type icon - Field -->
+  <circle cx="378" cy="34" r="18" fill="#1D8A50" stroke="#0E5530" stroke-width="2"/>
+  <text x="378" y="30" font-family="sans-serif" font-size="9" fill="#FFFFFF" text-anchor="middle">魔法</text>
+  <text x="378" y="42" font-family="sans-serif" font-size="8" fill="#A0E0B8" text-anchor="middle">場地</text>
+
+  <!-- Sub-type indicator -->
+  <rect x="24" y="58" width="372" height="20" rx="2" ry="2" fill="rgba(0,0,0,0.1)"/>
+  <text x="390" y="72" font-family="'Noto Sans TC', sans-serif" font-size="12" fill="#E0FFE8" text-anchor="end">【場地魔法】</text>
+
+  <!-- Card art area -->
+  <rect x="24" y="82" width="372" height="284" rx="2" ry="2" fill="#060E1A" stroke="#2A2A2A" stroke-width="2"/>
+  <!-- Deep sea gradient -->
+  <rect x="26" y="84" width="368" height="280" fill="url(#seaDepth)" rx="1"/>
+  <!-- Light rays from surface -->
+  <g opacity="0.2">
+    <polygon points="150,84 170,84 200,200 160,200" fill="#87CEEB"/>
+    <polygon points="230,84 260,84 280,220 240,220" fill="#87CEEB"/>
+    <polygon points="310,84 330,84 340,180 320,180" fill="#87CEEB"/>
+  </g>
+  <!-- Underwater ruins (pillars) -->
+  <g opacity="0.5">
+    <!-- Left pillar -->
+    <rect x="80" y="200" width="20" height="120" fill="#1E3A5F" stroke="#00CED1" stroke-width="0.5" opacity="0.6"/>
+    <rect x="75" y="195" width="30" height="10" fill="#1E3A5F" stroke="#00CED1" stroke-width="0.5" opacity="0.6"/>
+    <!-- Center pillar (broken) -->
+    <rect x="190" y="230" width="25" height="90" fill="#1E3A5F" stroke="#00CED1" stroke-width="0.5" opacity="0.5"/>
+    <rect x="185" y="225" width="35" height="10" fill="#1E3A5F" stroke="#00CED1" stroke-width="0.5" opacity="0.5"/>
+    <!-- Right pillar -->
+    <rect x="310" y="210" width="22" height="110" fill="#1E3A5F" stroke="#00CED1" stroke-width="0.5" opacity="0.6"/>
+    <rect x="305" y="205" width="32" height="10" fill="#1E3A5F" stroke="#00CED1" stroke-width="0.5" opacity="0.6"/>
+  </g>
+  <!-- Ruin glow runes -->
+  <g filter="url(#waterGlow)" opacity="0.6">
+    <circle cx="90" cy="250" r="2" fill="#00CED1"/>
+    <circle cx="90" cy="270" r="1.5" fill="#00CED1"/>
+    <circle cx="202" cy="260" r="2" fill="#00CED1"/>
+    <circle cx="321" cy="250" r="2" fill="#00CED1"/>
+    <circle cx="321" cy="270" r="1.5" fill="#00CED1"/>
+  </g>
+  <!-- Coral and seaweed foreground -->
+  <g opacity="0.6">
+    <!-- Seaweed left -->
+    <path d="M50,364 Q55,330 48,300 Q55,310 52,280" stroke="#228B22" stroke-width="3" fill="none" opacity="0.5"/>
+    <path d="M65,364 Q70,340 63,310" stroke="#2E5A1E" stroke-width="2" fill="none" opacity="0.4"/>
+    <!-- Coral right -->
+    <path d="M350,364 Q345,340 355,320 Q348,330 360,310" stroke="#FF6B35" stroke-width="2.5" fill="none" opacity="0.4"/>
+    <path d="M370,364 Q365,345 372,325" stroke="#FF4500" stroke-width="2" fill="none" opacity="0.3"/>
+  </g>
+  <!-- Bubbles -->
+  <circle cx="120" cy="180" r="4" fill="none" stroke="#87CEEB" stroke-width="0.5" opacity="0.5"/>
+  <circle cx="125" cy="165" r="2.5" fill="none" stroke="#87CEEB" stroke-width="0.5" opacity="0.4"/>
+  <circle cx="270" cy="200" r="3" fill="none" stroke="#87CEEB" stroke-width="0.5" opacity="0.5"/>
+  <circle cx="265" cy="185" r="2" fill="none" stroke="#87CEEB" stroke-width="0.5" opacity="0.4"/>
+  <circle cx="180" cy="150" r="2" fill="none" stroke="#87CEEB" stroke-width="0.5" opacity="0.3"/>
+  <!-- Bioluminescent particles -->
+  <g filter="url(#waterGlow)">
+    <circle cx="140" cy="250" r="1.5" fill="#00CED1" opacity="0.7"/>
+    <circle cx="250" cy="230" r="1" fill="#4FC3F7" opacity="0.6"/>
+    <circle cx="170" cy="300" r="1.5" fill="#00CED1" opacity="0.5"/>
+    <circle cx="300" cy="280" r="1" fill="#4FC3F7" opacity="0.5"/>
+  </g>
+
+  <!-- Type description line -->
+  <rect x="24" y="370" width="372" height="24" rx="2" ry="2" fill="rgba(0,0,0,0.15)"/>
+  <text x="30" y="387" font-family="'Noto Sans TC', sans-serif" font-size="13" fill="#E0FFE8">【場地魔法】</text>
+
+  <!-- Effect text area -->
+  <rect x="24" y="398" width="372" height="172" rx="4" ry="4" fill="url(#textAreaBg)" stroke="#C8B888" stroke-width="1"/>
+  <text font-family="'Noto Sans TC', sans-serif" font-size="12" fill="#1A1A1A">
+    <tspan x="32" y="420">場上所有水屬性怪獸的攻擊力上升300</tspan>
+    <tspan x="32" y="437">點。場上所有火屬性怪獸的攻擊力下降</tspan>
+    <tspan x="32" y="454">300點。</tspan>
+  </text>
+
+  <!-- Card ID -->
+  <text x="28" y="588" font-family="'Roboto Mono', monospace" font-size="10" fill="#888888">SPL-005</text>
+  <text x="388" y="588" font-family="'Roboto', sans-serif" font-size="10" fill="#888888" text-anchor="end">SR</text>
+</svg>
