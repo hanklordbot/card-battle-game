@@ -51,14 +51,14 @@ export class UILayer extends Container {
 
     // Player LP
     this.playerLpLabel = new Text({ text: '我方', style: new TextStyle({ fontSize: 16, fill: hexNum(COLORS.myAccent), fontWeight: 'bold' }) });
-    this.playerLpLabel.position.set(30, LOGICAL_H - 140);
+    this.playerLpLabel.position.set(30, LOGICAL_H - 220);
     this.addChild(this.playerLpLabel);
 
     this.playerLpText = new Text({ text: `${INITIAL_LP}`, style: lpStyle });
-    this.playerLpText.position.set(30, LOGICAL_H - 120);
+    this.playerLpText.position.set(30, LOGICAL_H - 200);
     this.addChild(this.playerLpText);
 
-    this.playerLpBar.position.set(30, LOGICAL_H - 95);
+    this.playerLpBar.position.set(30, LOGICAL_H - 175);
     this.addChild(this.playerLpBar);
 
     // Opponent LP
@@ -76,11 +76,11 @@ export class UILayer extends Container {
     // Turn label
     this.turnLabel = new Text({ text: '', style: new TextStyle({ fontSize: 18, fill: hexNum(COLORS.myAccent), fontWeight: 'bold' }) });
     this.turnLabel.anchor.set(0.5, 0);
-    this.turnLabel.position.set(LOGICAL_W / 2, LOGICAL_H - 145);
+    this.turnLabel.position.set(LOGICAL_W / 2, LOGICAL_H - 225);
     this.addChild(this.turnLabel);
 
     // Phase nodes
-    const phaseY = LOGICAL_H - 120;
+    const phaseY = LOGICAL_H - 200;
     const phaseStartX = LOGICAL_W / 2 - (PHASE_ORDER.length - 1) * 40;
     for (let i = 0; i < PHASE_ORDER.length; i++) {
       const t = new Text({
@@ -105,7 +105,7 @@ export class UILayer extends Container {
     this.phaseBtnText = new Text({ text: '▶ 下一階段', style: new TextStyle({ fontSize: 16, fill: 0xffffff, fontWeight: 'bold' }) });
     this.phaseBtnText.anchor.set(0.5);
     this.phaseBtn.addChild(this.phaseBtnText);
-    this.phaseBtn.position.set(LOGICAL_W / 2, LOGICAL_H - 170);
+    this.phaseBtn.position.set(LOGICAL_W / 2, LOGICAL_H - 250);
     this.phaseBtn.on('pointerover', () => { this.phaseBtnBg.texture = getTexture('btn_phase_hover'); });
     this.phaseBtn.on('pointerout', () => { this.phaseBtnBg.texture = getTexture('btn_phase_normal'); });
     this.addChild(this.phaseBtn);
@@ -122,7 +122,7 @@ export class UILayer extends Container {
     const surText = new Text({ text: '🏳 投降', style: new TextStyle({ fontSize: 14, fill: 0xffffff }) });
     surText.anchor.set(0.5);
     this.surrenderBtn.addChild(surText);
-    this.surrenderBtn.position.set(LOGICAL_W - 80, LOGICAL_H - 170);
+    this.surrenderBtn.position.set(LOGICAL_W - 80, LOGICAL_H - 250);
     this.addChild(this.surrenderBtn);
 
     // Cancel button
@@ -136,7 +136,7 @@ export class UILayer extends Container {
     const cancelText = new Text({ text: '✕ 取消', style: new TextStyle({ fontSize: 14, fill: 0xffffff }) });
     cancelText.anchor.set(0.5);
     this.cancelBtn.addChild(cancelText);
-    this.cancelBtn.position.set(80, LOGICAL_H - 170);
+    this.cancelBtn.position.set(80, LOGICAL_H - 250);
     this.addChild(this.cancelBtn);
 
     // Direct attack button

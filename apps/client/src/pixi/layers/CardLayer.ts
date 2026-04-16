@@ -172,7 +172,7 @@ export class CardLayer extends Container {
     const gap = 8;
     const totalW = cards.length * HAND_CARD_W + Math.max(0, cards.length - 1) * gap;
     const startX = (LOGICAL_W - totalW) / 2 + HAND_CARD_W / 2;
-    const y = isOpponent ? 60 : LOGICAL_H - 10;
+    const y = isOpponent ? 60 : LOGICAL_H - 90;
 
     for (let i = 0; i < cards.length; i++) {
       const cs = pool[i];
