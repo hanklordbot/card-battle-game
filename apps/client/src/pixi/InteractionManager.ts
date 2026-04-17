@@ -106,6 +106,18 @@ export class InteractionManager {
         ui.showMessage('選擇攻擊目標（點擊對方怪獸或直接攻擊）');
       }
     }
+
+    // Position change in main phase
+    if (ui.mode === 'idle' && isMainPhase) {
+      const slot = duel.players[0].monsterZone[index];
+      if (slot && slot.canChangePosition && slot.position !== Position.FaceDownDefense) {
+        const ok = store.doChangePosition(index);
+        if (ok) {
+          const newPos = slot.position === Position.FaceUpDefense ? '守備表示' : '攻擊表示';
+          ui.showMessage(`切換為${newPos}`);
+        }
+      }
+    }
   }
 
   private handleOppMonsterZoneClick(index: number) {

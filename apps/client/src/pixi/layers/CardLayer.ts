@@ -22,6 +22,8 @@ export class CardSprite extends Container {
   private typeBadge: Text;
   private backSprite: Sprite;
   private artSprite: Sprite;
+  private statsOverlay = new Graphics();
+  private statsOverlayText: Text;
   private _faceDown = false;
   private _loadedCardId = '';
   cardRef: Card | null = null;
@@ -50,6 +52,18 @@ export class CardSprite extends Container {
     this.addChild(this.statsText);
 
     const badgeStyle = new TextStyle({ fontSize: 22, fill: 0xffffff, fontWeight: 'bold' });
+    this.typeBadge = new Text({ text: '', style: badgeStyle });
+    this.typeBadge.anchor.set(0.5);
+    this.typeBadge.position.set(w / 2, h / 2);
+    this.addChild(this.typeBadge);
+
+    // Stats overlay (shown on top of card art)
+    this.addChild(this.statsOverlay);
+    this.statsOverlayText = new Text({ text: '', style: new TextStyle({ fontSize: 13, fill: 0xffffff, fontWeight: 'bold' }) });
+    this.statsOverlayText.anchor.set(0.5, 1);
+    this.statsOverlayText.position.set(w / 2, h - 3);
+    this.statsOverlayText.visible = false;
+    this.addChild(this.statsOverlayText);
     this.typeBadge = new Text({ text: '', style: badgeStyle });
     this.typeBadge.anchor.set(0.5);
     this.typeBadge.position.set(w / 2, h / 2);
@@ -98,6 +112,8 @@ export class CardSprite extends Container {
       if (this._loadedCardId !== card.id) {
         this._loadedCardId = card.id;
         this.artSprite.visible = false;
+        this.statsOverlay.visible = false;
+        this.statsOverlayText.visible = false;
         const url = getCardImageUrl(card.id);
         if (url) {
           const img = new Image();
@@ -109,10 +125,11 @@ export class CardSprite extends Container {
             this.artSprite.width = this.w;
             this.artSprite.height = this.h;
             this.artSprite.visible = true;
-            // Hide text overlays when image is shown
             this.nameText.visible = false;
             this.typeBadge.visible = false;
             this.bg.visible = false;
+            this.statsText.visible = false;
+            this.showStatsOverlay(card);
           };
           img.src = url;
         }
@@ -121,8 +138,21 @@ export class CardSprite extends Container {
         this.nameText.visible = false;
         this.typeBadge.visible = false;
         this.bg.visible = false;
+        this.statsText.visible = false;
+        this.showStatsOverlay(card);
       }
     }
+  }
+
+  private showStatsOverlay(card: Card) {
+    if (!isMonster(card)) { this.statsOverlay.visible = false; this.statsOverlayText.visible = false; return; }
+    const m = card as MonsterCard;
+    this.statsOverlay.clear();
+    this.statsOverlay.roundRect(0, this.h - 22, this.w, 22, 0);
+    this.statsOverlay.fill({ color: 0x000000, alpha: 0.7 });
+    this.statsOverlay.visible = true;
+    this.statsOverlayText.text = `${m.atk}/${m.def}`;
+    this.statsOverlayText.visible = true;
   }
 
   get faceDown() { return this._faceDown; }

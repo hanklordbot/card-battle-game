@@ -30,6 +30,7 @@ interface BattleStoreState {
   doDirectAttack: (attackerZone: number) => number | null;
   doSetSpellTrap: (handIndex: number) => boolean;
   doDiscard: (handIndex: number) => boolean;
+  doChangePosition: (zoneIndex: number) => boolean;
   addLog: (message: string) => void;
   getDuel: () => DuelState;
 }
@@ -197,6 +198,28 @@ export const useBattleStore = create<BattleStoreState>((set, get) => ({
       set({ duel: { ...duel } });
     }
     return result;
+  },
+
+  doChangePosition: (zoneIndex) => {
+    const duel = get().duel;
+    if (!duel) return false;
+    const isMainPhase = duel.phase === Phase.Main1 || duel.phase === Phase.Main2;
+    if (!isMainPhase || duel.turnPlayer !== 0) return false;
+    const slot = duel.players[0].monsterZone[zoneIndex];
+    if (!slot || !slot.canChangePosition) return false;
+
+    if (slot.position === Position.FaceUpAttack) {
+      slot.position = Position.FaceUpDefense;
+      get().addLog(`我方怪獸「${slot.card.name}」切換為守備表示。`);
+    } else if (slot.position === Position.FaceUpDefense) {
+      slot.position = Position.FaceUpAttack;
+      get().addLog(`我方怪獸「${slot.card.name}」切換為攻擊表示。`);
+    } else {
+      return false; // face-down can't change position this way
+    }
+    slot.canChangePosition = false;
+    set({ duel: { ...duel } });
+    return true;
   },
 
   addLog: (message) => {
