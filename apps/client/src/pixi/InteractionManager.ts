@@ -41,6 +41,10 @@ export class InteractionManager {
     // Overlay
     overlayLayer.onDetailClose = () => useUIStore.getState().hideCardDetail();
     overlayLayer.onPreviewCancel = () => this.handleCancel();
+    overlayLayer.onPreviewSlotClick = (slotType, index) => {
+      if (slotType === 'monster') this.handleMyMonsterZoneClick(index);
+      else this.handleMySpellZoneClick(index);
+    };
     overlayLayer.onRestartClick = () => {
       useBattleStore.setState({ gameStarted: false, duel: null, logs: [] });
       useUIStore.getState().reset();

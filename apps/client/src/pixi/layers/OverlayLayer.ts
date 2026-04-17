@@ -5,6 +5,7 @@ import { getCardFrameColor, getCardTypeLabel } from '../../game/constants';
 import { LOGICAL_W, LOGICAL_H } from '../PixiApp';
 import { vfxManager } from '../vfx/VFXManager';
 import { getCardImageUrl } from '../../services/card-mapping';
+import { SLOT_W, SLOT_H, SLOT_GAP, FIELD_X_START, CENTER_Y, MONSTER_ROW_OFFSET, SPELL_ROW_OFFSET } from './FieldLayer';
 
 function hexNum(hex: string): number {
   return parseInt(hex.replace('#', ''), 16);
@@ -35,6 +36,7 @@ export class OverlayLayer extends Container {
   onRestartClick?: () => void;
   onDetailClose?: () => void;
   onPreviewCancel?: () => void;
+  onPreviewSlotClick?: (slotType: 'monster' | 'spell', index: number) => void;
 
   // Preview panel
   private previewPanel = new Container();
@@ -245,12 +247,38 @@ export class OverlayLayer extends Container {
   private buildPreviewPanel() {
     this.previewPanel.visible = false;
 
-    // Semi-transparent backdrop — clicking it cancels preview
+    // Semi-transparent backdrop — hit-test slots before cancelling
     const backdrop = new Graphics();
     backdrop.rect(0, 0, LOGICAL_W, LOGICAL_H);
     backdrop.fill({ color: 0x000000, alpha: 0.5 });
     backdrop.eventMode = 'static';
-    backdrop.on('pointerdown', () => this.onPreviewCancel?.());
+    backdrop.on('pointerdown', (e) => {
+      // Check if click is on a player monster or spell slot
+      const gp = e.global;
+      // Transform to logical coords (the scene is scaled to fit)
+      const parent = this.parent;
+      const local = parent ? parent.toLocal(gp) : gp;
+      const lx = local.x;
+      const ly = local.y;
+
+      for (let i = 0; i < 5; i++) {
+        const sx = FIELD_X_START + i * (SLOT_W + SLOT_GAP);
+        // Player monster row
+        const my = CENTER_Y + MONSTER_ROW_OFFSET - SLOT_H / 2;
+        if (lx >= sx && lx <= sx + SLOT_W && ly >= my && ly <= my + SLOT_H) {
+          this.onPreviewSlotClick?.('monster', i);
+          return;
+        }
+        // Player spell row
+        const sy = CENTER_Y + SPELL_ROW_OFFSET - SLOT_H / 2;
+        if (lx >= sx && lx <= sx + SLOT_W && ly >= sy && ly <= sy + SLOT_H) {
+          this.onPreviewSlotClick?.('spell', i);
+          return;
+        }
+      }
+      // Not on any slot — cancel
+      this.onPreviewCancel?.();
+    });
     this.previewPanel.addChild(backdrop);
 
     // Card preview — left side of screen
