@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 36" width="100" height="36">
+  <defs>
+    <linearGradient id="gN" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#F5D77A"/><stop offset="50%" stop-color="#D4A843"/><stop offset="100%" stop-color="#8B6914"/>
+    </linearGradient>
+    <linearGradient id="gH" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FBE5A0"/><stop offset="50%" stop-color="#E0B84E"/><stop offset="100%" stop-color="#A07A1A"/>
+    </linearGradient>
+    <linearGradient id="gP" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#8B6914"/><stop offset="50%" stop-color="#A07A1A"/><stop offset="100%" stop-color="#8B6914"/>
+    </linearGradient>
+  </defs>
+  <g id="normal"><rect width="100" height="36" rx="6" fill="url(#gN)" stroke="#F5D77A" stroke-width="0.5"/><text x="50" y="23" text-anchor="middle" font-family="'Noto Sans TC','sans-serif'" font-size="14" font-weight="600" fill="#0A0A12">儲存</text></g>
+  <g id="hover" transform="translate(0,48)"><rect width="100" height="36" rx="6" fill="url(#gH)" stroke="#FBE5A0" stroke-width="1"/><text x="50" y="23" text-anchor="middle" font-family="'Noto Sans TC','sans-serif'" font-size="14" font-weight="600" fill="#0A0A12">儲存</text></g>
+  <g id="pressed" transform="translate(0,96)"><rect width="100" height="36" rx="6" fill="url(#gP)" stroke="#8B6914" stroke-width="0.5"/><text x="50" y="24" text-anchor="middle" font-family="'Noto Sans TC','sans-serif'" font-size="14" font-weight="600" fill="#1A1E3E">儲存</text></g>
+</svg>

@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 36" width="320" height="36">
+  <!-- Normal state -->
+  <g id="normal">
+    <rect width="320" height="36" rx="6" fill="#0A0A12" fill-opacity="0.6" stroke="#2A1F5E" stroke-width="1"/>
+    <text x="12" y="23" font-family="'Noto Sans TC','sans-serif'" font-size="13" fill="#CBD5E1">全部</text>
+    <!-- Dropdown arrow -->
+    <polygon points="300,14 306,14 303,19" fill="#94A3B8"/>
+  </g>
+  <!-- Hover state -->
+  <g id="hover" transform="translate(0,48)">
+    <rect width="320" height="36" rx="6" fill="#0A0A12" fill-opacity="0.6" stroke="#8B5CF6" stroke-width="1"/>
+    <text x="12" y="23" font-family="'Noto Sans TC','sans-serif'" font-size="13" fill="#F1F5F9">全部</text>
+    <polygon points="300,14 306,14 303,19" fill="#8B5CF6"/>
+  </g>
+  <!-- Active/Open state -->
+  <g id="active" transform="translate(0,96)">
+    <rect width="320" height="36" rx="6" fill="#2A1F5E" fill-opacity="0.4" stroke="#8B5CF6" stroke-width="1.5"/>
+    <text x="12" y="23" font-family="'Noto Sans TC','sans-serif'" font-size="13" fill="#A78BFA">已選擇</text>
+    <polygon points="300,19 306,19 303,14" fill="#A78BFA"/>
+  </g>
+</svg>

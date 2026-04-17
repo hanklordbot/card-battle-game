@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 610" width="420" height="610">
+  <defs>
+    <linearGradient id="cardFrame" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#E07A3A"/><stop offset="50%" stop-color="#C45C1E"/><stop offset="100%" stop-color="#8E3A0E"/>
+    </linearGradient>
+    <linearGradient id="innerFrame" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#F09050"/><stop offset="100%" stop-color="#B04E14"/>
+    </linearGradient>
+    <linearGradient id="artBg" x1="0.5" y1="0" x2="0.5" y2="1">
+      <stop offset="0%" stop-color="#1A1A2E"/><stop offset="100%" stop-color="#2D1B4E"/>
+    </linearGradient>
+    <linearGradient id="textBg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#F8F4E8"/><stop offset="100%" stop-color="#F0E8D0"/>
+    </linearGradient>
+    <radialGradient id="crystalGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#8B5CF6" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#8B5CF6" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect x="0" y="0" width="420" height="610" rx="12" ry="12" fill="url(#cardFrame)" stroke="#3A3020" stroke-width="3"/>
+  <rect x="12" y="12" width="396" height="586" rx="6" ry="6" fill="none" stroke="url(#innerFrame)" stroke-width="2"/>
+  <!-- Card name -->
+  <rect x="20" y="14" width="380" height="40" rx="4" ry="4" fill="rgba(0,0,0,0.25)"/>
+  <text x="28" y="41" font-family="'Noto Sans TC',sans-serif" font-weight="bold" font-size="20" fill="#FFF" stroke="#000" stroke-width="0.8" paint-order="stroke">暗巷占卜師</text>
+  <!-- Attribute: Dark -->
+  <circle cx="378" cy="34" r="18" fill="#2D1B4E" stroke="#4A0E6B" stroke-width="2"/>
+  <path d="M382,20 A12,12 0 1,0 382,48 A8,8 0 1,1 382,20Z" fill="#9B59B6"/>
+  <!-- Stars: 2 -->
+  <g transform="translate(396,60)">
+    <polygon points="-8,-8 -5.5,-3 0,-2.5 -4,1 -3,6.5 -8,4 -13,6.5 -12,1 -16,-2.5 -10.5,-3" fill="#FFD700" stroke="#B8860B" stroke-width="0.8"/>
+    <polygon points="-26,-8 -23.5,-3 -18,-2.5 -22,1 -21,6.5 -26,4 -31,6.5 -30,1 -34,-2.5 -28.5,-3" fill="#FFD700" stroke="#B8860B" stroke-width="0.8"/>
+  </g>
+  <!-- Card art -->
+  <rect x="24" y="82" width="372" height="284" rx="2" ry="2" fill="url(#artBg)" stroke="#2A2A2A" stroke-width="2"/>
+  <!-- Crystal ball glow -->
+  <circle cx="210" cy="240" r="60" fill="url(#crystalGlow)"/>
+  <!-- Fortune teller figure -->
+  <g transform="translate(210,200)">
+    <!-- Oversized cloak -->
+    <path d="M-50,-20 Q-55,40 -45,80 Q0,90 45,80 Q55,40 50,-20 Q0,-35 -50,-20Z" fill="#2D1B4E" stroke="#4A2080" stroke-width="1"/>
+    <!-- Cloak inner -->
+    <path d="M-40,-10 Q-42,35 -35,70 Q0,78 35,70 Q42,35 40,-10 Q0,-20 -40,-10Z" fill="#1A1030"/>
+    <!-- Star embroidery on cloak -->
+    <g fill="#C0C0C0" opacity="0.6">
+      <polygon points="-30,10 -29,13 -26,13 -28.5,15 -27.5,18 -30,16 -32.5,18 -31.5,15 -34,13 -31,13" transform="scale(0.5) translate(-30,10)"/>
+      <polygon points="35,25 36,28 39,28 36.5,30 37.5,33 35,31 32.5,33 33.5,30 31,28 34,28" transform="scale(0.5) translate(35,25)"/>
+      <polygon points="-20,50 -19,53 -16,53 -18.5,55 -17.5,58 -20,56 -22.5,58 -21.5,55 -24,53 -21,53" transform="scale(0.5) translate(-20,50)"/>
+    </g>
+    <!-- Hood/hat -->
+    <path d="M-28,-20 Q-30,-55 0,-70 Q30,-55 28,-20 Q0,-25 -28,-20Z" fill="#2D1B4E" stroke="#4A2080" stroke-width="1"/>
+    <!-- Hat brim shadow -->
+    <path d="M-25,-18 Q0,-22 25,-18 Q0,-15 -25,-18Z" fill="#1A0A30"/>
+    <!-- Face (lower half visible) -->
+    <path d="M-12,-15 Q-14,0 -10,8 Q0,12 10,8 Q14,0 12,-15Z" fill="#FFE4C4"/>
+    <!-- Smile -->
+    <path d="M-5,2 Q0,6 5,2" fill="none" stroke="#B08060" stroke-width="0.8"/>
+    <!-- Silver hair strand -->
+    <path d="M-10,-16 Q-15,-8 -12,5" fill="none" stroke="#C0C0C0" stroke-width="1.5"/>
+    <!-- Hands holding crystal ball -->
+    <path d="M-15,30 Q-18,35 -14,40 Q-8,42 -5,38" fill="#FFE4C4" stroke="#D4A880" stroke-width="0.5"/>
+    <path d="M15,30 Q18,35 14,40 Q8,42 5,38" fill="#FFE4C4" stroke="#D4A880" stroke-width="0.5"/>
+    <!-- Crystal ball -->
+    <circle cx="0" cy="40" r="16" fill="#2D1B4E" stroke="#8B5CF6" stroke-width="1.5" opacity="0.8"/>
+    <circle cx="0" cy="40" r="14" fill="#4A2080" opacity="0.5"/>
+    <!-- Swirling mist inside -->
+    <path d="M-8,35 Q0,30 8,35 Q4,40 -4,42 Q-10,38 -8,35Z" fill="#8B5CF6" opacity="0.4"/>
+    <path d="M-5,42 Q2,38 6,44 Q0,48 -5,42Z" fill="#9B6FF6" opacity="0.3"/>
+    <!-- Crystal highlight -->
+    <ellipse cx="-5" cy="34" rx="4" ry="3" fill="#C8A0E0" opacity="0.3"/>
+  </g>
+  <!-- Type line -->
+  <rect x="24" y="370" width="372" height="24" rx="2" ry="2" fill="rgba(0,0,0,0.15)"/>
+  <text x="30" y="387" font-family="'Noto Sans TC',sans-serif" font-size="13" fill="#1A1A1A">【魔法使族／效果】</text>
+  <!-- Effect text -->
+  <rect x="24" y="398" width="372" height="144" rx="4" ry="4" fill="url(#textBg)" stroke="#C8B888" stroke-width="1"/>
+  <text font-family="'Noto Sans TC',sans-serif" font-size="12" fill="#1A1A1A">
+    <tspan x="32" y="420">【翻轉效果】此卡從裡側翻轉為表側時</tspan>
+    <tspan x="32" dy="17">發動。查看對方手牌，選擇其中1張卡</tspan>
+    <tspan x="32" dy="17">片確認。</tspan>
+  </text>
+  <text x="28" y="562" font-family="'Roboto Mono',monospace" font-size="10" fill="#888">MON-003</text>
+  <text x="388" y="562" font-family="'Roboto',sans-serif" font-weight="bold" font-size="16" fill="#1A1A1A" text-anchor="end">ATK/800 DEF/600</text>
+  <text x="28" y="592" font-family="'Roboto',sans-serif" font-size="10" fill="#888">R</text>
+</svg>

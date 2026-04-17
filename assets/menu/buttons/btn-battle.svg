@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 64" width="520" height="64">
+  <defs>
+    <linearGradient id="goldN" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#F5D77A"/><stop offset="50%" stop-color="#D4A843"/><stop offset="100%" stop-color="#8B6914"/>
+    </linearGradient>
+    <linearGradient id="goldH" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FBE5A0"/><stop offset="50%" stop-color="#E0B84E"/><stop offset="100%" stop-color="#A07A1A"/>
+    </linearGradient>
+    <linearGradient id="goldP" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#8B6914"/><stop offset="50%" stop-color="#A07A1A"/><stop offset="100%" stop-color="#8B6914"/>
+    </linearGradient>
+    <filter id="glow"><feGaussianBlur stdDeviation="4" result="b"/><feComposite in="b" in2="SourceGraphic" operator="over"/></filter>
+    <filter id="glowH"><feGaussianBlur stdDeviation="6" result="b"/><feComposite in="b" in2="SourceGraphic" operator="over"/></filter>
+    <filter id="inner"><feOffset dx="0" dy="2"/><feGaussianBlur stdDeviation="2"/><feComposite operator="out" in="SourceGraphic"/><feFlood flood-color="#000" flood-opacity="0.3"/><feComposite operator="in" in2=""/><feComposite operator="over" in2="SourceGraphic"/></filter>
+  </defs>
+  <!-- Normal state -->
+  <g id="normal">
+    <rect x="0" y="0" width="520" height="64" rx="8" fill="url(#goldN)" filter="url(#glow)" stroke="#F5D77A" stroke-width="1"/>
+    <!-- Sword icon -->
+    <g transform="translate(200,32)" fill="#0A0A12">
+      <path d="M-8,-12 L0,-16 L8,-12 L4,-2 L8,4 L4,8 L0,4 L-4,8 L-8,4 L-4,-2Z" opacity="0.9"/>
+      <path d="M-2,-16 L2,-16 L2,-20 L-2,-20Z"/>
+    </g>
+    <text x="280" y="40" font-family="'Noto Sans TC','sans-serif'" font-size="24" font-weight="700" fill="#0A0A12" letter-spacing="8">對　戰</text>
+  </g>
+  <!-- Hover state (offset below) -->
+  <g id="hover" transform="translate(0,80)">
+    <rect x="0" y="0" width="520" height="64" rx="8" fill="url(#goldH)" filter="url(#glowH)" stroke="#FBE5A0" stroke-width="1.5"/>
+    <g transform="translate(200,32)" fill="#0A0A12">
+      <path d="M-8,-12 L0,-16 L8,-12 L4,-2 L8,4 L4,8 L0,4 L-4,8 L-8,4 L-4,-2Z" opacity="0.9"/>
+      <path d="M-2,-16 L2,-16 L2,-20 L-2,-20Z"/>
+    </g>
+    <text x="280" y="40" font-family="'Noto Sans TC','sans-serif'" font-size="24" font-weight="700" fill="#0A0A12" letter-spacing="8">對　戰</text>
+  </g>
+  <!-- Pressed state (offset below) -->
+  <g id="pressed" transform="translate(0,160)">
+    <rect x="0" y="0" width="520" height="64" rx="8" fill="url(#goldP)" stroke="#8B6914" stroke-width="1"/>
+    <g transform="translate(200,33)" fill="#1A1E3E">
+      <path d="M-8,-12 L0,-16 L8,-12 L4,-2 L8,4 L4,8 L0,4 L-4,8 L-8,4 L-4,-2Z" opacity="0.9"/>
+      <path d="M-2,-16 L2,-16 L2,-20 L-2,-20Z"/>
+    </g>
+    <text x="280" y="41" font-family="'Noto Sans TC','sans-serif'" font-size="24" font-weight="700" fill="#1A1E3E" letter-spacing="8">對　戰</text>
+  </g>
+</svg>

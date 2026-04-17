@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="88" height="124" viewBox="0 0 88 124">
+  <defs>
+    <linearGradient id="monsterFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0F3460" stop-opacity="0.85"/>
+      <stop offset="100%" stop-color="#0A2540" stop-opacity="0.85"/>
+    </linearGradient>
+  </defs>
+  <rect x="1" y="1" width="86" height="122" rx="4" ry="4" fill="url(#monsterFill)" stroke="#16213E" stroke-width="1"/>
+  <!-- Sword icon watermark -->
+  <g transform="translate(44,62)" opacity="0.12" fill="none" stroke="#00D4FF" stroke-width="1.5" stroke-linecap="round">
+    <line x1="0" y1="-20" x2="0" y2="20"/>
+    <line x1="-8" y1="-8" x2="8" y2="-8"/>
+    <polygon points="0,-24 -4,-20 4,-20" fill="#00D4FF" stroke="none"/>
+    <line x1="-3" y1="20" x2="3" y2="20"/>
+    <line x1="-5" y1="24" x2="5" y2="24"/>
+  </g>
+  <!-- Corner marks -->
+  <path d="M8,4 L4,4 L4,8" fill="none" stroke="#16213E" stroke-width="1" opacity="0.6"/>
+  <path d="M80,4 L84,4 L84,8" fill="none" stroke="#16213E" stroke-width="1" opacity="0.6"/>
+  <path d="M4,116 L4,120 L8,120" fill="none" stroke="#16213E" stroke-width="1" opacity="0.6"/>
+  <path d="M84,116 L84,120 L80,120" fill="none" stroke="#16213E" stroke-width="1" opacity="0.6"/>
+</svg>

@@ -1,0 +1,93 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 610" width="420" height="610">
+  <defs>
+    <linearGradient id="cardFrameGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#2AAE68"/>
+      <stop offset="50%" stop-color="#1D8A50"/>
+      <stop offset="100%" stop-color="#126638"/>
+    </linearGradient>
+    <linearGradient id="innerFrameGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#38C478"/>
+      <stop offset="100%" stop-color="#187A44"/>
+    </linearGradient>
+    <linearGradient id="textAreaBg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#F8F4E8"/>
+      <stop offset="100%" stop-color="#F0E8D0"/>
+    </linearGradient>
+    <!-- Art: Fire storm radial -->
+    <radialGradient id="fireCore" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#FFD93D"/>
+      <stop offset="30%" stop-color="#FF6B35"/>
+      <stop offset="70%" stop-color="#FF4500"/>
+      <stop offset="100%" stop-color="#1A1A2E"/>
+    </radialGradient>
+    <radialGradient id="magicCircle" cx="50%" cy="55%" r="35%">
+      <stop offset="0%" stop-color="#FFD700" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#FF4500" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="fireGlow">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- Card frame -->
+  <rect x="0" y="0" width="420" height="610" rx="12" ry="12" fill="url(#cardFrameGrad)" stroke="#3A3020" stroke-width="3"/>
+  <rect x="12" y="12" width="396" height="586" rx="6" ry="6" fill="none" stroke="url(#innerFrameGrad)" stroke-width="2"/>
+
+  <!-- Card name -->
+  <rect x="20" y="14" width="380" height="40" rx="4" ry="4" fill="rgba(0,0,0,0.25)"/>
+  <text x="28" y="41" font-family="'Noto Sans TC', sans-serif" font-weight="bold" font-size="20" fill="#FFFFFF" stroke="#000000" stroke-width="0.8" paint-order="stroke">烈焰風暴</text>
+
+  <!-- Spell type icon -->
+  <circle cx="378" cy="34" r="18" fill="#1D8A50" stroke="#0E5530" stroke-width="2"/>
+  <text x="378" y="30" font-family="sans-serif" font-size="9" fill="#FFFFFF" text-anchor="middle">魔法</text>
+  <text x="378" y="42" font-family="sans-serif" font-size="8" fill="#A0E0B8" text-anchor="middle">通常</text>
+
+  <!-- Sub-type indicator -->
+  <rect x="24" y="58" width="372" height="20" rx="2" ry="2" fill="rgba(0,0,0,0.1)"/>
+  <text x="390" y="72" font-family="'Noto Sans TC', sans-serif" font-size="12" fill="#E0FFE8" text-anchor="end">【魔法卡】</text>
+
+  <!-- Card art area -->
+  <rect x="24" y="82" width="372" height="284" rx="2" ry="2" fill="#1A1A2E" stroke="#2A2A2A" stroke-width="2"/>
+  <!-- Dark sky background -->
+  <rect x="26" y="84" width="368" height="280" fill="#1A1A2E" rx="1"/>
+  <!-- Fire explosion core -->
+  <ellipse cx="210" cy="224" rx="160" ry="120" fill="url(#fireCore)"/>
+  <!-- Magic circle at center -->
+  <ellipse cx="210" cy="240" rx="80" ry="30" fill="url(#magicCircle)" opacity="0.8"/>
+  <!-- Flame tongues -->
+  <g filter="url(#fireGlow)" opacity="0.9">
+    <path d="M210,140 Q230,170 220,200 Q240,160 250,130 Q245,175 235,210 Q260,165 270,140 Q255,190 240,220" fill="#FF6B35" opacity="0.8"/>
+    <path d="M210,140 Q190,170 200,200 Q180,160 170,130 Q175,175 185,210 Q160,165 150,140 Q165,190 180,220" fill="#FF6B35" opacity="0.8"/>
+    <path d="M195,155 Q210,120 225,155 Q215,130 210,110 Q205,130 195,155Z" fill="#FFD93D" opacity="0.9"/>
+  </g>
+  <!-- Swirling fire particles -->
+  <circle cx="160" cy="170" r="3" fill="#FFD93D" opacity="0.8"/>
+  <circle cx="260" cy="165" r="2.5" fill="#FFD93D" opacity="0.7"/>
+  <circle cx="140" cy="210" r="2" fill="#FF6B35" opacity="0.6"/>
+  <circle cx="280" cy="200" r="2" fill="#FF6B35" opacity="0.6"/>
+  <circle cx="180" cy="145" r="1.5" fill="#FFD93D" opacity="0.9"/>
+  <circle cx="240" cy="150" r="1.5" fill="#FFD93D" opacity="0.9"/>
+  <circle cx="190" cy="280" r="3" fill="#FF4500" opacity="0.5"/>
+  <circle cx="230" cy="290" r="2.5" fill="#FF4500" opacity="0.5"/>
+  <!-- Ground silhouette being destroyed -->
+  <path d="M26,340 L60,310 L90,320 L120,295 L150,315 L180,290 L210,305 L240,285 L270,310 L300,290 L330,315 L360,300 L394,330 L394,364 L26,364Z" fill="#2C2C2C" opacity="0.7"/>
+  <!-- Heat distortion lines -->
+  <path d="M100,260 Q120,255 140,260 Q160,265 180,260" stroke="#FF4500" stroke-width="0.5" fill="none" opacity="0.4"/>
+  <path d="M240,255 Q260,250 280,255 Q300,260 320,255" stroke="#FF4500" stroke-width="0.5" fill="none" opacity="0.4"/>
+
+  <!-- Type description line -->
+  <rect x="24" y="370" width="372" height="24" rx="2" ry="2" fill="rgba(0,0,0,0.15)"/>
+  <text x="30" y="387" font-family="'Noto Sans TC', sans-serif" font-size="13" fill="#E0FFE8">【魔法卡】</text>
+
+  <!-- Effect text area -->
+  <rect x="24" y="398" width="372" height="172" rx="4" ry="4" fill="url(#textAreaBg)" stroke="#C8B888" stroke-width="1"/>
+  <text font-family="'Noto Sans TC', sans-serif" font-size="12" fill="#1A1A1A">
+    <tspan x="32" y="420">破壞對方場上所有表側表示的怪獸。</tspan>
+  </text>
+
+  <!-- Card ID -->
+  <text x="28" y="588" font-family="'Roboto Mono', monospace" font-size="10" fill="#888888">SPL-001</text>
+  <!-- Rarity -->
+  <text x="388" y="588" font-family="'Roboto', sans-serif" font-size="10" fill="#888888" text-anchor="end">R</text>
+</svg>

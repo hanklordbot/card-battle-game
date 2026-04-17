@@ -1,0 +1,101 @@
+{
+  "bundles": [
+    {
+      "name": "battlefield",
+      "assets": [
+        {
+          "alias": "bg_default",
+          "src": "assets-png/background/bg_default.png"
+        },
+        {
+          "alias": "slot_empty",
+          "src": "assets-png/card-slots/slot_empty.png"
+        },
+        {
+          "alias": "slot_highlight",
+          "src": "assets-png/card-slots/slot_highlight.png"
+        },
+        {
+          "alias": "slot_monster",
+          "src": "assets-png/card-slots/slot_monster.png"
+        },
+        {
+          "alias": "slot_spelltrap",
+          "src": "assets-png/card-slots/slot_spelltrap.png"
+        },
+        {
+          "alias": "slot_fieldspell",
+          "src": "assets-png/card-slots/slot_fieldspell.png"
+        },
+        {
+          "alias": "card_back",
+          "src": "assets-png/card-slots/card_back.png"
+        },
+        {
+          "alias": "zone_deck",
+          "src": "assets-png/functional/zone_deck.png"
+        },
+        {
+          "alias": "zone_graveyard",
+          "src": "assets-png/functional/zone_graveyard.png"
+        },
+        {
+          "alias": "zone_banished",
+          "src": "assets-png/functional/zone_banished.png"
+        },
+        {
+          "alias": "lp_bar_bg",
+          "src": "assets-png/ui/lp_bar_bg.png"
+        },
+        {
+          "alias": "lp_bar_player",
+          "src": "assets-png/ui/lp_bar_player.png"
+        },
+        {
+          "alias": "lp_bar_opponent",
+          "src": "assets-png/ui/lp_bar_opponent.png"
+        },
+        {
+          "alias": "phase_indicator",
+          "src": "assets-png/ui/phase_indicator.png"
+        },
+        {
+          "alias": "phase_node_active",
+          "src": "assets-png/ui/phase_node_active.png"
+        },
+        {
+          "alias": "btn_phase_normal",
+          "src": "assets-png/ui/btn_phase_normal.png"
+        },
+        {
+          "alias": "btn_phase_hover",
+          "src": "assets-png/ui/btn_phase_hover.png"
+        },
+        {
+          "alias": "btn_phase_pressed",
+          "src": "assets-png/ui/btn_phase_pressed.png"
+        },
+        {
+          "alias": "btn_surrender",
+          "src": "assets-png/ui/btn_surrender.png"
+        },
+        {
+          "alias": "btn_settings",
+          "src": "assets-png/ui/btn_settings.png"
+        },
+        {
+          "alias": "banner_my_turn",
+          "src": "assets-png/ui/banner_my_turn.png"
+        },
+        {
+          "alias": "banner_opponent_turn",
+          "src": "assets-png/ui/banner_opponent_turn.png"
+        },
+        {
+          "alias": "center_divider",
+          "src": "assets-png/ui/center_divider.png"
+        }
+      ]
+    }
+  ]
+}

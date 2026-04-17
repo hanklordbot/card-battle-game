@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <defs>
+    <linearGradient id="goldG" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#F5D77A"/><stop offset="100%" stop-color="#D4A843"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="2" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  <style>
+    @keyframes spinCW { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+    @keyframes spinCCW { from { transform: rotate(0deg); } to { transform: rotate(-360deg); } }
+    @keyframes pulse { 0%,100% { opacity: 0.4; } 50% { opacity: 0.8; } }
+    .ring-outer { animation: spinCW 8s linear infinite; transform-origin: 100px 100px; }
+    .ring-inner { animation: spinCCW 5s linear infinite; transform-origin: 100px 100px; }
+    .ring-mid { animation: spinCW 12s linear infinite; transform-origin: 100px 100px; }
+    .glow-pulse { animation: pulse 2s ease-in-out infinite; }
+  </style>
+
+  <!-- Glow background -->
+  <circle cx="100" cy="100" r="80" fill="#D4A843" opacity="0.05" class="glow-pulse"/>
+
+  <!-- Outer ring -->
+  <g class="ring-outer" filter="url(#glow)">
+    <circle cx="100" cy="100" r="85" fill="none" stroke="#D4A843" stroke-width="1" opacity="0.6"/>
+    <circle cx="100" cy="100" r="80" fill="none" stroke="#D4A843" stroke-width="0.5" opacity="0.3" stroke-dasharray="8 4"/>
+    <!-- Rune marks on outer ring -->
+    <circle cx="100" cy="15" r="3" fill="#D4A843" opacity="0.7"/>
+    <circle cx="185" cy="100" r="3" fill="#D4A843" opacity="0.7"/>
+    <circle cx="100" cy="185" r="3" fill="#D4A843" opacity="0.7"/>
+    <circle cx="15" cy="100" r="3" fill="#D4A843" opacity="0.7"/>
+  </g>
+
+  <!-- Middle ring -->
+  <g class="ring-mid">
+    <circle cx="100" cy="100" r="60" fill="none" stroke="#8B5CF6" stroke-width="0.8" opacity="0.4"/>
+    <!-- Hexagon -->
+    <polygon points="100,40 152,70 152,130 100,160 48,130 48,70" fill="none" stroke="#8B5CF6" stroke-width="0.6" opacity="0.3"/>
+  </g>
+
+  <!-- Inner ring -->
+  <g class="ring-inner" filter="url(#glow)">
+    <circle cx="100" cy="100" r="40" fill="none" stroke="#D4A843" stroke-width="1.2" opacity="0.5"/>
+    <!-- Triangle -->
+    <polygon points="100,62 133,119 67,119" fill="none" stroke="#D4A843" stroke-width="0.8" opacity="0.4"/>
+    <!-- Inverted triangle -->
+    <polygon points="100,138 67,81 133,81" fill="none" stroke="#8B5CF6" stroke-width="0.6" opacity="0.3"/>
+  </g>
+
+  <!-- Center dot -->
+  <circle cx="100" cy="100" r="4" fill="#D4A843" opacity="0.8" class="glow-pulse"/>
+  <circle cx="100" cy="100" r="2" fill="#F5D77A"/>
+
+  <!-- Cross lines -->
+  <line x1="100" y1="65" x2="100" y2="135" stroke="#D4A843" stroke-width="0.4" opacity="0.2"/>
+  <line x1="65" y1="100" x2="135" y2="100" stroke="#D4A843" stroke-width="0.4" opacity="0.2"/>
+</svg>

@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="88" height="124" viewBox="0 0 88 124">
+  <defs>
+    <linearGradient id="fieldFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#12204A" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#0A1838" stop-opacity="0.9"/>
+    </linearGradient>
+  </defs>
+  <rect x="1" y="1" width="86" height="122" rx="4" ry="4" fill="url(#fieldFill)" stroke="#1A3060" stroke-width="1.5"/>
+  <!-- Globe/world watermark -->
+  <g transform="translate(44,62)" opacity="0.15" fill="none" stroke="#FFD43B" stroke-width="1">
+    <circle r="18"/>
+    <ellipse rx="10" ry="18"/>
+    <line x1="-18" y1="0" x2="18" y2="0"/>
+    <path d="M-16,-9 Q0,-7 16,-9" />
+    <path d="M-16,9 Q0,7 16,9" />
+  </g>
+  <!-- Decorative border -->
+  <rect x="3" y="3" width="82" height="118" rx="3" ry="3" fill="none" stroke="#1A3060" stroke-width="0.5" opacity="0.5"/>
+  <!-- Corner marks -->
+  <path d="M8,4 L4,4 L4,8" fill="none" stroke="#1A3060" stroke-width="1" opacity="0.7"/>
+  <path d="M80,4 L84,4 L84,8" fill="none" stroke="#1A3060" stroke-width="1" opacity="0.7"/>
+  <path d="M4,116 L4,120 L8,120" fill="none" stroke="#1A3060" stroke-width="1" opacity="0.7"/>
+  <path d="M84,116 L84,120 L80,120" fill="none" stroke="#1A3060" stroke-width="1" opacity="0.7"/>
+</svg>

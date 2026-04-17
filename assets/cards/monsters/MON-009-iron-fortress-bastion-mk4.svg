@@ -1,0 +1,140 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 610" width="420" height="610">
+  <defs>
+    <linearGradient id="cardFrame" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#E07A3A"/><stop offset="50%" stop-color="#C45C1E"/><stop offset="100%" stop-color="#8E3A0E"/>
+    </linearGradient>
+    <linearGradient id="innerFrame" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#F09050"/><stop offset="100%" stop-color="#B04E14"/>
+    </linearGradient>
+    <linearGradient id="artBg" x1="0.5" y1="1" x2="0.5" y2="0">
+      <stop offset="0%" stop-color="#C0A882"/><stop offset="60%" stop-color="#808080"/><stop offset="100%" stop-color="#606060"/>
+    </linearGradient>
+    <linearGradient id="textBg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#F8F4E8"/><stop offset="100%" stop-color="#F0E8D0"/>
+    </linearGradient>
+    <linearGradient id="heavyArmor" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#707070"/><stop offset="50%" stop-color="#5A5A5A"/><stop offset="100%" stop-color="#404040"/>
+    </linearGradient>
+    <filter id="glow"><feGaussianBlur stdDeviation="3" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  </defs>
+  <rect width="420" height="610" rx="12" fill="url(#cardFrame)" stroke="#3A3020" stroke-width="3"/>
+  <rect x="12" y="12" width="396" height="586" rx="6" fill="none" stroke="url(#innerFrame)" stroke-width="2"/>
+  <rect x="20" y="14" width="380" height="40" rx="4" fill="rgba(0,0,0,0.25)"/>
+  <text x="28" y="39" font-family="'Noto Sans TC',sans-serif" font-weight="bold" font-size="15" fill="#FFF" stroke="#000" stroke-width="0.8" paint-order="stroke">鋼鐵要塞·巴斯提昂 MK-IV</text>
+  <!-- Attribute: Earth -->
+  <circle cx="378" cy="34" r="18" fill="#5C4033" stroke="#3A2818" stroke-width="2"/>
+  <polygon points="378,22 388,38 368,38" fill="#D4A843"/>
+  <!-- Stars: 8 -->
+  <g transform="translate(396,60)">
+    <polygon points="-8,-8 -5.5,-3 0,-2.5 -4,1 -3,6.5 -8,4 -13,6.5 -12,1 -16,-2.5 -10.5,-3" fill="#FFD700" stroke="#B8860B" stroke-width="0.8"/>
+    <polygon points="-26,-8 -23.5,-3 -18,-2.5 -22,1 -21,6.5 -26,4 -31,6.5 -30,1 -34,-2.5 -28.5,-3" fill="#FFD700" stroke="#B8860B" stroke-width="0.8"/>
+    <polygon points="-44,-8 -41.5,-3 -36,-2.5 -40,1 -39,6.5 -44,4 -49,6.5 -48,1 -52,-2.5 -46.5,-3" fill="#FFD700" stroke="#B8860B" stroke-width="0.8"/>
+    <polygon points="-62,-8 -59.5,-3 -54,-2.5 -58,1 -57,6.5 -62,4 -67,6.5 -66,1 -70,-2.5 -64.5,-3" fill="#FFD700" stroke="#B8860B" stroke-width="0.8"/>
+    <polygon points="-80,-8 -77.5,-3 -72,-2.5 -76,1 -75,6.5 -80,4 -85,6.5 -84,1 -88,-2.5 -82.5,-3" fill="#FFD700" stroke="#B8860B" stroke-width="0.8"/>
+    <polygon points="-98,-8 -95.5,-3 -90,-2.5 -94,1 -93,6.5 -98,4 -103,6.5 -102,1 -106,-2.5 -100.5,-3" fill="#FFD700" stroke="#B8860B" stroke-width="0.8"/>
+    <polygon points="-116,-8 -113.5,-3 -108,-2.5 -112,1 -111,6.5 -116,4 -121,6.5 -120,1 -124,-2.5 -118.5,-3" fill="#FFD700" stroke="#B8860B" stroke-width="0.8"/>
+    <polygon points="-134,-8 -131.5,-3 -126,-2.5 -130,1 -129,6.5 -134,4 -139,6.5 -138,1 -142,-2.5 -136.5,-3" fill="#FFD700" stroke="#B8860B" stroke-width="0.8"/>
+  </g>
+  <!-- Card art -->
+  <rect x="24" y="82" width="372" height="284" rx="2" fill="url(#artBg)" stroke="#2A2A2A" stroke-width="2"/>
+  <!-- Dust/smoke background -->
+  <g fill="#C0A882" opacity="0.3">
+    <ellipse cx="80" cy="120" rx="50" ry="30"/><ellipse cx="340" cy="140" rx="40" ry="25"/>
+  </g>
+  <!-- Ground cracks -->
+  <g stroke="#DAA520" stroke-width="1" opacity="0.4" fill="none">
+    <path d="M100,340 L120,350 L115,360"/><path d="M280,335 L300,345 L310,360"/>
+    <path d="M180,345 L200,355 L195,366"/>
+  </g>
+  <!-- Mecha fortress figure -->
+  <g transform="translate(210,210)">
+    <!-- Legs (treads + support) -->
+    <rect x="-50" y="55" width="35" height="35" rx="3" fill="#404040" stroke="#333" stroke-width="1.5"/>
+    <rect x="15" y="55" width="35" height="35" rx="3" fill="#404040" stroke="#333" stroke-width="1.5"/>
+    <!-- Tread details -->
+    <g stroke="#555" stroke-width="0.8">
+      <line x1="-48" y1="62" x2="-17" y2="62"/><line x1="-48" y1="72" x2="-17" y2="72"/><line x1="-48" y1="82" x2="-17" y2="82"/>
+      <line x1="17" y1="62" x2="48" y2="62"/><line x1="17" y1="72" x2="48" y2="72"/><line x1="17" y1="82" x2="48" y2="82"/>
+    </g>
+    <!-- Main body (massive, boxy) -->
+    <rect x="-55" y="-30" width="110" height="88" rx="5" fill="url(#heavyArmor)" stroke="#333" stroke-width="2"/>
+    <!-- Armor plates -->
+    <rect x="-50" y="-25" width="100" height="15" rx="2" fill="#606060" stroke="#444" stroke-width="0.8"/>
+    <rect x="-50" y="-5" width="100" height="15" rx="2" fill="#606060" stroke="#444" stroke-width="0.8"/>
+    <rect x="-50" y="15" width="100" height="15" rx="2" fill="#606060" stroke="#444" stroke-width="0.8"/>
+    <!-- Rivets -->
+    <g fill="#888">
+      <circle cx="-45" cy="-18" r="1.5"/><circle cx="45" cy="-18" r="1.5"/>
+      <circle cx="-45" cy="2" r="1.5"/><circle cx="45" cy="2" r="1.5"/>
+      <circle cx="-45" cy="22" r="1.5"/><circle cx="45" cy="22" r="1.5"/>
+    </g>
+    <!-- Military green patches -->
+    <rect x="-40" y="35" width="30" height="18" rx="2" fill="#4A5A2E" stroke="#3A4A1E" stroke-width="0.8"/>
+    <rect x="10" y="35" width="30" height="18" rx="2" fill="#4A5A2E" stroke="#3A4A1E" stroke-width="0.8"/>
+    <!-- Central energy core (hexagonal) -->
+    <polygon points="0,-12 10,-6 10,6 0,12 -10,6 -10,-6" fill="#1A3A5C" stroke="#DAA520" stroke-width="2"/>
+    <polygon points="0,-8 7,-4 7,4 0,8 -7,4 -7,-4" fill="#DAA520" opacity="0.6" filter="url(#glow)"/>
+    <!-- Earth vein glow from core -->
+    <g stroke="#DAA520" stroke-width="0.8" opacity="0.4" fill="none">
+      <path d="M-10,0 L-50,5"/><path d="M10,0 L50,5"/>
+      <path d="M0,12 L0,50"/><path d="M0,-12 L0,-28"/>
+    </g>
+    <!-- Shoulder turrets -->
+    <rect x="-70" y="-35" width="20" height="25" rx="3" fill="#505050" stroke="#333" stroke-width="1.5"/>
+    <rect x="50" y="-35" width="20" height="25" rx="3" fill="#505050" stroke="#333" stroke-width="1.5"/>
+    <!-- Turret barrels -->
+    <rect x="-72" y="-40" width="6" height="12" rx="2" fill="#404040" stroke="#333" stroke-width="0.8"/>
+    <rect x="-62" y="-40" width="6" height="12" rx="2" fill="#404040" stroke="#333" stroke-width="0.8"/>
+    <rect x="56" y="-40" width="6" height="12" rx="2" fill="#404040" stroke="#333" stroke-width="0.8"/>
+    <rect x="66" y="-40" width="6" height="12" rx="2" fill="#404040" stroke="#333" stroke-width="0.8"/>
+    <!-- Energy charge at turret tips -->
+    <circle cx="-69" cy="-42" r="3" fill="#DAA520" opacity="0.5" filter="url(#glow)"/>
+    <circle cx="69" cy="-42" r="3" fill="#DAA520" opacity="0.5" filter="url(#glow)"/>
+    <!-- Left arm: giant shield -->
+    <rect x="-85" y="-20" width="12" height="50" rx="4" fill="url(#heavyArmor)" stroke="#333" stroke-width="1"/>
+    <path d="M-100,-25 L-100,35 Q-100,50 -88,50 L-88,-25Z" fill="#5A5A5A" stroke="#DAA520" stroke-width="1.5"/>
+    <!-- Shield earth vein pattern -->
+    <g stroke="#DAA520" stroke-width="1" opacity="0.5" fill="none">
+      <path d="M-96,0 Q-92,10 -96,20"/><path d="M-94,-10 L-94,30"/>
+    </g>
+    <!-- Right arm: cannon array -->
+    <rect x="73" y="-20" width="12" height="40" rx="4" fill="url(#heavyArmor)" stroke="#333" stroke-width="1"/>
+    <rect x="82" y="-15" width="20" height="10" rx="2" fill="#505050" stroke="#333" stroke-width="1"/>
+    <rect x="82" y="0" width="20" height="10" rx="2" fill="#505050" stroke="#333" stroke-width="1"/>
+    <circle cx="103" cy="-10" r="4" fill="#DAA520" opacity="0.4" filter="url(#glow)"/>
+    <!-- Head (tiny relative to body) -->
+    <rect x="-12" y="-45" width="24" height="16" rx="3" fill="url(#heavyArmor)" stroke="#333" stroke-width="1.5"/>
+    <!-- Eyes (red visor band) -->
+    <rect x="-10" y="-42" width="20" height="5" rx="1" fill="#CC0000"/>
+    <rect x="-8" y="-41" width="7" height="3" rx="0.5" fill="#FF4444" opacity="0.8"/>
+    <rect x="1" y="-41" width="7" height="3" rx="0.5" fill="#FF4444" opacity="0.8"/>
+    <!-- Antenna array -->
+    <line x1="-5" y1="-45" x2="-8" y2="-55" stroke="#888" stroke-width="1"/>
+    <line x1="5" y1="-45" x2="8" y2="-55" stroke="#888" stroke-width="1"/>
+    <line x1="0" y1="-45" x2="0" y2="-58" stroke="#888" stroke-width="1.5"/>
+    <circle cx="0" cy="-60" r="2" fill="#CC0000"/>
+    <!-- Exhaust pipes (back) -->
+    <g fill="#404040" stroke="#333" stroke-width="0.8">
+      <rect x="30" y="-50" width="6" height="15" rx="2"/><rect x="40" y="-50" width="6" height="15" rx="2"/>
+    </g>
+    <!-- Steam -->
+    <g fill="#DDD" opacity="0.3">
+      <circle cx="33" cy="-55" r="4"/><circle cx="43" cy="-58" r="3"/><circle cx="38" cy="-62" r="3"/>
+    </g>
+  </g>
+  <!-- Type line -->
+  <rect x="24" y="370" width="372" height="24" rx="2" fill="rgba(0,0,0,0.15)"/>
+  <text x="30" y="387" font-family="'Noto Sans TC',sans-serif" font-size="13" fill="#1A1A1A">【機械族／效果】</text>
+  <rect x="24" y="398" width="372" height="144" rx="4" fill="url(#textBg)" stroke="#C8B888" stroke-width="1"/>
+  <text font-family="'Noto Sans TC',sans-serif" font-size="12" fill="#1A1A1A">
+    <tspan x="32" y="420">①：此卡在場上表側表示存在的期間，自</tspan>
+    <tspan x="32" dy="17">己場上其他機械族怪獸不會被效果破壞。</tspan>
+    <tspan x="32" dy="17">②：一回合一次，可以將此卡變更為守備</tspan>
+    <tspan x="32" dy="17">表示，此回合此卡不會被戰鬥破壞。</tspan>
+    <tspan x="32" dy="17">③：此卡的守備力上升自己墓地機械族怪</tspan>
+    <tspan x="32" dy="17">獸數量×200。</tspan>
+  </text>
+  <text x="28" y="562" font-family="'Roboto Mono',monospace" font-size="10" fill="#888">MON-009</text>
+  <text x="388" y="562" font-family="'Roboto',sans-serif" font-weight="bold" font-size="16" fill="#1A1A1A" text-anchor="end">ATK/2600 DEF/3000</text>
+  <text x="28" y="592" font-family="'Roboto',sans-serif" font-size="10" fill="#888">SR</text>
+</svg>

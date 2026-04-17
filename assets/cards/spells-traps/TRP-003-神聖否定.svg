@@ -1,0 +1,114 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 610" width="420" height="610">
+  <defs>
+    <linearGradient id="cardFrameGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#C42878"/>
+      <stop offset="50%" stop-color="#9B1B5E"/>
+      <stop offset="100%" stop-color="#701045"/>
+    </linearGradient>
+    <linearGradient id="innerFrameGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#D83888"/>
+      <stop offset="100%" stop-color="#881050"/>
+    </linearGradient>
+    <linearGradient id="textAreaBg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#F8F4E8"/>
+      <stop offset="100%" stop-color="#F0E8D0"/>
+    </linearGradient>
+    <!-- Art: Shield barrier -->
+    <linearGradient id="shieldGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#78909C" stop-opacity="0.6"/>
+      <stop offset="50%" stop-color="#B0BEC5" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#78909C" stop-opacity="0.6"/>
+    </linearGradient>
+    <radialGradient id="impactGlow" cx="40%" cy="50%" r="30%">
+      <stop offset="0%" stop-color="#F5F0E8" stop-opacity="0.9"/>
+      <stop offset="50%" stop-color="#B0BEC5" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#78909C" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="shieldGlow">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="darkBlur">
+      <feGaussianBlur stdDeviation="4"/>
+    </filter>
+  </defs>
+
+  <!-- Card frame -->
+  <rect x="0" y="0" width="420" height="610" rx="12" ry="12" fill="url(#cardFrameGrad)" stroke="#3A3020" stroke-width="3"/>
+  <rect x="12" y="12" width="396" height="586" rx="6" ry="6" fill="none" stroke="url(#innerFrameGrad)" stroke-width="2"/>
+
+  <!-- Card name -->
+  <rect x="20" y="14" width="380" height="40" rx="4" ry="4" fill="rgba(0,0,0,0.25)"/>
+  <text x="28" y="41" font-family="'Noto Sans TC', sans-serif" font-weight="bold" font-size="20" fill="#FFFFFF" stroke="#000000" stroke-width="0.8" paint-order="stroke">神聖否定</text>
+
+  <!-- Trap type icon - Counter -->
+  <circle cx="378" cy="34" r="18" fill="#9B1B5E" stroke="#5A0E38" stroke-width="2"/>
+  <text x="378" y="30" font-family="sans-serif" font-size="9" fill="#FFFFFF" text-anchor="middle">陷阱</text>
+  <text x="378" y="42" font-family="sans-serif" font-size="8" fill="#F0A0C8" text-anchor="middle">反擊</text>
+
+  <!-- Sub-type indicator -->
+  <rect x="24" y="58" width="372" height="20" rx="2" ry="2" fill="rgba(0,0,0,0.1)"/>
+  <text x="390" y="72" font-family="'Noto Sans TC', sans-serif" font-size="12" fill="#FFD0E8" text-anchor="end">【反擊陷阱】</text>
+
+  <!-- Card art area -->
+  <rect x="24" y="82" width="372" height="284" rx="2" ry="2" fill="#212121" stroke="#2A2A2A" stroke-width="2"/>
+  <!-- Dark background -->
+  <rect x="26" y="84" width="368" height="280" fill="#212121" rx="1"/>
+  <!-- Incoming dark magic (left side) -->
+  <g filter="url(#darkBlur)" opacity="0.6">
+    <path d="M26,180 Q80,200 140,220 Q100,210 60,230 Q100,240 140,240" fill="#8B0000" opacity="0.5"/>
+    <path d="M26,210 Q70,220 130,230" fill="#2D1B4E" opacity="0.6"/>
+  </g>
+  <!-- Dark magic fragments shattering -->
+  <g opacity="0.6">
+    <polygon points="155,200 165,195 160,205" fill="#8B0000" opacity="0.7"/>
+    <polygon points="145,230 155,225 150,235" fill="#2D1B4E" opacity="0.6"/>
+    <polygon points="160,240 168,233 165,245" fill="#8B0000" opacity="0.5"/>
+    <polygon points="140,210 148,205 145,215" fill="#2D1B4E" opacity="0.5"/>
+    <polygon points="150,250 158,245 155,255" fill="#8B0000" opacity="0.4"/>
+  </g>
+  <!-- Shield barrier (center-right) -->
+  <g filter="url(#shieldGlow)">
+    <!-- Main shield shape -->
+    <path d="M180,140 Q210,130 240,140 Q260,150 270,180 Q275,220 270,260 Q260,290 240,300 Q210,310 180,300 Q160,290 150,260 Q145,220 150,180 Q160,150 180,140Z" fill="url(#shieldGrad)" stroke="#B0BEC5" stroke-width="2"/>
+    <!-- Shield rune pattern -->
+    <circle cx="210" cy="220" r="35" fill="none" stroke="#F5F0E8" stroke-width="1" opacity="0.5"/>
+    <circle cx="210" cy="220" r="25" fill="none" stroke="#B0BEC5" stroke-width="0.5" opacity="0.4"/>
+    <!-- Cross/prohibition symbol -->
+    <circle cx="210" cy="220" r="18" fill="none" stroke="#F5F0E8" stroke-width="2" opacity="0.7"/>
+    <line x1="197" y1="207" x2="223" y2="233" stroke="#F5F0E8" stroke-width="2.5" opacity="0.7"/>
+  </g>
+  <!-- Impact point (where magic hits shield) -->
+  <ellipse cx="170" cy="220" rx="20" ry="25" fill="url(#impactGlow)"/>
+  <!-- Shatter sparks at impact -->
+  <g filter="url(#shieldGlow)">
+    <line x1="170" y1="220" x2="150" y2="200" stroke="#F5F0E8" stroke-width="1.5" opacity="0.7"/>
+    <line x1="170" y1="220" x2="155" y2="240" stroke="#F5F0E8" stroke-width="1" opacity="0.6"/>
+    <line x1="170" y1="220" x2="145" y2="215" stroke="#B0BEC5" stroke-width="1" opacity="0.5"/>
+    <line x1="170" y1="220" x2="160" y2="195" stroke="#B0BEC5" stroke-width="0.5" opacity="0.4"/>
+  </g>
+  <!-- Right side: protected light -->
+  <g opacity="0.2">
+    <ellipse cx="320" cy="220" rx="60" ry="80" fill="#B0BEC5"/>
+  </g>
+  <!-- Scattered dark particles (defeated magic) -->
+  <circle cx="130" cy="190" r="3" fill="#2D1B4E" opacity="0.4"/>
+  <circle cx="120" cy="250" r="2.5" fill="#8B0000" opacity="0.3"/>
+  <circle cx="140" cy="270" r="2" fill="#2D1B4E" opacity="0.3"/>
+  <circle cx="155" cy="175" r="2" fill="#8B0000" opacity="0.3"/>
+
+  <!-- Type description line -->
+  <rect x="24" y="370" width="372" height="24" rx="2" ry="2" fill="rgba(0,0,0,0.15)"/>
+  <text x="30" y="387" font-family="'Noto Sans TC', sans-serif" font-size="13" fill="#FFD0E8">【反擊陷阱】</text>
+
+  <!-- Effect text area -->
+  <rect x="24" y="398" width="372" height="172" rx="4" ry="4" fill="url(#textAreaBg)" stroke="#C8B888" stroke-width="1"/>
+  <text font-family="'Noto Sans TC', sans-serif" font-size="12" fill="#1A1A1A">
+    <tspan x="32" y="420">對方發動魔法卡時才能發動。那個發動</tspan>
+    <tspan x="32" y="437">無效並破壞。</tspan>
+  </text>
+
+  <!-- Card ID -->
+  <text x="28" y="588" font-family="'Roboto Mono', monospace" font-size="10" fill="#888888">TRP-003</text>
+  <text x="388" y="588" font-family="'Roboto', sans-serif" font-size="10" fill="#888888" text-anchor="end">SR</text>
+</svg>

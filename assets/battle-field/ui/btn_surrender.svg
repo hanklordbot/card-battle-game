@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 44 44">
+  <defs>
+    <linearGradient id="btnPurple" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#6B44A0"/>
+      <stop offset="100%" stop-color="#533483"/>
+    </linearGradient>
+  </defs>
+  <rect x="0" y="0" width="44" height="44" rx="8" ry="8" fill="url(#btnPurple)"/>
+  <rect x="1" y="1" width="42" height="20" rx="7" ry="7" fill="#fff" opacity="0.06"/>
+  <!-- Flag icon -->
+  <g transform="translate(22,22)" fill="none" stroke="#E0E0E0" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <line x1="-7" y1="-10" x2="-7" y2="10"/>
+    <path d="M-7,-10 L-7,-2 Q0,-6 7,-2 L7,-10 Q0,-6 -7,-10Z" fill="#E0E0E0" opacity="0.8" stroke="none"/>
+  </g>
+</svg>

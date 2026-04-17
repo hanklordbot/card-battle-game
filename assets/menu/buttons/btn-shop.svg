@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 252 48" width="252" height="48">
+  <defs>
+    <filter id="gl"><feGaussianBlur stdDeviation="2" result="b"/><feComposite in="b" in2="SourceGraphic" operator="over"/></filter>
+  </defs>
+  <!-- Normal -->
+  <g id="normal">
+    <rect width="252" height="48" rx="8" fill="transparent" stroke="#94A3B8" stroke-width="1"/>
+    <!-- Gem icon -->
+    <g transform="translate(82,24)" fill="none" stroke="#CBD5E1" stroke-width="1.5" stroke-linejoin="round">
+      <polygon points="0,-10 10,-3 6,10 -6,10 -10,-3"/>
+      <polyline points="-10,-3 0,10 10,-3"/>
+      <line x1="-6" y1="-3" x2="6" y2="-3"/>
+    </g>
+    <text x="148" y="31" font-family="'Noto Sans TC','sans-serif'" font-size="18" font-weight="500" fill="#CBD5E1" letter-spacing="6">商 店</text>
+  </g>
+  <!-- Hover -->
+  <g id="hover" transform="translate(0,64)">
+    <rect width="252" height="48" rx="8" fill="rgba(255,255,255,0.05)" stroke="#CBD5E1" stroke-width="1"/>
+    <g transform="translate(82,24)" fill="none" stroke="#F1F5F9" stroke-width="1.5" stroke-linejoin="round">
+      <polygon points="0,-10 10,-3 6,10 -6,10 -10,-3"/>
+      <polyline points="-10,-3 0,10 10,-3"/>
+      <line x1="-6" y1="-3" x2="6" y2="-3"/>
+    </g>
+    <text x="148" y="31" font-family="'Noto Sans TC','sans-serif'" font-size="18" font-weight="500" fill="#F1F5F9" letter-spacing="6">商 店</text>
+  </g>
+  <!-- Pressed -->
+  <g id="pressed" transform="translate(0,128)">
+    <rect width="252" height="48" rx="8" fill="rgba(255,255,255,0.02)" stroke="#64748B" stroke-width="1"/>
+    <g transform="translate(82,25)" fill="none" stroke="#94A3B8" stroke-width="1.5" stroke-linejoin="round">
+      <polygon points="0,-10 10,-3 6,10 -6,10 -10,-3"/>
+      <polyline points="-10,-3 0,10 10,-3"/>
+      <line x1="-6" y1="-3" x2="6" y2="-3"/>
+    </g>
+    <text x="148" y="32" font-family="'Noto Sans TC','sans-serif'" font-size="18" font-weight="500" fill="#94A3B8" letter-spacing="6">商 店</text>
+  </g>
+</svg>

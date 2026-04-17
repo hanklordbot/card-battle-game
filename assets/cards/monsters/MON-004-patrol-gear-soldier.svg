@@ -1,0 +1,102 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 610" width="420" height="610">
+  <defs>
+    <linearGradient id="cardFrame" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#E07A3A"/><stop offset="50%" stop-color="#C45C1E"/><stop offset="100%" stop-color="#8E3A0E"/>
+    </linearGradient>
+    <linearGradient id="innerFrame" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#F09050"/><stop offset="100%" stop-color="#B04E14"/>
+    </linearGradient>
+    <linearGradient id="artBg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#A0A0A0"/><stop offset="100%" stop-color="#707070"/>
+    </linearGradient>
+    <linearGradient id="textBg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#F8F4E8"/><stop offset="100%" stop-color="#F0E8D0"/>
+    </linearGradient>
+    <linearGradient id="metalBody" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#A0A0A0"/><stop offset="50%" stop-color="#808080"/><stop offset="100%" stop-color="#606060"/>
+    </linearGradient>
+  </defs>
+  <rect x="0" y="0" width="420" height="610" rx="12" ry="12" fill="url(#cardFrame)" stroke="#3A3020" stroke-width="3"/>
+  <rect x="12" y="12" width="396" height="586" rx="6" ry="6" fill="none" stroke="url(#innerFrame)" stroke-width="2"/>
+  <rect x="20" y="14" width="380" height="40" rx="4" ry="4" fill="rgba(0,0,0,0.25)"/>
+  <text x="28" y="41" font-family="'Noto Sans TC',sans-serif" font-weight="bold" font-size="20" fill="#FFF" stroke="#000" stroke-width="0.8" paint-order="stroke">巡邏齒輪兵</text>
+  <!-- Attribute: Earth -->
+  <circle cx="378" cy="34" r="18" fill="#5C4033" stroke="#3A2818" stroke-width="2"/>
+  <polygon points="378,22 388,38 368,38" fill="#D4A843"/>
+  <polygon points="378,22 383,30 373,30" fill="#E8C96A" opacity="0.5"/>
+  <!-- Stars: 3 -->
+  <g transform="translate(396,60)">
+    <polygon points="-8,-8 -5.5,-3 0,-2.5 -4,1 -3,6.5 -8,4 -13,6.5 -12,1 -16,-2.5 -10.5,-3" fill="#FFD700" stroke="#B8860B" stroke-width="0.8"/>
+    <polygon points="-26,-8 -23.5,-3 -18,-2.5 -22,1 -21,6.5 -26,4 -31,6.5 -30,1 -34,-2.5 -28.5,-3" fill="#FFD700" stroke="#B8860B" stroke-width="0.8"/>
+    <polygon points="-44,-8 -41.5,-3 -36,-2.5 -40,1 -39,6.5 -44,4 -49,6.5 -48,1 -52,-2.5 -46.5,-3" fill="#FFD700" stroke="#B8860B" stroke-width="0.8"/>
+  </g>
+  <!-- Card art -->
+  <rect x="24" y="82" width="372" height="284" rx="2" ry="2" fill="url(#artBg)" stroke="#2A2A2A" stroke-width="2"/>
+  <!-- Factory floor -->
+  <rect x="24" y="310" width="372" height="56" fill="#8A8070"/>
+  <g stroke="#707060" stroke-width="0.5" opacity="0.5">
+    <line x1="24" y1="320" x2="396" y2="320"/><line x1="24" y1="340" x2="396" y2="340"/>
+  </g>
+  <!-- Robot figure -->
+  <g transform="translate(210,220)">
+    <!-- Legs (tube joints) -->
+    <rect x="-22" y="40" width="14" height="40" rx="5" fill="url(#metalBody)" stroke="#555" stroke-width="1"/>
+    <rect x="8" y="40" width="14" height="40" rx="5" fill="url(#metalBody)" stroke="#555" stroke-width="1"/>
+    <!-- Feet -->
+    <rect x="-26" y="76" width="22" height="8" rx="3" fill="#606060" stroke="#444" stroke-width="1"/>
+    <rect x="4" y="76" width="22" height="8" rx="3" fill="#606060" stroke="#444" stroke-width="1"/>
+    <!-- Body (cylinder) -->
+    <rect x="-28" y="-20" width="56" height="62" rx="14" fill="url(#metalBody)" stroke="#555" stroke-width="1.5"/>
+    <!-- Chest window -->
+    <circle cx="0" cy="8" r="10" fill="#1A3A5C" stroke="#4682B4" stroke-width="1.5"/>
+    <circle cx="0" cy="8" r="6" fill="#4FC3F7" opacity="0.6"/>
+    <circle cx="-2" cy="6" r="2" fill="#FFF" opacity="0.4"/>
+    <!-- Warning stripes -->
+    <g fill="#DAA520" opacity="0.7">
+      <rect x="-28" y="30" width="56" height="4" rx="1"/>
+    </g>
+    <!-- Exposed gears on side -->
+    <circle cx="-30" cy="15" r="6" fill="none" stroke="#8B6914" stroke-width="1.5"/>
+    <circle cx="-30" cy="15" r="2" fill="#8B6914"/>
+    <circle cx="30" cy="15" r="6" fill="none" stroke="#8B6914" stroke-width="1.5"/>
+    <circle cx="30" cy="15" r="2" fill="#8B6914"/>
+    <!-- Left arm (3-finger claw) -->
+    <rect x="-42" y="-10" width="10" height="35" rx="4" fill="url(#metalBody)" stroke="#555" stroke-width="1"/>
+    <path d="M-46,25 L-48,35 M-40,25 L-40,36 M-34,25 L-32,35" stroke="#707070" stroke-width="2" stroke-linecap="round"/>
+    <!-- Right arm (beam gun) -->
+    <rect x="32" y="-10" width="10" height="30" rx="4" fill="url(#metalBody)" stroke="#555" stroke-width="1"/>
+    <rect x="33" y="18" width="14" height="8" rx="2" fill="#606060" stroke="#444" stroke-width="1"/>
+    <circle cx="48" cy="22" r="3" fill="#4FC3F7" opacity="0.5"/>
+    <!-- Head (hemisphere) -->
+    <ellipse cx="0" cy="-30" rx="20" ry="16" fill="url(#metalBody)" stroke="#555" stroke-width="1.5"/>
+    <!-- Single eye lens -->
+    <circle cx="0" cy="-30" r="10" fill="#1A3A5C" stroke="#4682B4" stroke-width="1.5"/>
+    <circle cx="0" cy="-30" r="7" fill="#4FC3F7"/>
+    <circle cx="-2" cy="-32" r="2.5" fill="#FFF" opacity="0.5"/>
+    <!-- Focus ring -->
+    <circle cx="0" cy="-30" r="12" fill="none" stroke="#888" stroke-width="0.8"/>
+    <!-- Antenna -->
+    <line x1="0" y1="-46" x2="0" y2="-52" stroke="#888" stroke-width="1.5"/>
+    <circle cx="0" cy="-54" r="2" fill="#CC0000"/>
+    <!-- Exhaust pipe (back, visible) -->
+    <rect x="18" y="-22" width="6" height="12" rx="2" fill="#606060"/>
+    <!-- Steam puff -->
+    <circle cx="24" cy="-26" r="3" fill="#DDD" opacity="0.4"/>
+    <circle cx="28" cy="-30" r="2" fill="#DDD" opacity="0.3"/>
+    <!-- Scratches/wear -->
+    <line x1="-15" y1="-5" x2="-8" y2="0" stroke="#999" stroke-width="0.5" opacity="0.5"/>
+    <line x1="10" y1="20" x2="18" y2="22" stroke="#999" stroke-width="0.5" opacity="0.5"/>
+  </g>
+  <!-- Type line -->
+  <rect x="24" y="370" width="372" height="24" rx="2" ry="2" fill="rgba(0,0,0,0.15)"/>
+  <text x="30" y="387" font-family="'Noto Sans TC',sans-serif" font-size="13" fill="#1A1A1A">【機械族／效果】</text>
+  <!-- Effect text -->
+  <rect x="24" y="398" width="372" height="144" rx="4" ry="4" fill="url(#textBg)" stroke="#C8B888" stroke-width="1"/>
+  <text font-family="'Noto Sans TC',sans-serif" font-size="12" fill="#1A1A1A">
+    <tspan x="32" y="420">此卡召喚成功時，可以將自己場上1隻</tspan>
+    <tspan x="32" dy="17">怪獸的表示形式變更。</tspan>
+  </text>
+  <text x="28" y="562" font-family="'Roboto Mono',monospace" font-size="10" fill="#888">MON-004</text>
+  <text x="388" y="562" font-family="'Roboto',sans-serif" font-weight="bold" font-size="16" fill="#1A1A1A" text-anchor="end">ATK/1000 DEF/1400</text>
+  <text x="28" y="592" font-family="'Roboto',sans-serif" font-size="10" fill="#888">N</text>
+</svg>

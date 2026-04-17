@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 610" width="420" height="610">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0A0E27"/>
+      <stop offset="100%" stop-color="#1A1A3E"/>
+    </linearGradient>
+    <radialGradient id="vortex" cx="50%" cy="50%" r="40%">
+      <stop offset="0%" stop-color="#FFD700" stop-opacity="0.6"/>
+      <stop offset="30%" stop-color="#4A0E6B" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#1A0530" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glow" cx="50%" cy="50%" r="20%">
+      <stop offset="0%" stop-color="#FFD700" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#FFD700" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="diamond" width="30" height="30" patternUnits="userSpaceOnUse" patternTransform="rotate(45 210 305)">
+      <rect width="30" height="30" fill="none"/>
+      <rect x="0" y="0" width="30" height="30" fill="none" stroke="#2A2A5E" stroke-width="1"/>
+    </pattern>
+    <clipPath id="cardClip">
+      <rect x="0" y="0" width="420" height="610" rx="12" ry="12"/>
+    </clipPath>
+  </defs>
+  <g clip-path="url(#cardClip)">
+    <!-- Background -->
+    <rect width="420" height="610" fill="url(#bg)"/>
+    <!-- Diamond grid -->
+    <rect width="420" height="610" fill="url(#diamond)" opacity="0.6"/>
+    <!-- Vortex ellipse -->
+    <ellipse cx="210" cy="305" rx="130" ry="170" fill="url(#vortex)"/>
+    <!-- Spiral arms -->
+    <g opacity="0.35" fill="none" stroke="#DAA520" stroke-width="1.5">
+      <path d="M210,305 Q260,250 280,305 Q300,360 250,380 Q200,400 190,350 Q180,300 220,280 Q260,260 270,305"/>
+      <path d="M210,305 Q160,360 140,305 Q120,250 170,230 Q220,210 230,260 Q240,310 200,330 Q160,350 150,305"/>
+    </g>
+    <!-- Center glow -->
+    <ellipse cx="210" cy="305" rx="40" ry="40" fill="url(#glow)"/>
+    <!-- Outer gold frame -->
+    <rect x="6" y="6" width="408" height="598" rx="10" ry="10" fill="none" stroke="#B8860B" stroke-width="4"/>
+    <!-- Inner decorative frame -->
+    <rect x="14" y="14" width="392" height="582" rx="8" ry="8" fill="none" stroke="#DAA520" stroke-width="1"/>
+    <!-- Corner ornaments -->
+    <g stroke="#DAA520" stroke-width="1.5" fill="none">
+      <!-- Top-left -->
+      <path d="M24,24 L54,24 M24,24 L24,54 M24,24 L44,44"/>
+      <!-- Top-right -->
+      <path d="M396,24 L366,24 M396,24 L396,54 M396,24 L376,44"/>
+      <!-- Bottom-left -->
+      <path d="M24,586 L54,586 M24,586 L24,556 M24,586 L44,566"/>
+      <!-- Bottom-right -->
+      <path d="M396,586 L366,586 M396,586 L396,556 M396,586 L376,566"/>
+    </g>
+    <!-- Outer ellipse ring -->
+    <ellipse cx="210" cy="305" rx="132" ry="172" fill="none" stroke="#B8860B" stroke-width="2" opacity="0.7"/>
+    <!-- Decorative dots on ellipse -->
+    <g fill="#DAA520" opacity="0.8">
+      <circle cx="210" cy="133" r="3"/>
+      <circle cx="210" cy="477" r="3"/>
+      <circle cx="78" cy="305" r="3"/>
+      <circle cx="342" cy="305" r="3"/>
+    </g>
+  </g>
+</svg>

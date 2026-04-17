@@ -1,0 +1,113 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 610" width="420" height="610">
+  <defs>
+    <linearGradient id="cardFrameGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#C42878"/>
+      <stop offset="50%" stop-color="#9B1B5E"/>
+      <stop offset="100%" stop-color="#701045"/>
+    </linearGradient>
+    <linearGradient id="innerFrameGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#D83888"/>
+      <stop offset="100%" stop-color="#881050"/>
+    </linearGradient>
+    <linearGradient id="textAreaBg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#F8F4E8"/>
+      <stop offset="100%" stop-color="#F0E8D0"/>
+    </linearGradient>
+    <!-- Art: Mirror barrier reflecting attack -->
+    <linearGradient id="mirrorGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#B0BEC5" stop-opacity="0.9"/>
+      <stop offset="30%" stop-color="#F5F0E8" stop-opacity="0.7"/>
+      <stop offset="50%" stop-color="#78909C" stop-opacity="0.8"/>
+      <stop offset="70%" stop-color="#F5F0E8" stop-opacity="0.7"/>
+      <stop offset="100%" stop-color="#B0BEC5" stop-opacity="0.9"/>
+    </linearGradient>
+    <filter id="mirrorGlow">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="attackBlur">
+      <feGaussianBlur stdDeviation="3"/>
+    </filter>
+  </defs>
+
+  <!-- Card frame -->
+  <rect x="0" y="0" width="420" height="610" rx="12" ry="12" fill="url(#cardFrameGrad)" stroke="#3A3020" stroke-width="3"/>
+  <rect x="12" y="12" width="396" height="586" rx="6" ry="6" fill="none" stroke="url(#innerFrameGrad)" stroke-width="2"/>
+
+  <!-- Card name -->
+  <rect x="20" y="14" width="380" height="40" rx="4" ry="4" fill="rgba(0,0,0,0.25)"/>
+  <text x="28" y="41" font-family="'Noto Sans TC', sans-serif" font-weight="bold" font-size="20" fill="#FFFFFF" stroke="#000000" stroke-width="0.8" paint-order="stroke">鏡面力量</text>
+
+  <!-- Trap type icon -->
+  <circle cx="378" cy="34" r="18" fill="#9B1B5E" stroke="#5A0E38" stroke-width="2"/>
+  <text x="378" y="30" font-family="sans-serif" font-size="9" fill="#FFFFFF" text-anchor="middle">陷阱</text>
+  <text x="378" y="42" font-family="sans-serif" font-size="8" fill="#F0A0C8" text-anchor="middle">通常</text>
+
+  <!-- Sub-type indicator -->
+  <rect x="24" y="58" width="372" height="20" rx="2" ry="2" fill="rgba(0,0,0,0.1)"/>
+  <text x="390" y="72" font-family="'Noto Sans TC', sans-serif" font-size="12" fill="#FFD0E8" text-anchor="end">【陷阱卡】</text>
+
+  <!-- Card art area -->
+  <rect x="24" y="82" width="372" height="284" rx="2" ry="2" fill="#1A1A2E" stroke="#2A2A2A" stroke-width="2"/>
+  <rect x="26" y="84" width="368" height="280" fill="#1A1A2E" rx="1"/>
+  <!-- Incoming attack from left (red energy) -->
+  <g filter="url(#attackBlur)" opacity="0.7">
+    <path d="M26,200 L80,210 L120,195 L160,215 L190,205" fill="none" stroke="#FF4500" stroke-width="8" opacity="0.5"/>
+    <path d="M26,220 L70,225 L110,215 L150,230 L185,220" fill="none" stroke="#8B0000" stroke-width="5" opacity="0.4"/>
+  </g>
+  <!-- Mirror wall (vertical, center) -->
+  <g filter="url(#mirrorGlow)">
+    <rect x="195" y="100" width="8" height="250" rx="2" fill="url(#mirrorGrad)" opacity="0.8"/>
+    <rect x="193" y="100" width="12" height="250" rx="2" fill="none" stroke="#F5F0E8" stroke-width="1" opacity="0.6"/>
+    <!-- Mirror surface shimmer lines -->
+    <line x1="199" y1="120" x2="199" y2="140" stroke="#F5F0E8" stroke-width="0.5" opacity="0.8"/>
+    <line x1="199" y1="160" x2="199" y2="175" stroke="#F5F0E8" stroke-width="0.5" opacity="0.7"/>
+    <line x1="199" y1="200" x2="199" y2="220" stroke="#F5F0E8" stroke-width="0.5" opacity="0.8"/>
+    <line x1="199" y1="250" x2="199" y2="270" stroke="#F5F0E8" stroke-width="0.5" opacity="0.7"/>
+    <line x1="199" y1="290" x2="199" y2="310" stroke="#F5F0E8" stroke-width="0.5" opacity="0.6"/>
+  </g>
+  <!-- Reflected attack going back right (mirrored red energy) -->
+  <g filter="url(#attackBlur)" opacity="0.6">
+    <path d="M210,205 L250,195 L290,210 L330,200 L370,215 L394,210" fill="none" stroke="#FF4500" stroke-width="6" opacity="0.5"/>
+    <path d="M210,220 L260,230 L300,218 L340,228 L394,225" fill="none" stroke="#8B0000" stroke-width="4" opacity="0.4"/>
+  </g>
+  <!-- Impact flash at mirror surface -->
+  <g filter="url(#mirrorGlow)">
+    <circle cx="199" cy="210" r="15" fill="#F5F0E8" opacity="0.4"/>
+    <circle cx="199" cy="210" r="8" fill="#F5F0E8" opacity="0.6"/>
+  </g>
+  <!-- Shatter sparks from impact -->
+  <g opacity="0.7">
+    <line x1="199" y1="210" x2="175" y2="185" stroke="#F5F0E8" stroke-width="1" opacity="0.6"/>
+    <line x1="199" y1="210" x2="180" y2="240" stroke="#B0BEC5" stroke-width="1" opacity="0.5"/>
+    <line x1="199" y1="210" x2="220" y2="185" stroke="#F5F0E8" stroke-width="1" opacity="0.6"/>
+    <line x1="199" y1="210" x2="225" y2="235" stroke="#B0BEC5" stroke-width="1" opacity="0.5"/>
+  </g>
+  <!-- Destruction fragments on right (enemy being destroyed) -->
+  <g opacity="0.5">
+    <polygon points="330,180 340,175 335,185" fill="#FF4500" opacity="0.6"/>
+    <polygon points="350,200 358,193 355,205" fill="#8B0000" opacity="0.5"/>
+    <polygon points="320,230 328,225 325,235" fill="#FF4500" opacity="0.5"/>
+    <polygon points="360,220 367,215 364,228" fill="#8B0000" opacity="0.4"/>
+  </g>
+  <!-- Silhouette of attacker being reflected -->
+  <g opacity="0.25">
+    <ellipse cx="350" cy="200" rx="15" ry="25" fill="#8B0000"/>
+    <circle cx="350" cy="172" r="10" fill="#8B0000"/>
+  </g>
+
+  <!-- Type description line -->
+  <rect x="24" y="370" width="372" height="24" rx="2" ry="2" fill="rgba(0,0,0,0.15)"/>
+  <text x="30" y="387" font-family="'Noto Sans TC', sans-serif" font-size="13" fill="#FFD0E8">【陷阱卡】</text>
+
+  <!-- Effect text area -->
+  <rect x="24" y="398" width="372" height="172" rx="4" ry="4" fill="url(#textAreaBg)" stroke="#C8B888" stroke-width="1"/>
+  <text font-family="'Noto Sans TC', sans-serif" font-size="12" fill="#1A1A1A">
+    <tspan x="32" y="420">對方怪獸的攻擊宣言時才能發動。對方</tspan>
+    <tspan x="32" y="437">場上所有攻擊表示怪獸破壞。</tspan>
+  </text>
+
+  <!-- Card ID -->
+  <text x="28" y="588" font-family="'Roboto Mono', monospace" font-size="10" fill="#888888">TRP-004</text>
+  <text x="388" y="588" font-family="'Roboto', sans-serif" font-size="10" fill="#888888" text-anchor="end">SR</text>
+</svg>

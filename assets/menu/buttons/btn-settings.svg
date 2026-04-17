@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 252 48" width="252" height="48">
+  <!-- Normal -->
+  <g id="normal">
+    <rect width="252" height="48" rx="8" fill="transparent" stroke="#94A3B8" stroke-width="1"/>
+    <!-- Gear icon -->
+    <g transform="translate(82,24)" fill="none" stroke="#CBD5E1" stroke-width="1.5">
+      <circle cx="0" cy="0" r="4"/>
+      <path d="M0,-10 L2,-8 L4,-9 L6,-7 L5,-5 L7,-4 L7,-2 L5,-1 L5,1 L7,2 L7,4 L5,5 L6,7 L4,9 L2,8 L0,10 L-2,8 L-4,9 L-6,7 L-5,5 L-7,4 L-7,2 L-5,1 L-5,-1 L-7,-2 L-7,-4 L-5,-5 L-6,-7 L-4,-9 L-2,-8Z"/>
+    </g>
+    <text x="148" y="31" font-family="'Noto Sans TC','sans-serif'" font-size="18" font-weight="500" fill="#CBD5E1" letter-spacing="6">設 定</text>
+  </g>
+  <!-- Hover -->
+  <g id="hover" transform="translate(0,64)">
+    <rect width="252" height="48" rx="8" fill="rgba(255,255,255,0.05)" stroke="#CBD5E1" stroke-width="1"/>
+    <g transform="translate(82,24)" fill="none" stroke="#F1F5F9" stroke-width="1.5">
+      <circle cx="0" cy="0" r="4"/>
+      <path d="M0,-10 L2,-8 L4,-9 L6,-7 L5,-5 L7,-4 L7,-2 L5,-1 L5,1 L7,2 L7,4 L5,5 L6,7 L4,9 L2,8 L0,10 L-2,8 L-4,9 L-6,7 L-5,5 L-7,4 L-7,2 L-5,1 L-5,-1 L-7,-2 L-7,-4 L-5,-5 L-6,-7 L-4,-9 L-2,-8Z"/>
+    </g>
+    <text x="148" y="31" font-family="'Noto Sans TC','sans-serif'" font-size="18" font-weight="500" fill="#F1F5F9" letter-spacing="6">設 定</text>
+  </g>
+  <!-- Pressed -->
+  <g id="pressed" transform="translate(0,128)">
+    <rect width="252" height="48" rx="8" fill="rgba(255,255,255,0.02)" stroke="#64748B" stroke-width="1"/>
+    <g transform="translate(82,25)" fill="none" stroke="#94A3B8" stroke-width="1.5">
+      <circle cx="0" cy="0" r="4"/>
+      <path d="M0,-10 L2,-8 L4,-9 L6,-7 L5,-5 L7,-4 L7,-2 L5,-1 L5,1 L7,2 L7,4 L5,5 L6,7 L4,9 L2,8 L0,10 L-2,8 L-4,9 L-6,7 L-5,5 L-7,4 L-7,2 L-5,1 L-5,-1 L-7,-2 L-7,-4 L-5,-5 L-6,-7 L-4,-9 L-2,-8Z"/>
+    </g>
+    <text x="148" y="32" font-family="'Noto Sans TC','sans-serif'" font-size="18" font-weight="500" fill="#94A3B8" letter-spacing="6">設 定</text>
+  </g>
+</svg>

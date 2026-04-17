@@ -1,0 +1,121 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 610" width="420" height="610">
+  <defs>
+    <linearGradient id="cardFrameGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#2AAE68"/>
+      <stop offset="50%" stop-color="#1D8A50"/>
+      <stop offset="100%" stop-color="#126638"/>
+    </linearGradient>
+    <linearGradient id="innerFrameGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#38C478"/>
+      <stop offset="100%" stop-color="#187A44"/>
+    </linearGradient>
+    <linearGradient id="textAreaBg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#F8F4E8"/>
+      <stop offset="100%" stop-color="#F0E8D0"/>
+    </linearGradient>
+    <!-- Art: Teleport beam diagonal -->
+    <linearGradient id="beamGrad" x1="0" y1="1" x2="1" y2="0">
+      <stop offset="0%" stop-color="#8B5CF6"/>
+      <stop offset="40%" stop-color="#4FC3F7"/>
+      <stop offset="60%" stop-color="#F5F0E8"/>
+      <stop offset="100%" stop-color="#8B5CF6"/>
+    </linearGradient>
+    <radialGradient id="portalLeft" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#F5F0E8"/>
+      <stop offset="40%" stop-color="#4FC3F7"/>
+      <stop offset="80%" stop-color="#8B5CF6"/>
+      <stop offset="100%" stop-color="#2D1B4E"/>
+    </radialGradient>
+    <radialGradient id="portalRight" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#F5F0E8"/>
+      <stop offset="40%" stop-color="#4FC3F7"/>
+      <stop offset="80%" stop-color="#8B5CF6"/>
+      <stop offset="100%" stop-color="#2D1B4E"/>
+    </radialGradient>
+    <filter id="portalGlow">
+      <feGaussianBlur stdDeviation="5" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="beamBlur">
+      <feGaussianBlur stdDeviation="2"/>
+    </filter>
+  </defs>
+
+  <!-- Card frame -->
+  <rect x="0" y="0" width="420" height="610" rx="12" ry="12" fill="url(#cardFrameGrad)" stroke="#3A3020" stroke-width="3"/>
+  <rect x="12" y="12" width="396" height="586" rx="6" ry="6" fill="none" stroke="url(#innerFrameGrad)" stroke-width="2"/>
+
+  <!-- Card name -->
+  <rect x="20" y="14" width="380" height="40" rx="4" ry="4" fill="rgba(0,0,0,0.25)"/>
+  <text x="28" y="41" font-family="'Noto Sans TC', sans-serif" font-weight="bold" font-size="20" fill="#FFFFFF" stroke="#000000" stroke-width="0.8" paint-order="stroke">瞬間轉移</text>
+
+  <!-- Spell type icon - Quick-Play -->
+  <circle cx="378" cy="34" r="18" fill="#1D8A50" stroke="#0E5530" stroke-width="2"/>
+  <text x="378" y="30" font-family="sans-serif" font-size="9" fill="#FFFFFF" text-anchor="middle">魔法</text>
+  <text x="378" y="42" font-family="sans-serif" font-size="8" fill="#A0E0B8" text-anchor="middle">速攻</text>
+
+  <!-- Sub-type indicator -->
+  <rect x="24" y="58" width="372" height="20" rx="2" ry="2" fill="rgba(0,0,0,0.1)"/>
+  <text x="390" y="72" font-family="'Noto Sans TC', sans-serif" font-size="12" fill="#E0FFE8" text-anchor="end">【速攻魔法】</text>
+
+  <!-- Card art area -->
+  <rect x="24" y="82" width="372" height="284" rx="2" ry="2" fill="#0D1B3E" stroke="#2A2A2A" stroke-width="2"/>
+  <!-- Dark space background -->
+  <rect x="26" y="84" width="368" height="280" fill="#0D1B3E" rx="1"/>
+  <!-- Speed lines background -->
+  <g opacity="0.15">
+    <line x1="26" y1="364" x2="394" y2="84" stroke="#4FC3F7" stroke-width="1"/>
+    <line x1="46" y1="364" x2="394" y2="104" stroke="#4FC3F7" stroke-width="0.5"/>
+    <line x1="26" y1="344" x2="374" y2="84" stroke="#4FC3F7" stroke-width="0.5"/>
+    <line x1="66" y1="364" x2="394" y2="124" stroke="#4FC3F7" stroke-width="0.3"/>
+    <line x1="26" y1="324" x2="354" y2="84" stroke="#4FC3F7" stroke-width="0.3"/>
+  </g>
+  <!-- Portal left (bottom-left) -->
+  <g filter="url(#portalGlow)">
+    <ellipse cx="100" cy="300" rx="45" ry="35" fill="url(#portalLeft)" opacity="0.9"/>
+    <ellipse cx="100" cy="300" rx="25" ry="18" fill="#F5F0E8" opacity="0.5"/>
+  </g>
+  <!-- Portal right (top-right) -->
+  <g filter="url(#portalGlow)">
+    <ellipse cx="320" cy="150" rx="45" ry="35" fill="url(#portalRight)" opacity="0.9"/>
+    <ellipse cx="320" cy="150" rx="25" ry="18" fill="#F5F0E8" opacity="0.5"/>
+  </g>
+  <!-- Teleport beam connecting portals -->
+  <g filter="url(#beamBlur)">
+    <line x1="130" y1="280" x2="290" y2="170" stroke="#4FC3F7" stroke-width="12" opacity="0.4"/>
+    <line x1="130" y1="280" x2="290" y2="170" stroke="#F5F0E8" stroke-width="4" opacity="0.7"/>
+  </g>
+  <!-- Energy particles along beam -->
+  <circle cx="170" cy="260" r="2" fill="#F5F0E8" opacity="0.9"/>
+  <circle cx="200" cy="240" r="3" fill="#4FC3F7" opacity="0.8"/>
+  <circle cx="230" cy="220" r="2" fill="#F5F0E8" opacity="0.9"/>
+  <circle cx="260" cy="195" r="2.5" fill="#4FC3F7" opacity="0.7"/>
+  <!-- Silhouette figures being teleported -->
+  <g opacity="0.6">
+    <ellipse cx="105" cy="290" rx="12" ry="20" fill="#2D1B4E"/>
+    <circle cx="105" cy="268" r="7" fill="#2D1B4E"/>
+  </g>
+  <g opacity="0.4">
+    <ellipse cx="315" cy="140" rx="12" ry="20" fill="#8B5CF6"/>
+    <circle cx="315" cy="118" r="7" fill="#8B5CF6"/>
+  </g>
+  <!-- Space distortion rings -->
+  <ellipse cx="100" cy="300" rx="55" ry="42" fill="none" stroke="#8B5CF6" stroke-width="1" opacity="0.4"/>
+  <ellipse cx="320" cy="150" rx="55" ry="42" fill="none" stroke="#8B5CF6" stroke-width="1" opacity="0.4"/>
+
+  <!-- Type description line -->
+  <rect x="24" y="370" width="372" height="24" rx="2" ry="2" fill="rgba(0,0,0,0.15)"/>
+  <text x="30" y="387" font-family="'Noto Sans TC', sans-serif" font-size="13" fill="#E0FFE8">【速攻魔法】</text>
+
+  <!-- Effect text area -->
+  <rect x="24" y="398" width="372" height="172" rx="4" ry="4" fill="url(#textAreaBg)" stroke="#C8B888" stroke-width="1"/>
+  <text font-family="'Noto Sans TC', sans-serif" font-size="12" fill="#1A1A1A">
+    <tspan x="32" y="420">自己場上的怪獸1隻與對方場上的怪獸</tspan>
+    <tspan x="32" y="437">1隻為對象才能發動。交換那2隻怪獸</tspan>
+    <tspan x="32" y="454">的控制權。</tspan>
+  </text>
+
+  <!-- Card ID -->
+  <text x="28" y="588" font-family="'Roboto Mono', monospace" font-size="10" fill="#888888">SPL-002</text>
+  <text x="388" y="588" font-family="'Roboto', sans-serif" font-size="10" fill="#888888" text-anchor="end">SR</text>
+</svg>
