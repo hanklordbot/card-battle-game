@@ -1,9 +1,10 @@
-import { Container, Graphics, Text, TextStyle } from 'pixi.js';
+import { Container, Graphics, Text, TextStyle, Sprite, Texture } from 'pixi.js';
 import { Card, isMonster, MonsterCard, CardType } from '../../core/card';
 import { DuelResult } from '../../core/duel';
 import { getCardFrameColor, getCardTypeLabel } from '../../game/constants';
 import { LOGICAL_W, LOGICAL_H } from '../PixiApp';
 import { vfxManager } from '../vfx/VFXManager';
+import { getCardImageUrl } from '../../services/card-mapping';
 
 function hexNum(hex: string): number {
   return parseInt(hex.replace('#', ''), 16);
@@ -33,12 +34,25 @@ export class OverlayLayer extends Container {
   onStartClick?: () => void;
   onRestartClick?: () => void;
   onDetailClose?: () => void;
+  onPreviewCancel?: () => void;
+
+  // Preview panel
+  private previewPanel = new Container();
+  private previewBg = new Graphics();
+  private previewArt: Sprite;
+  private previewFallbackArt = new Graphics();
+  private previewName: Text;
+  private previewType: Text;
+  private previewStats: Text;
+  private previewEffect: Text;
+  private _previewLoadedId = '';
 
   constructor() {
     super();
     this.buildStartScreen();
     this.buildGameOver();
     this.buildDetailPanel();
+    this.buildPreviewPanel();
   }
 
   private buildStartScreen() {
@@ -224,5 +238,123 @@ export class OverlayLayer extends Container {
 
   hideCardDetail() {
     this.detailPanel.visible = false;
+  }
+
+  // === Preview Panel ===
+
+  private buildPreviewPanel() {
+    this.previewPanel.visible = false;
+
+    // Semi-transparent backdrop — clicking it cancels preview
+    const backdrop = new Graphics();
+    backdrop.rect(0, 0, LOGICAL_W, LOGICAL_H);
+    backdrop.fill({ color: 0x000000, alpha: 0.5 });
+    backdrop.eventMode = 'static';
+    backdrop.on('pointerdown', () => this.onPreviewCancel?.());
+    this.previewPanel.addChild(backdrop);
+
+    // Card preview — left side of screen
+    const cardW = 200;
+    const cardH = 290;
+    const cardX = 120;
+    const cardY = LOGICAL_H / 2 - cardH / 2;
+
+    // Card frame bg
+    this.previewBg.position.set(cardX, cardY);
+    this.previewPanel.addChild(this.previewBg);
+
+    // Fallback art (colored rectangle)
+    this.previewFallbackArt.position.set(cardX, cardY);
+    this.previewPanel.addChild(this.previewFallbackArt);
+
+    // Card image
+    this.previewArt = new Sprite();
+    this.previewArt.position.set(cardX, cardY);
+    this.previewArt.width = cardW;
+    this.previewArt.height = cardH;
+    this.previewArt.visible = false;
+    this.previewPanel.addChild(this.previewArt);
+
+    // Info — right of card
+    const infoX = cardX + cardW + 30;
+
+    this.previewName = new Text({ text: '', style: new TextStyle({ fontSize: 26, fill: 0xffffff, fontWeight: 'bold', wordWrap: true, wordWrapWidth: 400 }) });
+    this.previewName.position.set(infoX, cardY);
+    this.previewPanel.addChild(this.previewName);
+
+    this.previewType = new Text({ text: '', style: new TextStyle({ fontSize: 16, fill: 0xaaaaaa }) });
+    this.previewType.position.set(infoX, cardY + 36);
+    this.previewPanel.addChild(this.previewType);
+
+    this.previewStats = new Text({ text: '', style: new TextStyle({ fontSize: 22, fill: 0xffd700, fontWeight: 'bold' }) });
+    this.previewStats.position.set(infoX, cardY + 62);
+    this.previewPanel.addChild(this.previewStats);
+
+    this.previewEffect = new Text({ text: '', style: new TextStyle({ fontSize: 15, fill: 0xcccccc, wordWrap: true, wordWrapWidth: 400 }) });
+    this.previewEffect.position.set(infoX, cardY + 96);
+    this.previewPanel.addChild(this.previewEffect);
+
+    // Hint text
+    const hint = new Text({ text: '點擊高亮格位放置卡片 | 點擊其他地方取消', style: new TextStyle({ fontSize: 16, fill: 0x00d4ff }) });
+    hint.anchor.set(0.5);
+    hint.position.set(LOGICAL_W / 2, LOGICAL_H - 40);
+    this.previewPanel.addChild(hint);
+
+    this.addChild(this.previewPanel);
+  }
+
+  showPreview(card: Card) {
+    this.previewPanel.visible = true;
+
+    const cardW = 200;
+    const cardH = 290;
+    const color = hexNum(getCardFrameColor(card));
+
+    // Fallback art
+    this.previewFallbackArt.clear();
+    this.previewFallbackArt.roundRect(0, 0, cardW, cardH, 8);
+    this.previewFallbackArt.fill({ color, alpha: 0.3 });
+    this.previewFallbackArt.stroke({ color, width: 3 });
+    this.previewFallbackArt.visible = true;
+
+    // Try load real image
+    if (this._previewLoadedId !== card.id) {
+      this._previewLoadedId = card.id;
+      this.previewArt.visible = false;
+      const url = getCardImageUrl(card.id, 'large');
+      if (url) {
+        const img = new Image();
+        img.crossOrigin = 'anonymous';
+        img.onload = () => {
+          if (this._previewLoadedId !== card.id) return;
+          this.previewArt.texture = Texture.from(img);
+          this.previewArt.width = cardW;
+          this.previewArt.height = cardH;
+          this.previewArt.visible = true;
+          this.previewFallbackArt.visible = false;
+        };
+        img.src = url;
+      }
+    } else if (this.previewArt.texture && this.previewArt.texture !== Texture.EMPTY) {
+      this.previewArt.visible = true;
+      this.previewFallbackArt.visible = false;
+    }
+
+    this.previewName.text = card.name;
+    this.previewType.text = getCardTypeLabel(card);
+
+    if (isMonster(card)) {
+      const m = card as MonsterCard;
+      this.previewStats.text = `ATK/${m.atk}  DEF/${m.def}`;
+    } else {
+      this.previewStats.text = '';
+    }
+
+    const mon = isMonster(card) ? card as MonsterCard : null;
+    this.previewEffect.text = card.effectDescription || mon?.flavorText || '';
+  }
+
+  hidePreview() {
+    this.previewPanel.visible = false;
   }
 }

@@ -1,7 +1,7 @@
 import { create } from 'zustand';
 import { Card } from '../core/card';
 
-export type UIMode = 'idle' | 'summon_select' | 'attack_select' | 'target_select' | 'set_select';
+export type UIMode = 'idle' | 'summon_select' | 'attack_select' | 'target_select' | 'set_select' | 'preview';
 
 interface UIStoreState {
   mode: UIMode;

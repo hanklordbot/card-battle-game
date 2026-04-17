@@ -28,6 +28,7 @@ export class InteractionManager {
     for (let i = 0; i < 5; i++) {
       const idx = i;
       fieldLayer.playerMonsterSlots[i].sprite.on('pointerdown', () => this.handleMyMonsterZoneClick(idx));
+      fieldLayer.playerSpellSlots[i].sprite.on('pointerdown', () => this.handleMySpellZoneClick(idx));
       fieldLayer.oppMonsterSlots[i].sprite.on('pointerdown', () => this.handleOppMonsterZoneClick(idx));
     }
 
@@ -39,32 +40,32 @@ export class InteractionManager {
 
     // Overlay
     overlayLayer.onDetailClose = () => useUIStore.getState().hideCardDetail();
+    overlayLayer.onPreviewCancel = () => this.handleCancel();
     overlayLayer.onRestartClick = () => {
       useBattleStore.setState({ gameStarted: false, duel: null, logs: [] });
       useUIStore.getState().reset();
     };
+
+    // ESC key to cancel preview
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') this.handleCancel();
+    });
   }
 
   private handleHandClick(index: number) {
     const duel = useBattleStore.getState().duel;
     if (!duel || duel.turnPlayer !== 0) return;
     const { mode, selectHand, setMode, reset } = useUIStore.getState();
-    const { doSetSpellTrap, doNormalSummon } = useBattleStore.getState();
+    const { doSetSpellTrap } = useBattleStore.getState();
     const card = duel.players[0].hand[index];
     const isMainPhase = duel.phase === Phase.Main1 || duel.phase === Phase.Main2;
 
     gameAudio.selectCard();
 
     if (mode === 'idle' && isMainPhase) {
+      // Enter preview mode — show enlarged card, highlight valid slots
       selectHand(index);
-      if (isMonster(card)) {
-        setMode('summon_select');
-        useUIStore.getState().showMessage('選擇：點擊場地召喚');
-      } else {
-        const ok = doSetSpellTrap(index);
-        if (ok) useUIStore.getState().showMessage('蓋放成功！');
-        reset();
-      }
+      setMode('preview');
     }
   }
 
@@ -85,16 +86,38 @@ export class InteractionManager {
       if (err) ui.showMessage(`召喚失敗：${err}`);
       else {
         ui.showMessage('召喚成功！');
-        // Trigger summon VFX at the slot position
         if (vfxManager.isInitialized) {
           const slot = this.scene.fieldLayer.playerMonsterSlots[index];
           if (slot) {
-            const cardContainer = this.scene.cardLayer;
-            vfxManager.cardVFX.normalSummon(cardContainer, { x: slot.x, y: slot.y });
+            vfxManager.cardVFX.normalSummon(this.scene.cardLayer, { x: slot.x, y: slot.y });
           }
         }
       }
       ui.reset();
+      return;
+    }
+
+    // Preview mode: clicking an empty monster slot summons the previewed card
+    if (ui.mode === 'preview' && ui.selectedHandIndex !== null && isMainPhase) {
+      const card = duel.players[0].hand[ui.selectedHandIndex];
+      if (isMonster(card)) {
+        if (duel.players[0].monsterZone[index] !== null) {
+          ui.showMessage('此格位已有怪獸！');
+          return;
+        }
+        const err = store.doNormalSummon(ui.selectedHandIndex, 'atk');
+        if (err) ui.showMessage(`召喚失敗：${err}`);
+        else {
+          ui.showMessage('召喚成功！');
+          if (vfxManager.isInitialized) {
+            const slot = this.scene.fieldLayer.playerMonsterSlots[index];
+            if (slot) {
+              vfxManager.cardVFX.normalSummon(this.scene.cardLayer, { x: slot.x, y: slot.y });
+            }
+          }
+        }
+        ui.reset();
+      }
       return;
     }
 
@@ -116,6 +139,28 @@ export class InteractionManager {
           const newPos = slot.position === Position.FaceUpDefense ? '守備表示' : '攻擊表示';
           ui.showMessage(`切換為${newPos}`);
         }
+      }
+    }
+  }
+
+  private handleMySpellZoneClick(index: number) {
+    const duel = useBattleStore.getState().duel;
+    if (!duel || duel.turnPlayer !== 0) return;
+    const ui = useUIStore.getState();
+    const store = useBattleStore.getState();
+    const isMainPhase = duel.phase === Phase.Main1 || duel.phase === Phase.Main2;
+
+    // Preview mode: clicking an empty spell/trap slot sets the previewed card
+    if (ui.mode === 'preview' && ui.selectedHandIndex !== null && isMainPhase) {
+      const card = duel.players[0].hand[ui.selectedHandIndex];
+      if (card.cardType === CardType.Spell || card.cardType === CardType.Trap) {
+        if (duel.players[0].spellTrapZone[index] !== null) {
+          ui.showMessage('此格位已有卡片！');
+          return;
+        }
+        const ok = store.doSetSpellTrap(ui.selectedHandIndex);
+        if (ok) ui.showMessage('蓋放成功！');
+        ui.reset();
       }
     }
   }

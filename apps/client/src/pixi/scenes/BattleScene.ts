@@ -112,6 +112,30 @@ export class BattleScene extends Container {
       }
     }
 
+    // Preview mode: show enlarged card + highlight valid placement slots
+    if (ui.mode === 'preview' && ui.selectedHandIndex !== null) {
+      const card = duel.players[0].hand[ui.selectedHandIndex];
+      if (card) {
+        this.overlayLayer.showPreview(card);
+        if (isMonster(card) && !duel.players[0].normalSummonUsed) {
+          for (let i = 0; i < 5; i++) {
+            if (!duel.players[0].monsterZone[i]) {
+              this.fieldLayer.setHighlight(this.fieldLayer.playerMonsterSlots, i, true, hexNum(COLORS.canSummon));
+            }
+          }
+        }
+        if (card.cardType === 'spell' || card.cardType === 'trap') {
+          for (let i = 0; i < 5; i++) {
+            if (!duel.players[0].spellTrapZone[i]) {
+              this.fieldLayer.setHighlight(this.fieldLayer.playerSpellSlots, i, true, hexNum(COLORS.canSummon));
+            }
+          }
+        }
+      }
+    } else {
+      this.overlayLayer.hidePreview();
+    }
+
     if (ui.mode === 'idle' && isBattlePhase && isMyTurn) {
       for (let i = 0; i < 5; i++) {
         const slot = duel.players[0].monsterZone[i];
