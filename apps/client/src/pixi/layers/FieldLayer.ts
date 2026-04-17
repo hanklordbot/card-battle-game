@@ -89,7 +89,7 @@ export class FieldLayer extends Container {
       highlight.height = SLOT_H + 8;
       highlight.position.set(x, y);
       highlight.visible = false;
-      highlight.alpha = 0.7;
+      highlight.alpha = 1.0;
       this.addChild(highlight);
 
       slots.push({ x, y, sprite, highlight });

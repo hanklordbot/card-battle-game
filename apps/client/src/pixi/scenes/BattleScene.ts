@@ -39,6 +39,11 @@ export class BattleScene extends Container {
     this.addChild(this.cardLayer);
     this.addChild(this.uiLayer);
     this.addChild(this.overlayLayer);
+    this.sortableChildren = true;
+    this.fieldLayer.zIndex = 0;
+    this.cardLayer.zIndex = 1;
+    this.uiLayer.zIndex = 2;
+    this.overlayLayer.zIndex = 3;
 
     this.interaction = new InteractionManager(this);
   }
@@ -114,6 +119,7 @@ export class BattleScene extends Container {
 
     // Preview mode: show enlarged card + highlight valid placement slots
     if (ui.mode === 'preview' && ui.selectedHandIndex !== null) {
+      this.fieldLayer.zIndex = 1.5; // Above cardLayer so highlights show
       const card = duel.players[0].hand[ui.selectedHandIndex];
       if (card) {
         this.overlayLayer.showPreview(card);
@@ -133,6 +139,7 @@ export class BattleScene extends Container {
         }
       }
     } else {
+      this.fieldLayer.zIndex = 0; // Reset to normal
       this.overlayLayer.hidePreview();
     }
 
