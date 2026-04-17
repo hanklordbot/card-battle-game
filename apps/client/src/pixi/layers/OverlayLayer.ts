@@ -247,10 +247,10 @@ export class OverlayLayer extends Container {
   private buildPreviewPanel() {
     this.previewPanel.visible = false;
 
-    // Semi-transparent backdrop — hit-test slots before cancelling
+    // Invisible backdrop for slot hit-test (no dark overlay)
     const backdrop = new Graphics();
     backdrop.rect(0, 0, LOGICAL_W, LOGICAL_H);
-    backdrop.fill({ color: 0x000000, alpha: 0.5 });
+    backdrop.fill({ color: 0x000000, alpha: 0.01 });
     backdrop.eventMode = 'static';
     backdrop.on('pointerdown', (e) => {
       // Check if click is on a player monster or spell slot
